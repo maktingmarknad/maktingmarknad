@@ -1,287 +1,3281 @@
 <!DOCTYPE html>
+
 <html lang="id">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Produk Makting Marknad - Pilihan Herbal Terbaik">
-  <title>Produk - Makting Marknad</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+
+<meta
+name="description"
+content="Temukan pilihan produk herbal dan wellness dari Makting Marknad."
+
+>
+
+  <title>Produk | Makting Marknad</title>
+
+  <!-- Google Font -->
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Poppins:wght@400;500;600;700&display=swap"
+    rel="stylesheet"
+  >
+
+  <!-- AOS Animation -->
+
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css"
+  >
+
+  <!-- Favicon -->
+
   <link rel="icon" type="image/png" href="img/favicon.png">
+
   <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    body { font-family: 'Poppins', sans-serif; line-height: 1.6; background: #f7f9fc; color: #333; }
-    header { background: #0055a5; color: white; padding: 20px 0; text-align: center;margin-bottom: 20px; }
-    nav a { color: white; margin: 0 15px; text-decoration: none; font-weight: 600; }
-    .container { max-width: 1200px; margin: auto; padding: 20px; }
-    .products-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 5px; justify-content: center; }
-    .product-card { background: white; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.05); text-align: center; padding: 5px;  border: 1px solid #ddd;}
-    .product-card:hover { transform: translateY(-10px); }
-    .product-card img { width: 100%; height: auto; object-fit: cover; border-radius: 5px ; margin-bottom: 5px;}
-    .product-card h2 { margin-bottom: 2px; font-size: 18px; color: #0055a5; }
-    .product-card p { font-size: 14px; margin-bottom: 5px; }
-    .features-section { background: #e9f1fb; padding: 30px 20px; text-align: center;margin-bottom: 15px; }
-    .feature p { font-size: 0.95rem; }
-    .btn { font-weight: bold; display: inline-block; background-color: #0055a5; color: white; padding: 5px 20px; border-radius: 18px; text-decoration: none; font-size: 0.9rem; transition: background 3s, transform 3s;}
-    .btn:hover { background-color: #003f7f;transform: scale(1.05); }
-    footer { background: #333; color: white; text-align: center; padding: 15px 0; margin-top: 30px; font-size: 0.9rem; }
-    @media (min-width: 992px) {
-      .products-grid {
-        grid-template-columns: repeat(4, 1fr);
-      }
+
+    :root {
+      --primary: #0756a4;
+      --primary-dark: #043d77;
+      --primary-light: #eaf4ff;
+      --secondary: #0b75d1;
+
+      --dark: #10233b;
+      --text: #506176;
+      --muted: #748397;
+
+      --white: #ffffff;
+      --light: #f6f9fd;
+
+      --border: #dfe8f2;
+
+      --success: #169458;
+      --success-light: #e7f7ef;
+
+      --shadow: 0 18px 50px rgba(11, 62, 116, 0.12);
+
+      --radius: 20px;
+      --container: 1180px;
     }
-    @media (max-width: 1000px) {
-  .container {
-    padding: 0 8px;
-  }
-  nav a { color: white; margin: 0 5px; text-decoration: none; font-weight: 600; }
-  .btn { font-weight: bold; display: inline-block; background-color: #0055a5; color: white; padding: 5px 20px; border-radius: 18px; text-decoration: none; font-size: 0.5rem; transition: background 3s, transform 3s;}
-  .btn:hover { background-color: #003f7f;transform: scale(1.05); }
-  .products-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 5px; justify-content: center; }
-  .product-card { background: white; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.05); text-align: center; padding: 5px;  border: 1px solid #ddd;}
-  .product-card:hover { transform: translateY(-10px); }
-  .product-card img { width: 100%; height: auto; object-fit: cover; border-radius: 5px ; margin-bottom: 5px;}
-  .product-card h2 { margin-bottom: 2px; font-size: 18px; color: #0055a5; }
-  .product-card p { font-size: 14px; margin-bottom: 5px; }
-  .features-section { font-size: 0.9rem; background: #e9f1fb; padding: 30px 20px; text-align: center;margin-bottom: 15px; }
-  .feature p { font-size: 0.9rem; }
-  .features-section h2 { color: #0055a5;  }
-}
+
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+
+    body {
+      font-family: "Poppins", sans-serif;
+      background: var(--light);
+      color: var(--text);
+      line-height: 1.7;
+      overflow-x: hidden;
+    }
+
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+
+    a {
+      text-decoration: none;
+    }
+
+
+    button {
+      font-family: inherit;
+    }
+
+
+    .container {
+      width: min(100% - 40px, var(--container));
+      margin-inline: auto;
+    }
+
+
+    .section {
+      padding: 100px 0;
+    }
+
+
+    .section-heading {
+      max-width: 720px;
+      margin: 0 auto 50px;
+      text-align: center;
+    }
+
+
+    .section-label {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+
+      padding: 8px 15px;
+      margin-bottom: 16px;
+
+      border-radius: 100px;
+
+      background: var(--primary-light);
+      color: var(--primary);
+
+      font-size: 0.78rem;
+      font-weight: 700;
+
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+
+    .section-heading h2 {
+      margin-bottom: 17px;
+
+      color: var(--dark);
+
+      font-family: "Manrope", sans-serif;
+
+      font-size: clamp(2rem, 4vw, 3.15rem);
+
+      line-height: 1.2;
+
+      letter-spacing: -0.04em;
+    }
+
+
+    .section-heading p {
+      font-size: 0.98rem;
+    }
+
+
+    /* =========================
+       HEADER
+    ========================== */
+
+    .site-header {
+      position: fixed;
+
+      top: 0;
+      left: 0;
+
+      width: 100%;
+
+      z-index: 1000;
+
+      padding: 18px 0;
+
+      background: rgba(255, 255, 255, 0.9);
+
+      border-bottom:
+        1px solid rgba(223, 232, 242, 0.8);
+
+      backdrop-filter: blur(16px);
+
+      transition: 0.3s ease;
+    }
+
+
+    .site-header.scrolled {
+      padding: 12px 0;
+
+      box-shadow:
+        0 10px 35px rgba(10, 45, 83, 0.1);
+    }
+
+
+    .navbar {
+      display: flex;
+
+      align-items: center;
+
+      justify-content: space-between;
+
+      gap: 25px;
+    }
+
+
+    .brand {
+      display: flex;
+
+      align-items: center;
+
+      gap: 12px;
+
+      color: var(--dark);
+    }
+
+
+    .brand-logo {
+      width: 46px;
+      height: 46px;
+
+      padding: 6px;
+
+      border-radius: 13px;
+
+      background: var(--primary-light);
+
+      object-fit: contain;
+    }
+
+
+    .brand-name {
+      display: flex;
+
+      flex-direction: column;
+
+      line-height: 1.2;
+    }
+
+
+    .brand-name strong {
+      color: var(--primary);
+
+      font-family: "Manrope", sans-serif;
+
+      font-size: 1.05rem;
+
+      font-weight: 800;
+    }
+
+
+    .brand-name span {
+      color: var(--muted);
+
+      font-size: 0.7rem;
+    }
+
+
+    .nav-menu {
+      display: flex;
+
+      align-items: center;
+
+      gap: 30px;
+
+      list-style: none;
+    }
+
+
+    .nav-menu a {
+      position: relative;
+
+      color: #44566c;
+
+      font-size: 0.92rem;
+
+      font-weight: 600;
+
+      transition: 0.25s;
+    }
+
+
+    .nav-menu a::after {
+      content: "";
+
+      position: absolute;
+
+      left: 0;
+      bottom: -7px;
+
+      width: 0;
+      height: 2px;
+
+      border-radius: 5px;
+
+      background: var(--primary);
+
+      transition: 0.25s;
+    }
+
+
+    .nav-menu a:hover,
+    .nav-menu a.active {
+      color: var(--primary);
+    }
+
+
+    .nav-menu a:hover::after,
+    .nav-menu a.active::after {
+      width: 100%;
+    }
+
+
+    .nav-button {
+      padding: 12px 20px;
+
+      border-radius: 11px;
+
+      background: var(--primary);
+
+      color: var(--white) !important;
+
+      box-shadow:
+        0 8px 20px rgba(7, 86, 164, 0.2);
+    }
+
+
+    .nav-button::after {
+      display: none;
+    }
+
+
+    .nav-button:hover {
+      background: var(--primary-dark);
+
+      transform: translateY(-2px);
+    }
+
+
+    .menu-toggle {
+      display: none;
+
+      width: 44px;
+      height: 44px;
+
+      border:
+        1px solid var(--border);
+
+      border-radius: 11px;
+
+      background: var(--white);
+
+      color: var(--primary);
+
+      font-size: 1.3rem;
+
+      cursor: pointer;
+    }
+
+
+    /* =========================
+       PRODUCT HERO
+    ========================== */
+
+    .product-hero {
+      position: relative;
+
+      padding:
+        180px 0 105px;
+
+      overflow: hidden;
+
+      text-align: center;
+
+      background:
+
+        radial-gradient(
+          circle at 85% 20%,
+          rgba(55, 151, 245, 0.18),
+          transparent 28%
+        ),
+
+        radial-gradient(
+          circle at 15% 80%,
+          rgba(7, 86, 164, 0.1),
+          transparent 25%
+        ),
+
+        linear-gradient(
+          135deg,
+          #f9fcff,
+          #eaf4ff
+        );
+    }
+
+
+    .product-hero::before {
+      content: "";
+
+      position: absolute;
+
+      top: -220px;
+      left: -160px;
+
+      width: 430px;
+      height: 430px;
+
+      border-radius: 50%;
+
+      border:
+        1px solid rgba(7, 86, 164, 0.08);
+    }
+
+
+    .breadcrumb {
+      display: flex;
+
+      justify-content: center;
+
+      align-items: center;
+
+      gap: 10px;
+
+      margin-bottom: 24px;
+
+      color: var(--muted);
+
+      font-size: 0.8rem;
+    }
+
+
+    .breadcrumb a {
+      color: var(--primary);
+
+      font-weight: 600;
+    }
+
+
+    .breadcrumb span {
+      color: #a2afbd;
+    }
+
+
+    .product-hero .section-label {
+      position: relative;
+
+      z-index: 2;
+    }
+
+
+    .product-hero h1 {
+      position: relative;
+
+      z-index: 2;
+
+      max-width: 850px;
+
+      margin:
+        0 auto 20px;
+
+      color: var(--dark);
+
+      font-family:
+        "Manrope",
+        sans-serif;
+
+      font-size:
+        clamp(
+          2.7rem,
+          6vw,
+          4.8rem
+        );
+
+      font-weight: 800;
+
+      line-height: 1.08;
+
+      letter-spacing:
+        -0.055em;
+    }
+
+
+    .product-hero h1 span {
+      color: var(--primary);
+    }
+
+
+    .product-hero p {
+      position: relative;
+
+      z-index: 2;
+
+      max-width: 680px;
+
+      margin:
+        0 auto;
+
+      font-size: 1rem;
+    }
+
+
+    /* =========================
+       PRODUCT FILTER
+    ========================== */
+
+    .product-section {
+      padding:
+        90px 0 105px;
+    }
+
+
+    .filter-wrapper {
+      display: flex;
+
+      flex-wrap: wrap;
+
+      justify-content: center;
+
+      gap: 11px;
+
+      margin-bottom: 45px;
+    }
+
+
+    .filter-button {
+      padding:
+        11px 19px;
+
+      border:
+        1px solid var(--border);
+
+      border-radius:
+        100px;
+
+      background:
+        var(--white);
+
+      color:
+        #617288;
+
+      font-size:
+        0.82rem;
+
+      font-weight:
+        700;
+
+      cursor:
+        pointer;
+
+      transition:
+        0.25s ease;
+    }
+
+
+    .filter-button:hover,
+    .filter-button.active {
+      border-color:
+        var(--primary);
+
+      background:
+        var(--primary);
+
+      color:
+        var(--white);
+
+      box-shadow:
+        0 10px 25px
+        rgba(
+          7,
+          86,
+          164,
+          0.18
+        );
+    }
+
+
+    /* =========================
+       PRODUCT GRID
+    ========================== */
+
+    .product-grid {
+      display: grid;
+
+      grid-template-columns:
+        repeat(
+          3,
+          1fr
+        );
+
+      gap:
+        25px;
+    }
+
+
+    .product-card {
+      position:
+        relative;
+
+      display:
+        flex;
+
+      flex-direction:
+        column;
+
+      min-height:
+        100%;
+
+      overflow:
+        hidden;
+
+      border:
+        1px solid
+        var(--border);
+
+      border-radius:
+        23px;
+
+      background:
+        var(--white);
+
+      transition:
+        0.35s ease;
+    }
+
+
+    .product-card:hover {
+      transform:
+        translateY(-9px);
+
+      border-color:
+        transparent;
+
+      box-shadow:
+        var(--shadow);
+    }
+
+
+    .product-image {
+      position:
+        relative;
+
+      display:
+        flex;
+
+      align-items:
+        center;
+
+      justify-content:
+        center;
+
+      min-height:
+        290px;
+
+      padding:
+        35px;
+
+      overflow:
+        hidden;
+
+      background:
+
+        radial-gradient(
+          circle at 50% 40%,
+          #ffffff,
+          #e8f3ff
+        );
+    }
+
+
+    .product-image::before {
+      content:
+        "";
+
+      position:
+        absolute;
+
+      width:
+        220px;
+
+      height:
+        220px;
+
+      border-radius:
+        50%;
+
+      background:
+        rgba(
+          7,
+          86,
+          164,
+          0.06
+        );
+    }
+
+
+    .product-image img {
+      position:
+        relative;
+
+      z-index:
+        2;
+
+      width:
+        100%;
+
+      max-width:
+        210px;
+
+      height:
+        220px;
+
+      object-fit:
+        contain;
+
+      transition:
+        0.4s ease;
+    }
+
+
+    .product-card:hover
+    .product-image img {
+      transform:
+        scale(1.07);
+    }
+
+
+    .product-badge {
+      position:
+        absolute;
+
+      z-index:
+        5;
+
+      top:
+        17px;
+
+      left:
+        17px;
+
+      padding:
+        6px 11px;
+
+      border-radius:
+        100px;
+
+      background:
+        var(--primary);
+
+      color:
+        var(--white);
+
+      font-size:
+        0.67rem;
+
+      font-weight:
+        700;
+    }
+
+
+    .product-category {
+      position:
+        absolute;
+
+      z-index:
+        5;
+
+      right:
+        17px;
+
+      top:
+        17px;
+
+      padding:
+        6px 10px;
+
+      border-radius:
+        100px;
+
+      background:
+        rgba(
+          255,
+          255,
+          255,
+          0.9
+        );
+
+      color:
+        var(--primary);
+
+      font-size:
+        0.65rem;
+
+      font-weight:
+        700;
+
+      backdrop-filter:
+        blur(8px);
+    }
+
+
+    .product-content {
+      display:
+        flex;
+
+      flex-direction:
+        column;
+
+      flex-grow:
+        1;
+
+      padding:
+        27px;
+    }
+
+
+    .product-content h2 {
+      margin-bottom:
+        10px;
+
+      color:
+        var(--dark);
+
+      font-family:
+        "Manrope",
+        sans-serif;
+
+      font-size:
+        1.3rem;
+
+      line-height:
+        1.35;
+    }
+
+
+    .product-content p {
+      margin-bottom:
+        21px;
+
+      color:
+        #68798d;
+
+      font-size:
+        0.84rem;
+
+      line-height:
+        1.8;
+    }
+
+
+    .product-benefits {
+      display:
+        grid;
+
+      gap:
+        8px;
+
+      margin-bottom:
+        23px;
+
+      list-style:
+        none;
+    }
+
+
+    .product-benefits li {
+      display:
+        flex;
+
+      align-items:
+        center;
+
+      gap:
+        9px;
+
+      color:
+        #4c6076;
+
+      font-size:
+        0.76rem;
+
+      font-weight:
+        600;
+    }
+
+
+    .benefit-check {
+      display:
+        grid;
+
+      flex:
+        0 0 20px;
+
+      place-items:
+        center;
+
+      width:
+        20px;
+
+      height:
+        20px;
+
+      border-radius:
+        50%;
+
+      background:
+        var(--success-light);
+
+      color:
+        var(--success);
+
+      font-size:
+        0.6rem;
+    }
+
+
+    .product-footer {
+      display:
+        flex;
+
+      align-items:
+        center;
+
+      justify-content:
+        space-between;
+
+      gap:
+        15px;
+
+      padding-top:
+        20px;
+
+      margin-top:
+        auto;
+
+      border-top:
+        1px solid
+        var(--border);
+    }
+
+
+    .product-price {
+      display:
+        flex;
+
+      flex-direction:
+        column;
+    }
+
+
+    .product-price small {
+      margin-bottom:
+        3px;
+
+      color:
+        var(--muted);
+
+      font-size:
+        0.66rem;
+    }
+
+
+    .product-price strong {
+      color:
+        var(--primary);
+
+      font-family:
+        "Manrope",
+        sans-serif;
+
+      font-size:
+        1.05rem;
+    }
+
+
+    .product-link {
+      display:
+        inline-flex;
+
+      align-items:
+        center;
+
+      justify-content:
+        center;
+
+      min-width:
+        44px;
+
+      height:
+        44px;
+
+      border-radius:
+        12px;
+
+      background:
+        var(--primary-light);
+
+      color:
+        var(--primary);
+
+      font-size:
+        1.15rem;
+
+      transition:
+        0.25s ease;
+    }
+
+
+    .product-link:hover {
+      background:
+        var(--primary);
+
+      color:
+        var(--white);
+
+      transform:
+        translateX(3px);
+    }
+
+
+    /* =========================
+       EMPTY STATE
+    ========================== */
+
+    .empty-product {
+      display:
+        none;
+
+      grid-column:
+        1 / -1;
+
+      padding:
+        55px 25px;
+
+      border:
+        1px dashed
+        var(--border);
+
+      border-radius:
+        20px;
+
+      background:
+        var(--white);
+
+      text-align:
+        center;
+    }
+
+
+    .empty-product h3 {
+      margin-bottom:
+        8px;
+
+      color:
+        var(--dark);
+    }
+
+
+    /* =========================
+       TRUST SECTION
+    ========================== */
+
+    .trust-section {
+      background:
+        var(--white);
+    }
+
+
+    .trust-grid {
+      display:
+        grid;
+
+      grid-template-columns:
+        repeat(
+          3,
+          1fr
+        );
+
+      gap:
+        25px;
+    }
+
+
+    .trust-card {
+      padding:
+        34px 27px;
+
+      border:
+        1px solid
+        var(--border);
+
+      border-radius:
+        20px;
+
+      background:
+        #fbfdff;
+    }
+
+
+    .trust-icon {
+      display:
+        grid;
+
+      place-items:
+        center;
+
+      width:
+        58px;
+
+      height:
+        58px;
+
+      margin-bottom:
+        21px;
+
+      border-radius:
+        17px;
+
+      background:
+        var(--primary-light);
+
+      font-size:
+        1.55rem;
+    }
+
+
+    .trust-card h3 {
+      margin-bottom:
+        10px;
+
+      color:
+        var(--dark);
+
+      font-family:
+        "Manrope",
+        sans-serif;
+
+      font-size:
+        1.15rem;
+    }
+
+
+    .trust-card p {
+      font-size:
+        0.84rem;
+
+      line-height:
+        1.8;
+    }
+
+
+    /* =========================
+       CTA
+    ========================== */
+
+    .cta {
+      padding:
+        90px 0;
+
+      background:
+        var(--light);
+    }
+
+
+    .cta-box {
+      position:
+        relative;
+
+      padding:
+        75px 40px;
+
+      overflow:
+        hidden;
+
+      border-radius:
+        30px;
+
+      background:
+
+        radial-gradient(
+          circle at 15% 10%,
+          rgba(
+            255,
+            255,
+            255,
+            0.18
+          ),
+          transparent 25%
+        ),
+
+        linear-gradient(
+          135deg,
+          var(--primary-dark),
+          var(--secondary)
+        );
+
+      color:
+        var(--white);
+
+      text-align:
+        center;
+
+      box-shadow:
+        0 25px 60px
+        rgba(
+          7,
+          70,
+          135,
+          0.25
+        );
+    }
+
+
+    .cta-box::before,
+    .cta-box::after {
+      content:
+        "";
+
+      position:
+        absolute;
+
+      border:
+        1px solid
+        rgba(
+          255,
+          255,
+          255,
+          0.14
+        );
+
+      border-radius:
+        50%;
+    }
+
+
+    .cta-box::before {
+      width:
+        400px;
+
+      height:
+        400px;
+
+      left:
+        -260px;
+
+      bottom:
+        -280px;
+    }
+
+
+    .cta-box::after {
+      width:
+        370px;
+
+      height:
+        370px;
+
+      right:
+        -250px;
+
+      top:
+        -260px;
+    }
+
+
+    .cta-box > * {
+      position:
+        relative;
+
+      z-index:
+        2;
+    }
+
+
+    .cta-box h2 {
+      max-width:
+        760px;
+
+      margin:
+        0 auto 17px;
+
+      font-family:
+        "Manrope",
+        sans-serif;
+
+      font-size:
+        clamp(
+          2rem,
+          4vw,
+          3.3rem
+        );
+
+      line-height:
+        1.2;
+
+      letter-spacing:
+        -0.04em;
+    }
+
+
+    .cta-box p {
+      max-width:
+        630px;
+
+      margin:
+        0 auto 30px;
+
+      color:
+        rgba(
+          255,
+          255,
+          255,
+          0.83
+        );
+    }
+
+
+    .btn {
+      display:
+        inline-flex;
+
+      align-items:
+        center;
+
+      justify-content:
+        center;
+
+      gap:
+        9px;
+
+      min-height:
+        53px;
+
+      padding:
+        0 24px;
+
+      border-radius:
+        13px;
+
+      font-size:
+        0.9rem;
+
+      font-weight:
+        700;
+
+      transition:
+        0.3s ease;
+    }
+
+
+    .cta-box .btn {
+      background:
+        var(--white);
+
+      color:
+        var(--primary);
+    }
+
+
+    .cta-box .btn:hover {
+      transform:
+        translateY(-4px);
+
+      box-shadow:
+        0 15px 35px
+        rgba(
+          0,
+          0,
+          0,
+          0.15
+        );
+    }
+
+
+    /* =========================
+       FOOTER
+    ========================== */
+
+    footer {
+      padding:
+        75px 0 0;
+
+      background:
+        #0b1d32;
+
+      color:
+        #aebdcd;
+    }
+
+
+    .footer-grid {
+      display:
+        grid;
+
+      grid-template-columns:
+        1.5fr
+        0.8fr
+        0.8fr;
+
+      gap:
+        55px;
+
+      padding-bottom:
+        55px;
+    }
+
+
+    .footer-brand {
+      display:
+        inline-flex;
+
+      align-items:
+        center;
+
+      gap:
+        12px;
+
+      margin-bottom:
+        20px;
+
+      color:
+        var(--white);
+    }
+
+
+    .footer-brand img {
+      width:
+        46px;
+
+      height:
+        46px;
+
+      padding:
+        5px;
+
+      border-radius:
+        12px;
+
+      background:
+        var(--white);
+
+      object-fit:
+        contain;
+    }
+
+
+    .footer-brand strong {
+      font-family:
+        "Manrope",
+        sans-serif;
+
+      font-size:
+        1.05rem;
+    }
+
+
+    .footer-about {
+      max-width:
+        430px;
+
+      font-size:
+        0.84rem;
+
+      line-height:
+        1.9;
+    }
+
+
+    .footer-column h3 {
+      margin-bottom:
+        20px;
+
+      color:
+        var(--white);
+
+      font-family:
+        "Manrope",
+        sans-serif;
+
+      font-size:
+        1rem;
+    }
+
+
+    .footer-column ul {
+      display:
+        grid;
+
+      gap:
+        11px;
+
+      list-style:
+        none;
+    }
+
+
+    .footer-column a {
+      color:
+        #aebdcd;
+
+      font-size:
+        0.82rem;
+
+      transition:
+        0.25s;
+    }
+
+
+    .footer-column a:hover {
+      padding-left:
+        4px;
+
+      color:
+        var(--white);
+    }
+
+
+    .footer-bottom {
+      padding:
+        22px 0;
+
+      border-top:
+        1px solid
+        rgba(
+          255,
+          255,
+          255,
+          0.09
+        );
+
+      text-align:
+        center;
+
+      font-size:
+        0.75rem;
+    }
+
+
+    /* =========================
+       RESPONSIVE
+    ========================== */
+
+    @media (
+      max-width:
+      960px
+    ) {
+
+      .product-grid {
+        grid-template-columns:
+          repeat(
+            2,
+            1fr
+          );
+      }
+
+
+      .trust-grid {
+        grid-template-columns:
+          1fr;
+      }
+
+    }
+
+
+    @media (
+      max-width:
+      760px
+    ) {
+
+      .site-header {
+        padding:
+          12px 0;
+      }
+
+
+      .menu-toggle {
+        display:
+          grid;
+
+        place-items:
+          center;
+      }
+
+
+      .nav-menu {
+        position:
+          absolute;
+
+        top:
+          calc(
+            100% + 8px
+          );
+
+        left:
+          20px;
+
+        right:
+          20px;
+
+        display:
+          none;
+
+        flex-direction:
+          column;
+
+        align-items:
+          stretch;
+
+        gap:
+          0;
+
+        padding:
+          12px;
+
+        border:
+          1px solid
+          var(--border);
+
+        border-radius:
+          18px;
+
+        background:
+          var(--white);
+
+        box-shadow:
+          0 20px 45px
+          rgba(
+            11,
+            42,
+            76,
+            0.15
+          );
+      }
+
+
+      .nav-menu.active {
+        display:
+          flex;
+      }
+
+
+      .nav-menu li {
+        width:
+          100%;
+      }
+
+
+      .nav-menu a {
+        display:
+          block;
+
+        padding:
+          13px 14px;
+      }
+
+
+      .nav-menu a::after {
+        display:
+          none;
+      }
+
+
+      .nav-button {
+        text-align:
+          center;
+      }
+
+
+      .product-hero {
+        padding:
+          145px 0 80px;
+      }
+
+
+      .product-section,
+      .section {
+        padding:
+          75px 0;
+      }
+
+
+      .product-grid {
+        grid-template-columns:
+          1fr;
+      }
+
+
+      .product-card {
+        max-width:
+          480px;
+
+        margin:
+          0 auto;
+      }
+
+
+      .footer-grid {
+        grid-template-columns:
+          1fr;
+
+        gap:
+          35px;
+      }
+
+    }
+
+
+    @media (
+      max-width:
+      480px
+    ) {
+
+      .container {
+        width:
+          min(
+            100% - 28px,
+            var(--container)
+          );
+      }
+
+
+      .brand-name span {
+        display:
+          none;
+      }
+
+
+      .product-hero h1 {
+        font-size:
+          2.4rem;
+      }
+
+
+      .filter-wrapper {
+        justify-content:
+          flex-start;
+
+        flex-wrap:
+          nowrap;
+
+        padding-bottom:
+          8px;
+
+        overflow-x:
+          auto;
+      }
+
+
+      .filter-button {
+        flex:
+          0 0 auto;
+      }
+
+
+      .product-image {
+        min-height:
+          255px;
+      }
+
+
+      .product-content {
+        padding:
+          23px;
+      }
+
+
+      .cta-box {
+        padding:
+          60px 22px;
+      }
+
+    }
+
   </style>
+
 </head>
+
 <body>
 
-<header>
-  <nav>
-    <a href="index.html">Beranda</a>
-    <a href="about.html">Tentang</a>
-    <a href="produk.html">Produk</a>
-    <a href="contact.html">Kontak</a>
-  </nav>
-</header>
+  <!-- =========================
+       HEADER
+  ========================== -->
 
-<section class="container" data-aos="fade-up">
-  <h1 style="text-align:center; margin-bottom: 10px; color:#0055a5;">Produk Kami</h1>
+  <header
+    class="site-header"
+    id="header"
+  >
 
-
-  <section class="features-section" data-aos="fade-up">
-  <p >Pilih Produk (Pesan Sekarang) Yang 
-    Anda Butuhkan, Kemudian Akan Otimatis Diarahkan Kepada Admin, Setelah Itu Langsung Saja Klik Tombol (Chat WhatsApp) </p>
-  </section>
+```
+<div class="container navbar">
 
 
-  <section class="features-section" data-aos="fade-up">
-    <h2>Detail Product</h2>
-    <p >Skip Detail Produk Untuk Menuju Pemesanan</p>
-    <a href="#pesanan-langsung" class="btn">Pesanan Langsung</a>
-  </section>
+  <a
+    href="index.html"
+    class="brand"
+    aria-label="Makting Marknad"
+  >
 
-  <div class="products-grid">
-    <div class="product-card-wrapper" style="position: relative;">
-      <a href="black-blue-mmc.html" style="text-decoration: none; color: inherit;">
-        <div class="product-card">
-          <img src="img/product/black-blue-mmc.jpg" alt="Black Blue MMC">
-          <h2>Black Blue MMC</h2>
-          <p>Herbal alami untuk stamina dan vitalitas.<br><strong>Rp 350.000</strong></p>
-          <span class="btn">Lihat Detail</span>
-        </div>
+    <img
+      src="img/logo.png"
+      alt="Logo Makting Marknad"
+      class="brand-logo"
+    >
+
+
+    <span class="brand-name">
+
+      <strong>
+        Makting Marknad
+      </strong>
+
+      <span>
+        Herbal &amp; Wellness
+      </span>
+
+    </span>
+
+  </a>
+
+
+  <button
+    class="menu-toggle"
+    id="menuToggle"
+    aria-label="Buka menu"
+    aria-expanded="false"
+  >
+    ☰
+  </button>
+
+
+  <ul
+    class="nav-menu"
+    id="navMenu"
+  >
+
+    <li>
+      <a href="index.html">
+        Beranda
       </a>
-    </div>
-    <div class="product-card-wrapper" style="position: relative;">
-      <a href="daun-tiga-jari.html" style="text-decoration: none; color: inherit;">
-        <div class="product-card">
-          <img src="img/product/tiga-jari-oil.jpg" alt="Daun Tiga Jari">
-          <h2>Daun Tiga Jari</h2>
-          <p>Herbal alami untuk stamina dan vitalitas.<br><strong>Rp 150.000</strong></p>
-          <span class="btn">Lihat Detail</span>
-        </div>
+    </li>
+
+
+    <li>
+      <a href="about.html">
+        Tentang Kami
       </a>
-    </div>
-    <div class="product-card-wrapper" style="position: relative;">
-      <a href="titan-gel-red.html" style="text-decoration: none; color: inherit;">
-        <div class="product-card">
-          <img src="img/product/titan-gel-red.jpg" alt="Titan Gel Red">
-          <h2>Titan Gel Red</h2>
-          <p>Herbal alami untuk stamina dan vitalitas.<br><strong>Rp 250.000</strong></p>
-          <span class="btn">Lihat Detail</span>
-        </div>
+    </li>
+
+
+    <li>
+      <a
+        href="produk.html"
+        class="active"
+      >
+        Produk
       </a>
-    </div>
-    <div class="product-card-wrapper" style="position: relative;">
-      <a href="titan-gel-gold.html" style="text-decoration: none; color: inherit;">
-        <div class="product-card">
-          <img src="img/product/titan-gel-gold.jpg" alt="Titan Gel Gold">
-          <h2>Titan Gel Gold</h2>
-          <p>Herbal alami untuk stamina dan vitalitas.<br><strong>Rp 250.000</strong></p>
-          <span class="btn">Lihat Detail</span>
-        </div>
+    </li>
+
+
+    <li>
+      <a
+        href="contact.html"
+        class="nav-button"
+      >
+        Hubungi Kami
       </a>
-    </div>
-    <div class="product-card-wrapper" style="position: relative;">
-      <a href="viagra-mmc-blue.html" style="text-decoration: none; color: inherit;">
-        <div class="product-card">
-          <img src="img/product/viagra-mmc-blue.jpg" alt="Viagra MMC Blue">
-          <h2>Viagra MMC Blue</h2>
-          <p>Herbal alami untuk stamina dan vitalitas.<br><strong>Rp 350.000</strong></p>
-          <span class="btn">Lihat Detail</span>
-        </div>
+    </li>
+
+  </ul>
+
+</div>
+```
+
+  </header>
+
+  <main>
+
+```
+<!-- =========================
+     PRODUCT HERO
+========================== -->
+
+<section
+  class="product-hero"
+>
+
+  <div class="container">
+
+
+    <div class="breadcrumb">
+
+      <a href="index.html">
+        Beranda
       </a>
+
+      <span>
+        /
+      </span>
+
+      <span>
+        Produk
+      </span>
+
     </div>
-    <div class="product-card-wrapper" style="position: relative;">
-      <a href="vigamax.html" style="text-decoration: none; color: inherit;">
-        <div class="product-card">
-          <img src="img/product/vigamax.jpg" alt="Vigamax">
-          <h2>Vigamax</h2>
-          <p>Herbal alami untuk stamina dan vitalitas.<br><strong>Rp 250.000</strong></p>
-          <span class="btn">Lihat Detail</span>
-        </div>
-      </a>
+
+
+    <div class="section-label">
+
+      Koleksi Produk
+
     </div>
-    <div class="product-card-wrapper" style="position: relative;">
-      <a href="super-stud-007.html" style="text-decoration: none; color: inherit;">
-        <div class="product-card">
-          <img src="img/product/super-stud-007.jpg" alt="Super Stud 007">
-          <h2>Super Stud 007</h2>
-          <p>Herbal alami untuk stamina dan vitalitas.<br><strong>Rp 50.000</strong></p>
-          <span class="btn">Lihat Detail</span>
-        </div>
-      </a>
-    </div>
-    <div class="product-card-wrapper" style="position: relative;">
-      <a href="minyak-wamena.html" style="text-decoration: none; color: inherit;">
-        <div class="product-card">
-          <img src="img/product/minyak-wamena.jpg" alt="Minyak Wamena">
-          <h2>Minyak Wamena</h2>
-          <p>Herbal alami untuk stamina dan vitalitas.<br><strong>Rp 85.000</strong></p>
-          <span class="btn">Lihat Detail</span>
-        </div>
-      </a>
-    </div>
-    <div class="product-card-wrapper" style="position: relative;">
-      <a href="japan-tengsu.html" style="text-decoration: none; color: inherit;">
-        <div class="product-card">
-          <img src="img/product/japan-tengsu.jpg" alt="Japan Tengsu">
-          <h2>Japan Tengsu</h2>
-          <p>Herbal alami untuk stamina dan vitalitas.<br><strong>Rp 550.000</strong></p>
-          <span class="btn">Lihat Detail</span>
-        </div>
-      </a>
-    </div>
-    <div class="product-card-wrapper" style="position: relative;">
-      <a href="minyak-lintah.html" style="text-decoration: none; color: inherit;">
-        <div class="product-card">
-          <img src="img/product/minyak-lintah.jpg" alt="Minyak Lintah">
-          <h2>Minyak Lintah</h2>
-          <p>Herbal alami untuk stamina dan vitalitas.<br><strong>Rp 150.000</strong></p>
-          <span class="btn">Lihat Detail</span>
-        </div>
-      </a>
-    </div>
+
+
+    <h1>
+
+      Temukan Pilihan
+      <span>
+        Produk Terbaik
+      </span>
+
+      untuk Kebutuhan Anda
+
+    </h1>
+
+
+    <p>
+
+      Jelajahi pilihan produk herbal dan wellness
+      dari Makting Marknad. Dapatkan informasi
+      produk secara jelas sebelum melakukan
+      pemesanan.
+
+    </p>
+
+
   </div>
 
-
-  <section class="features-section" data-aos="fade-up" id="pesanan-langsung">
-    <h2>Pesanan Langsung</h2>
-  </section>
-
-  <div class="products-grid">
-    <div class="product-card">
-      <img src="img/product/pil-biru-cina.jpg" alt="Pil Biru Cina">
-      <h2>Pil Biru Cina</h2>
-      <p>Obat perangsang wanita tetes berkualitas.<br><strong>Rp 120.000</strong></p>
-      <a href="contact.html?produk=Pil%20Blue%20Cina%20(Rp%20120.000)" class="btn">Pesan Sekarang</a>
-    </div>
-    <div class="product-card">
-      <img src="img/product/black-blue-mmc.jpg" alt="Soloco">
-      <h2>Black Blue MMC</h2>
-      <p>Permen coklat herbal untuk vitalitas pria.<br><strong>Rp 350.000</strong></p>
-      <a href="contact.html?produk=Black%20Blue%20MMC%20(Rp%20350.000)" class="btn">Pesan Sekarang</a>
-    </div>
-    <div class="product-card">
-      <img src="img/product/tiga-jari-oil.jpg" alt="Daun Tiga Jari">
-      <h2>Daun Tiga Jari</h2>
-      <p>Herbal alami untuk stamina dan vitalitas.<br><strong>Rp 150.000</strong></p>
-      <a href="contact.html?produk=Daun%20Tiga%20Jari%20(Rp%20150.000)" class="btn">Pesan Sekarang</a>
-    </div>
-    <div class="product-card">
-      <img src="img/product/titan-gel-red.jpg" alt="Titan gel red">
-      <h2>Titan Gel Red</h2>
-      <p>Herbal alami untuk stamina dan vitalitas.<br><strong>Rp 250.000</strong></p>
-      <a href="contact.html?produk=Titan%20Gel%20Red%20(Rp%20250.000)" class="btn">Pesan Sekarang</a>
-    </div>
-    <div class="product-card">
-      <img src="img/product/titan-gel-gold.jpg" alt="titan gel gold">
-      <h2>Titan Gel Gold</h2>
-      <p>Herbal alami untuk stamina dan vitalitas.<br><strong>Rp 250.000</strong></p>
-      <a href="contact.html?produk=Titan%20Gel%20gold%20(Rp%20250.000)" class="btn">Pesan Sekarang</a>
-    </div>
-    <div class="product-card">
-      <img src="img/product/viagra-mmc-blue.jpg" alt="Viagra mmc blue">
-      <h2>Viagra MMC Blue</h2>
-      <p>Herbal alami untuk stamina dan vitalitas.<br><strong>Rp 350.000</strong></p>
-      <a href="contact.html?produk=Viagra%20MMC%20Blue%20(Rp%20350.000)" class="btn">Pesan Sekarang</a>
-    </div>
-    <div class="product-card">
-      <img src="img/product/vigamax.jpg" alt="Vigamax">
-      <h2>Vigamax</h2>
-      <p>Herbal alami untuk stamina dan vitalitas.<br><strong>Rp 250.000</strong></p>
-      <a href="contact.html?produk=Vigamax%20(Rp%20250.000)" class="btn">Pesan Sekarang</a>
-    </div>
-    <div class="product-card">
-      <img src="img/product/super-stud-007.jpg" alt="super-stud-007">
-      <h2>Super Stud 007</h2>
-      <p>Herbal alami untuk stamina dan vitalitas.<br><strong>Rp 50.000</strong></p>
-      <a href="contact.html?produk=Super%20Stud%20007%20(Rp%2050.000)" class="btn">Pesan Sekarang</a>
-    </div>
-    <div class="product-card">
-      <img src="img/product/minyak-wamena.jpg" alt="minyak-wamena">
-      <h2>Minyak Wamena</h2>
-      <p>Herbal alami untuk stamina dan vitalitas.<br><strong>Rp 85.000</strong></p>
-      <a href="contact.html?produk=Minyak%20Wamena%20oil%20(Rp%2085.000)" class="btn">Pesan Sekarang</a>
-    </div>
-    <div class="product-card">
-      <img src="img/product/japan-tengsu.jpg" alt="Japan Tengsu">
-      <h2>Japan Tengsu</h2>
-      <p>Herbal alami untuk stamina dan vitalitas.<br><strong>Rp 550.000</strong></p>
-      <a href="contact.html?produk=Japan%20tengsu%20(Rp%20550.000)" class="btn">Pesan Sekarang</a>
-    </div>
-    <div class="product-card">
-      <img src="img/product/minyak-lintah.jpg" alt="minyak-lintah">
-      <h2>Minyak LIntah</h2>
-      <p>Herbal alami untuk stamina dan vitalitas.<br><strong>Rp 150.000</strong></p>
-      <a href="contact.html?produk=Minyak%20Lintah%20(Rp%20150.000)" class="btn">Pesan Sekarang</a>
-    </div>
-    <div class="product-card">
-      <img src="img/product/alat-pijat.jpg" alt="Vibrator">
-      <h2>Alat Pijat Wanita</h2>
-      <p>Herbal alami untuk stamina dan vitalitas.<br><strong>Rp 110.000</strong></p>
-      <a href="contact.html?produk=Vigamax%20(Rp%20100.000)" class="btn">Pesan Sekarang</a>
-    </div>
-    <div class="product-card-wrapper" style="position: relative;">
-      <a href="pil-biru-cina.html" style="text-decoration: none; color: inherit;">
-        <div class="product-card">
-          <img src="img/product/pil-biru-cina.jpg" alt="Pil Biru Cina">
-          <h2>Pil Biru Cina</h2>
-          <p>Obat perangsang wanita tetes berkualitas.<br><strong>Rp 120.000</strong></p>
-          <span class="btn">Lihat Detail</span>
-        </div>
-      </a>
-    </div>
-    
-   
-    
-  </div>
 </section>
 
-<footer>
-  <p>&copy; 2025 Makting Marknad. All rights reserved.</p>
-</footer>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
-<script>
-  AOS.init({ duration: 1200 });
-</script>
 
+<!-- =========================
+     PRODUCT LIST
+========================== -->
+
+<section
+  class="product-section"
+>
+
+  <div class="container">
+
+
+    <div
+      class="section-heading"
+      data-aos="fade-up"
+    >
+
+      <div class="section-label">
+
+        Produk Kami
+
+      </div>
+
+
+      <h2>
+
+        Pilihan yang Tersedia
+
+      </h2>
+
+
+      <p>
+
+        Pilih kategori untuk melihat produk
+        yang sesuai dengan kebutuhan Anda.
+
+      </p>
+
+    </div>
+
+
+
+    <!-- FILTER CATEGORY -->
+
+    <div
+      class="filter-wrapper"
+      data-aos="fade-up"
+    >
+
+      <button
+        class="filter-button active"
+        data-filter="all"
+      >
+
+        Semua Produk
+
+      </button>
+
+
+      <button
+        class="filter-button"
+        data-filter="herbal"
+      >
+
+        Herbal
+
+      </button>
+
+
+      <button
+        class="filter-button"
+        data-filter="wellness"
+      >
+
+        Wellness
+
+      </button>
+
+
+      <button
+        class="filter-button"
+        data-filter="vitalitas"
+      >
+
+        Vitalitas
+
+      </button>
+
+    </div>
+
+
+
+    <!-- PRODUCT GRID -->
+
+    <div
+      class="product-grid"
+      id="productGrid"
+    >
+
+
+      <!-- PRODUCT 1 -->
+
+      <article
+        class="product-card"
+        data-category="herbal"
+        data-aos="fade-up"
+      >
+
+
+        <div class="product-image">
+
+          <span class="product-badge">
+
+            Produk Pilihan
+
+          </span>
+
+
+          <span class="product-category">
+
+            Herbal
+
+          </span>
+
+
+          <!--
+            GANTI FILE INI
+            DENGAN FOTO PRODUK ASLI
+          -->
+
+          <img
+            src="img/logo.png"
+            alt="Produk Herbal Makting Marknad"
+          >
+
+        </div>
+
+
+
+        <div class="product-content">
+
+
+          <h2>
+
+            Produk Herbal Pilihan
+
+          </h2>
+
+
+          <p>
+
+            Pilihan produk herbal untuk mendukung
+            kebutuhan kesehatan dan kebugaran
+            sehari-hari.
+
+          </p>
+
+
+          <ul class="product-benefits">
+
+            <li>
+
+              <span class="benefit-check">
+                ✓
+              </span>
+
+              Informasi produk tersedia
+
+            </li>
+
+
+            <li>
+
+              <span class="benefit-check">
+                ✓
+              </span>
+
+              Pemesanan mudah
+
+            </li>
+
+
+            <li>
+
+              <span class="benefit-check">
+                ✓
+              </span>
+
+              Pelayanan ramah
+
+            </li>
+
+          </ul>
+
+
+          <div class="product-footer">
+
+
+            <div class="product-price">
+
+              <small>
+
+                Mulai dari
+
+              </small>
+
+
+              <strong>
+
+                Hubungi Kami
+
+              </strong>
+
+            </div>
+
+
+            <a
+              href="contact.html"
+              class="product-link"
+              aria-label="Lihat detail produk"
+            >
+
+              →
+
+            </a>
+
+
+          </div>
+
+
+        </div>
+
+      </article>
+
+
+
+      <!-- PRODUCT 2 -->
+
+      <article
+        class="product-card"
+        data-category="wellness"
+        data-aos="fade-up"
+        data-aos-delay="100"
+      >
+
+
+        <div class="product-image">
+
+
+          <span class="product-badge">
+
+            Rekomendasi
+
+          </span>
+
+
+          <span class="product-category">
+
+            Wellness
+
+          </span>
+
+
+          <img
+            src="img/logo.png"
+            alt="Produk Wellness Makting Marknad"
+          >
+
+
+        </div>
+
+
+
+        <div class="product-content">
+
+
+          <h2>
+
+            Produk Wellness
+
+          </h2>
+
+
+          <p>
+
+            Pilihan produk untuk membantu melengkapi
+            gaya hidup sehat dan menjaga kebugaran.
+
+          </p>
+
+
+          <ul class="product-benefits">
+
+
+            <li>
+
+              <span class="benefit-check">
+                ✓
+              </span>
+
+              Informasi mudah dipahami
+
+            </li>
+
+
+            <li>
+
+              <span class="benefit-check">
+                ✓
+              </span>
+
+              Pilihan sesuai kebutuhan
+
+            </li>
+
+
+            <li>
+
+              <span class="benefit-check">
+                ✓
+              </span>
+
+              Konsultasi sebelum pesan
+
+            </li>
+
+
+          </ul>
+
+
+          <div class="product-footer">
+
+
+            <div class="product-price">
+
+              <small>
+
+                Informasi harga
+
+              </small>
+
+
+              <strong>
+
+                Hubungi Kami
+
+              </strong>
+
+            </div>
+
+
+            <a
+              href="contact.html"
+              class="product-link"
+              aria-label="Tanyakan produk"
+            >
+
+              →
+
+            </a>
+
+
+          </div>
+
+
+        </div>
+
+      </article>
+
+
+
+      <!-- PRODUCT 3 -->
+
+      <article
+        class="product-card"
+        data-category="vitalitas"
+        data-aos="fade-up"
+        data-aos-delay="200"
+      >
+
+
+        <div class="product-image">
+
+
+          <span class="product-badge">
+
+            Populer
+
+          </span>
+
+
+          <span class="product-category">
+
+            Vitalitas
+
+          </span>
+
+
+          <img
+            src="img/logo.png"
+            alt="Produk Vitalitas Makting Marknad"
+          >
+
+
+        </div>
+
+
+
+        <div class="product-content">
+
+
+          <h2>
+
+            Produk Vitalitas
+
+          </h2>
+
+
+          <p>
+
+            Pilihan produk untuk mendukung energi,
+            kebugaran, dan aktivitas harian Anda.
+
+          </p>
+
+
+          <ul class="product-benefits">
+
+
+            <li>
+
+              <span class="benefit-check">
+                ✓
+              </span>
+
+              Informasi penggunaan tersedia
+
+            </li>
+
+
+            <li>
+
+              <span class="benefit-check">
+                ✓
+              </span>
+
+              Mudah ditanyakan
+
+            </li>
+
+
+            <li>
+
+              <span class="benefit-check">
+                ✓
+              </span>
+
+              Pelayanan responsif
+
+            </li>
+
+
+          </ul>
+
+
+          <div class="product-footer">
+
+
+            <div class="product-price">
+
+              <small>
+
+                Informasi produk
+
+              </small>
+
+
+              <strong>
+
+                Lihat Detail
+
+              </strong>
+
+            </div>
+
+
+            <a
+              href="contact.html"
+              class="product-link"
+              aria-label="Lihat informasi produk"
+            >
+
+              →
+
+            </a>
+
+
+          </div>
+
+
+        </div>
+
+      </article>
+
+
+
+      <!-- EMPTY RESULT -->
+
+      <div
+        class="empty-product"
+        id="emptyProduct"
+      >
+
+        <h3>
+
+          Produk belum tersedia
+
+        </h3>
+
+
+        <p>
+
+          Silakan pilih kategori lain.
+
+        </p>
+
+      </div>
+
+
+    </div>
+
+
+  </div>
+
+</section>
+
+
+
+<!-- =========================
+     TRUST SECTION
+========================== -->
+
+<section
+  class="section trust-section"
+>
+
+  <div class="container">
+
+
+    <div
+      class="section-heading"
+      data-aos="fade-up"
+    >
+
+      <div class="section-label">
+
+        Pelayanan Kami
+
+      </div>
+
+
+      <h2>
+
+        Nyaman dari Informasi hingga Pemesanan
+
+      </h2>
+
+
+      <p>
+
+        Kami berusaha memberikan pengalaman
+        yang lebih mudah dan jelas untuk
+        setiap pelanggan.
+
+      </p>
+
+    </div>
+
+
+
+    <div class="trust-grid">
+
+
+      <article
+        class="trust-card"
+        data-aos="fade-up"
+      >
+
+
+        <div class="trust-icon">
+
+          💬
+
+        </div>
+
+
+        <h3>
+
+          Informasi Jelas
+
+        </h3>
+
+
+        <p>
+
+          Dapatkan informasi produk sebelum
+          melakukan pemesanan agar Anda dapat
+          memilih dengan lebih nyaman.
+
+        </p>
+
+
+      </article>
+
+
+
+      <article
+        class="trust-card"
+        data-aos="fade-up"
+        data-aos-delay="100"
+      >
+
+
+        <div class="trust-icon">
+
+          🤝
+
+        </div>
+
+
+        <h3>
+
+          Pelayanan Ramah
+
+        </h3>
+
+
+        <p>
+
+          Tim kami siap membantu menjawab
+          pertanyaan dan memberikan informasi
+          yang diperlukan.
+
+        </p>
+
+
+      </article>
+
+
+
+      <article
+        class="trust-card"
+        data-aos="fade-up"
+        data-aos-delay="200"
+      >
+
+
+        <div class="trust-icon">
+
+          ✓
+
+        </div>
+
+
+        <h3>
+
+          Proses Mudah
+
+        </h3>
+
+
+        <p>
+
+          Hubungi kami melalui halaman kontak
+          untuk mendapatkan informasi dan
+          melanjutkan proses pemesanan.
+
+        </p>
+
+
+      </article>
+
+
+    </div>
+
+
+  </div>
+
+</section>
+
+
+
+<!-- =========================
+     CTA
+========================== -->
+
+<section class="cta">
+
+  <div class="container">
+
+
+    <div
+      class="cta-box"
+      data-aos="zoom-in"
+    >
+
+
+      <h2>
+
+        Butuh Informasi Lebih Lanjut?
+
+      </h2>
+
+
+      <p>
+
+        Hubungi tim Makting Marknad untuk
+        mendapatkan informasi mengenai produk
+        dan proses pemesanan.
+
+      </p>
+
+
+      <a
+        href="contact.html"
+        class="btn"
+      >
+
+        Hubungi Kami
+
+        <span>
+          →
+        </span>
+
+      </a>
+
+
+    </div>
+
+
+  </div>
+
+</section>
+```
+
+  </main>
+
+  <!-- =========================
+       FOOTER
+  ========================== -->
+
+  <footer>
+
+```
+<div class="container footer-grid">
+
+
+  <div>
+
+
+    <a
+      href="index.html"
+      class="footer-brand"
+    >
+
+
+      <img
+        src="img/logo.png"
+        alt="Logo Makting Marknad"
+      >
+
+
+      <strong>
+
+        Makting Marknad
+
+      </strong>
+
+
+    </a>
+
+
+    <p class="footer-about">
+
+      Menyediakan pilihan produk herbal
+      dan wellness dengan fokus pada
+      informasi yang jelas, pelayanan
+      yang nyaman, serta pengalaman
+      pelanggan yang baik.
+
+    </p>
+
+
+  </div>
+
+
+
+  <div class="footer-column">
+
+
+    <h3>
+
+      Navigasi
+
+    </h3>
+
+
+    <ul>
+
+
+      <li>
+
+        <a href="index.html">
+
+          Beranda
+
+        </a>
+
+      </li>
+
+
+      <li>
+
+        <a href="about.html">
+
+          Tentang Kami
+
+        </a>
+
+      </li>
+
+
+      <li>
+
+        <a href="produk.html">
+
+          Produk
+
+        </a>
+
+      </li>
+
+
+      <li>
+
+        <a href="contact.html">
+
+          Kontak
+
+        </a>
+
+      </li>
+
+
+    </ul>
+
+
+  </div>
+
+
+
+  <div class="footer-column">
+
+
+    <h3>
+
+      Informasi
+
+    </h3>
+
+
+    <ul>
+
+
+      <li>
+
+        <a href="contact.html">
+
+          Hubungi Kami
+
+        </a>
+
+      </li>
+
+
+      <li>
+
+        <a href="#">
+
+          Kebijakan Privasi
+
+        </a>
+
+      </li>
+
+
+      <li>
+
+        <a href="#">
+
+          Syarat &amp; Ketentuan
+
+        </a>
+
+      </li>
+
+
+    </ul>
+
+
+  </div>
+
+
+</div>
+
+
+
+<div class="footer-bottom">
+
+
+  <div class="container">
+
+
+    <p>
+
+      &copy; 2026 Makting Marknad.
+      Seluruh hak cipta dilindungi.
+
+    </p>
+
+
+  </div>
+
+
+</div>
+```
+
+  </footer>
+
+  <!-- =========================
+       JAVASCRIPT
+  ========================== -->
+
+  <!-- AOS -->
+
+  <script
+    src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"
+  >
+  </script>
+
+  <script>
+
+
+    /* AOS ANIMATION */
+
+    AOS.init({
+
+      duration: 850,
+
+      once: true,
+
+      offset: 60
+
+    });
+
+
+
+
+    /* MOBILE MENU */
+
+    const menuToggle =
+      document.getElementById(
+        "menuToggle"
+      );
+
+
+    const navMenu =
+      document.getElementById(
+        "navMenu"
+      );
+
+
+
+    menuToggle.addEventListener(
+
+      "click",
+
+      () => {
+
+
+        navMenu
+          .classList
+          .toggle(
+            "active"
+          );
+
+
+        const isOpen =
+
+          navMenu
+            .classList
+            .contains(
+              "active"
+            );
+
+
+
+        menuToggle
+          .setAttribute(
+
+            "aria-expanded",
+
+            isOpen
+
+          );
+
+
+
+        menuToggle.innerHTML =
+
+          isOpen
+
+            ? "✕"
+
+            : "☰";
+
+
+      }
+
+    );
+
+
+
+
+    /* CLOSE MOBILE MENU */
+
+    document
+
+      .querySelectorAll(
+        ".nav-menu a"
+      )
+
+      .forEach(
+
+        link => {
+
+
+          link
+            .addEventListener(
+
+              "click",
+
+              () => {
+
+
+                navMenu
+                  .classList
+                  .remove(
+                    "active"
+                  );
+
+
+                menuToggle
+                  .innerHTML =
+
+                  "☰";
+
+
+                menuToggle
+                  .setAttribute(
+
+                    "aria-expanded",
+
+                    "false"
+
+                  );
+
+
+              }
+
+            );
+
+
+        }
+
+      );
+
+
+
+
+    /* HEADER SCROLL */
+
+    const header =
+
+      document
+        .getElementById(
+          "header"
+        );
+
+
+
+    window
+      .addEventListener(
+
+        "scroll",
+
+        () => {
+
+
+          if (
+
+            window
+              .scrollY > 30
+
+          ) {
+
+
+            header
+              .classList
+              .add(
+                "scrolled"
+              );
+
+
+          } else {
+
+
+            header
+              .classList
+              .remove(
+                "scrolled"
+              );
+
+
+          }
+
+
+        }
+
+      );
+
+
+
+
+    /* PRODUCT FILTER */
+
+    const filterButtons =
+
+      document
+        .querySelectorAll(
+
+          ".filter-button"
+
+        );
+
+
+
+    const productCards =
+
+      document
+        .querySelectorAll(
+
+          ".product-card"
+
+        );
+
+
+
+    const emptyProduct =
+
+      document
+        .getElementById(
+
+          "emptyProduct"
+
+        );
+
+
+
+    filterButtons
+
+      .forEach(
+
+        button => {
+
+
+          button
+            .addEventListener(
+
+              "click",
+
+              () => {
+
+
+                filterButtons
+
+                  .forEach(
+
+                    item =>
+
+                      item
+                        .classList
+                        .remove(
+
+                          "active"
+
+                        )
+
+                  );
+
+
+
+                button
+
+                  .classList
+
+                  .add(
+
+                    "active"
+
+                  );
+
+
+
+                const selectedCategory =
+
+                  button
+
+                    .dataset
+
+                    .filter;
+
+
+
+                let visibleProduct = 0;
+
+
+
+                productCards
+
+                  .forEach(
+
+                    product => {
+
+
+                      const category =
+
+                        product
+
+                          .dataset
+
+                          .category;
+
+
+
+                      if (
+
+                        selectedCategory === "all"
+
+                        ||
+
+                        category ===
+
+                        selectedCategory
+
+                      ) {
+
+
+                        product
+
+                          .style
+
+                          .display =
+
+                          "flex";
+
+
+                        visibleProduct++;
+
+
+                      } else {
+
+
+                        product
+
+                          .style
+
+                          .display =
+
+                          "none";
+
+
+                      }
+
+
+                    }
+
+                  );
+
+
+
+                if (
+
+                  visibleProduct === 0
+
+                ) {
+
+
+                  emptyProduct
+
+                    .style
+
+                    .display =
+
+                    "block";
+
+
+                } else {
+
+
+                  emptyProduct
+
+                    .style
+
+                    .display =
+
+                    "none";
+
+
+                }
+
+
+              }
+
+            );
+
+
+        }
+
+      );
+
+
+  </script>
 
 </body>
 </html>
