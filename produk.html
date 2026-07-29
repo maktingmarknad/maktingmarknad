@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Produk Makting Marknad - Pilihan Herbal Terbaik">
+  <title>Produk - Makting Marknad</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+  <link rel="icon" type="image/png" href="img/favicon.png">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Poppins', sans-serif; line-height: 1.6; background: #f7f9fc; color: #333; }
+    header { background: #0055a5; color: white; padding: 20px 0; text-align: center;margin-bottom: 20px; }
+    nav a { color: white; margin: 0 15px; text-decoration: none; font-weight: 600; }
+    .container { max-width: 1200px; margin: auto; padding: 20px; }
+    .products-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 5px; justify-content: center; }
+    .product-card { background: white; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.05); text-align: center; padding: 5px;  border: 1px solid #ddd;}
+    .product-card:hover { transform: translateY(-10px); }
+    .product-card img { width: 100%; height: auto; object-fit: cover; border-radius: 5px ; margin-bottom: 5px;}
+    .product-card h2 { margin-bottom: 2px; font-size: 18px; color: #0055a5; }
+    .product-card p { font-size: 14px; margin-bottom: 5px; }
+    .features-section { background: #e9f1fb; padding: 30px 20px; text-align: center;margin-bottom: 15px; }
+    .feature p { font-size: 0.95rem; }
+    .btn { font-weight: bold; display: inline-block; background-color: #0055a5; color: white; padding: 5px 20px; border-radius: 18px; text-decoration: none; font-size: 0.9rem; transition: background 3s, transform 3s;}
+    .btn:hover { background-color: #003f7f;transform: scale(1.05); }
+    footer { background: #333; color: white; text-align: center; padding: 15px 0; margin-top: 30px; font-size: 0.9rem; }
+    @media (min-width: 992px) {
+      .products-grid {
+        grid-template-columns: repeat(4, 1fr);
+      }
+    }
+    @media (max-width: 1000px) {
+  .container {
+    padding: 0 8px;
+  }
+  nav a { color: white; margin: 0 5px; text-decoration: none; font-weight: 600; }
+  .btn { font-weight: bold; display: inline-block; background-color: #0055a5; color: white; padding: 5px 20px; border-radius: 18px; text-decoration: none; font-size: 0.5rem; transition: background 3s, transform 3s;}
+  .btn:hover { background-color: #003f7f;transform: scale(1.05); }
+  .products-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 5px; justify-content: center; }
+  .product-card { background: white; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.05); text-align: center; padding: 5px;  border: 1px solid #ddd;}
+  .product-card:hover { transform: translateY(-10px); }
+  .product-card img { width: 100%; height: auto; object-fit: cover; border-radius: 5px ; margin-bottom: 5px;}
+  .product-card h2 { margin-bottom: 2px; font-size: 18px; color: #0055a5; }
+  .product-card p { font-size: 14px; margin-bottom: 5px; }
+  .features-section { font-size: 0.9rem; background: #e9f1fb; padding: 30px 20px; text-align: center;margin-bottom: 15px; }
+  .feature p { font-size: 0.9rem; }
+  .features-section h2 { color: #0055a5;  }
+}
+  </style>
+</head>
+<body>
+
+<header>
+  <nav>
+    <a href="index.html">Beranda</a>
+    <a href="about.html">Tentang</a>
+    <a href="produk.html">Produk</a>
+    <a href="contact.html">Kontak</a>
+  </nav>
+</header>
+
+<section class="container" data-aos="fade-up">
+  <h1 style="text-align:center; margin-bottom: 10px; color:#0055a5;">Produk Kami</h1>
+
+
+  <section class="features-section" data-aos="fade-up">
+  <p >Pilih Produk (Pesan Sekarang) Yang 
+    Anda Butuhkan, Kemudian Akan Otimatis Diarahkan Kepada Admin, Setelah Itu Langsung Saja Klik Tombol (Chat WhatsApp) </p>
+  </section>
+
+
+  <section class="features-section" data-aos="fade-up">
+    <h2>Detail Product</h2>
+    <p >Skip Detail Produk Untuk Menuju Pemesanan</p>
+    <a href="#pesanan-langsung" class="btn">Pesanan Langsung</a>
+  </section>
+
+  <div class="products-grid">
+    <div class="product-card-wrapper" style="position: relative;">
+      <a href="black-blue-mmc.html" style="text-decoration: none; color: inherit;">
+        <div class="product-card">
+          <img src="img/product/black-blue-mmc.jpg" alt="Black Blue MMC">
+          <h2>Black Blue MMC</h2>
+          <p>Herbal alami untuk stamina dan vitalitas.<br><strong>Rp 350.000</strong></p>
+          <span class="btn">Lihat Detail</span>
+        </div>
+      </a>
+    </div>
+    <div class="product-card-wrapper" style="position: relative;">
+      <a href="daun-tiga-jari.html" style="text-decoration: none; color: inherit;">
+        <div class="product-card">
+          <img src="img/product/tiga-jari-oil.jpg" alt="Daun Tiga Jari">
+          <h2>Daun Tiga Jari</h2>
+          <p>Herbal alami untuk stamina dan vitalitas.<br><strong>Rp 150.000</strong></p>
+          <span class="btn">Lihat Detail</span>
+        </div>
+      </a>
+    </div>
+    <div class="product-card-wrapper" style="position: relative;">
+      <a href="titan-gel-red.html" style="text-decoration: none; color: inherit;">
+        <div class="product-card">
+          <img src="img/product/titan-gel-red.jpg" alt="Titan Gel Red">
+          <h2>Titan Gel Red</h2>
+          <p>Herbal alami untuk stamina dan vitalitas.<br><strong>Rp 250.000</strong></p>
+          <span class="btn">Lihat Detail</span>
+        </div>
+      </a>
+    </div>
+    <div class="product-card-wrapper" style="position: relative;">
+      <a href="titan-gel-gold.html" style="text-decoration: none; color: inherit;">
+        <div class="product-card">
+          <img src="img/product/titan-gel-gold.jpg" alt="Titan Gel Gold">
+          <h2>Titan Gel Gold</h2>
+          <p>Herbal alami untuk stamina dan vitalitas.<br><strong>Rp 250.000</strong></p>
+          <span class="btn">Lihat Detail</span>
+        </div>
+      </a>
+    </div>
+    <div class="product-card-wrapper" style="position: relative;">
+      <a href="viagra-mmc-blue.html" style="text-decoration: none; color: inherit;">
+        <div class="product-card">
+          <img src="img/product/viagra-mmc-blue.jpg" alt="Viagra MMC Blue">
+          <h2>Viagra MMC Blue</h2>
+          <p>Herbal alami untuk stamina dan vitalitas.<br><strong>Rp 350.000</strong></p>
+          <span class="btn">Lihat Detail</span>
+        </div>
+      </a>
+    </div>
+    <div class="product-card-wrapper" style="position: relative;">
+      <a href="vigamax.html" style="text-decoration: none; color: inherit;">
+        <div class="product-card">
+          <img src="img/product/vigamax.jpg" alt="Vigamax">
+          <h2>Vigamax</h2>
+          <p>Herbal alami untuk stamina dan vitalitas.<br><strong>Rp 250.000</strong></p>
+          <span class="btn">Lihat Detail</span>
+        </div>
+      </a>
+    </div>
+    <div class="product-card-wrapper" style="position: relative;">
+      <a href="super-stud-007.html" style="text-decoration: none; color: inherit;">
+        <div class="product-card">
+          <img src="img/product/super-stud-007.jpg" alt="Super Stud 007">
+          <h2>Super Stud 007</h2>
+          <p>Herbal alami untuk stamina dan vitalitas.<br><strong>Rp 50.000</strong></p>
+          <span class="btn">Lihat Detail</span>
+        </div>
+      </a>
+    </div>
+    <div class="product-card-wrapper" style="position: relative;">
+      <a href="minyak-wamena.html" style="text-decoration: none; color: inherit;">
+        <div class="product-card">
+          <img src="img/product/minyak-wamena.jpg" alt="Minyak Wamena">
+          <h2>Minyak Wamena</h2>
+          <p>Herbal alami untuk stamina dan vitalitas.<br><strong>Rp 85.000</strong></p>
+          <span class="btn">Lihat Detail</span>
+        </div>
+      </a>
+    </div>
+    <div class="product-card-wrapper" style="position: relative;">
+      <a href="japan-tengsu.html" style="text-decoration: none; color: inherit;">
+        <div class="product-card">
+          <img src="img/product/japan-tengsu.jpg" alt="Japan Tengsu">
+          <h2>Japan Tengsu</h2>
+          <p>Herbal alami untuk stamina dan vitalitas.<br><strong>Rp 550.000</strong></p>
+          <span class="btn">Lihat Detail</span>
+        </div>
+      </a>
+    </div>
+    <div class="product-card-wrapper" style="position: relative;">
+      <a href="minyak-lintah.html" style="text-decoration: none; color: inherit;">
+        <div class="product-card">
+          <img src="img/product/minyak-lintah.jpg" alt="Minyak Lintah">
+          <h2>Minyak Lintah</h2>
+          <p>Herbal alami untuk stamina dan vitalitas.<br><strong>Rp 150.000</strong></p>
+          <span class="btn">Lihat Detail</span>
+        </div>
+      </a>
+    </div>
+  </div>
+
+
+  <section class="features-section" data-aos="fade-up" id="pesanan-langsung">
+    <h2>Pesanan Langsung</h2>
+  </section>
+
+  <div class="products-grid">
+    <div class="product-card">
+      <img src="img/product/pil-biru-cina.jpg" alt="Pil Biru Cina">
+      <h2>Pil Biru Cina</h2>
+      <p>Obat perangsang wanita tetes berkualitas.<br><strong>Rp 120.000</strong></p>
+      <a href="contact.html?produk=Pil%20Blue%20Cina%20(Rp%20120.000)" class="btn">Pesan Sekarang</a>
+    </div>
+    <div class="product-card">
+      <img src="img/product/black-blue-mmc.jpg" alt="Soloco">
+      <h2>Black Blue MMC</h2>
+      <p>Permen coklat herbal untuk vitalitas pria.<br><strong>Rp 350.000</strong></p>
+      <a href="contact.html?produk=Black%20Blue%20MMC%20(Rp%20350.000)" class="btn">Pesan Sekarang</a>
+    </div>
+    <div class="product-card">
+      <img src="img/product/tiga-jari-oil.jpg" alt="Daun Tiga Jari">
+      <h2>Daun Tiga Jari</h2>
+      <p>Herbal alami untuk stamina dan vitalitas.<br><strong>Rp 150.000</strong></p>
+      <a href="contact.html?produk=Daun%20Tiga%20Jari%20(Rp%20150.000)" class="btn">Pesan Sekarang</a>
+    </div>
+    <div class="product-card">
+      <img src="img/product/titan-gel-red.jpg" alt="Titan gel red">
+      <h2>Titan Gel Red</h2>
+      <p>Herbal alami untuk stamina dan vitalitas.<br><strong>Rp 250.000</strong></p>
+      <a href="contact.html?produk=Titan%20Gel%20Red%20(Rp%20250.000)" class="btn">Pesan Sekarang</a>
+    </div>
+    <div class="product-card">
+      <img src="img/product/titan-gel-gold.jpg" alt="titan gel gold">
+      <h2>Titan Gel Gold</h2>
+      <p>Herbal alami untuk stamina dan vitalitas.<br><strong>Rp 250.000</strong></p>
+      <a href="contact.html?produk=Titan%20Gel%20gold%20(Rp%20250.000)" class="btn">Pesan Sekarang</a>
+    </div>
+    <div class="product-card">
+      <img src="img/product/viagra-mmc-blue.jpg" alt="Viagra mmc blue">
+      <h2>Viagra MMC Blue</h2>
+      <p>Herbal alami untuk stamina dan vitalitas.<br><strong>Rp 350.000</strong></p>
+      <a href="contact.html?produk=Viagra%20MMC%20Blue%20(Rp%20350.000)" class="btn">Pesan Sekarang</a>
+    </div>
+    <div class="product-card">
+      <img src="img/product/vigamax.jpg" alt="Vigamax">
+      <h2>Vigamax</h2>
+      <p>Herbal alami untuk stamina dan vitalitas.<br><strong>Rp 250.000</strong></p>
+      <a href="contact.html?produk=Vigamax%20(Rp%20250.000)" class="btn">Pesan Sekarang</a>
+    </div>
+    <div class="product-card">
+      <img src="img/product/super-stud-007.jpg" alt="super-stud-007">
+      <h2>Super Stud 007</h2>
+      <p>Herbal alami untuk stamina dan vitalitas.<br><strong>Rp 50.000</strong></p>
+      <a href="contact.html?produk=Super%20Stud%20007%20(Rp%2050.000)" class="btn">Pesan Sekarang</a>
+    </div>
+    <div class="product-card">
+      <img src="img/product/minyak-wamena.jpg" alt="minyak-wamena">
+      <h2>Minyak Wamena</h2>
+      <p>Herbal alami untuk stamina dan vitalitas.<br><strong>Rp 85.000</strong></p>
+      <a href="contact.html?produk=Minyak%20Wamena%20oil%20(Rp%2085.000)" class="btn">Pesan Sekarang</a>
+    </div>
+    <div class="product-card">
+      <img src="img/product/japan-tengsu.jpg" alt="Japan Tengsu">
+      <h2>Japan Tengsu</h2>
+      <p>Herbal alami untuk stamina dan vitalitas.<br><strong>Rp 550.000</strong></p>
+      <a href="contact.html?produk=Japan%20tengsu%20(Rp%20550.000)" class="btn">Pesan Sekarang</a>
+    </div>
+    <div class="product-card">
+      <img src="img/product/minyak-lintah.jpg" alt="minyak-lintah">
+      <h2>Minyak LIntah</h2>
+      <p>Herbal alami untuk stamina dan vitalitas.<br><strong>Rp 150.000</strong></p>
+      <a href="contact.html?produk=Minyak%20Lintah%20(Rp%20150.000)" class="btn">Pesan Sekarang</a>
+    </div>
+    <div class="product-card">
+      <img src="img/product/alat-pijat.jpg" alt="Vibrator">
+      <h2>Alat Pijat Wanita</h2>
+      <p>Herbal alami untuk stamina dan vitalitas.<br><strong>Rp 110.000</strong></p>
+      <a href="contact.html?produk=Vigamax%20(Rp%20100.000)" class="btn">Pesan Sekarang</a>
+    </div>
+    <div class="product-card-wrapper" style="position: relative;">
+      <a href="pil-biru-cina.html" style="text-decoration: none; color: inherit;">
+        <div class="product-card">
+          <img src="img/product/pil-biru-cina.jpg" alt="Pil Biru Cina">
+          <h2>Pil Biru Cina</h2>
+          <p>Obat perangsang wanita tetes berkualitas.<br><strong>Rp 120.000</strong></p>
+          <span class="btn">Lihat Detail</span>
+        </div>
+      </a>
+    </div>
+    
+   
+    
+  </div>
+</section>
+
+<footer>
+  <p>&copy; 2025 Makting Marknad. All rights reserved.</p>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+<script>
+  AOS.init({ duration: 1200 });
+</script>
+
+
+</body>
+</html>

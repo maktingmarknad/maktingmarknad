@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Makting Marknad - Produk Herbal dan Vitalitas Pria">
+  <title>Beranda - Makting Marknad</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+  <link rel="icon" type="image/png" href="img/favicon.png">
+
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Poppins', sans-serif; line-height: 1.6; background: #f7f9fc; color: #333; }
+    header { background: #0055a5; color: white; padding: 20px 0; text-align: center; }
+    nav a { color: white; margin: 0 5px; text-decoration: none; font-weight: 600; }
+    .container { max-width: 1200px; margin: auto; padding: 20px; }
+    .hero { display: flex; flex-wrap: wrap; align-items: center; justify-content: center; padding: 60px 0; }
+    .hero img { max-width: 300px; width: 100%; border-radius: 10px; }
+    .hero-text { max-width: 600px; padding: 20px; text-align: center; }
+    .hero-text h1 { font-size: 2.5rem; color: #0055a5; }
+    .hero-text p { margin: 20px 0; font-size: 1.1rem; }
+    .btn { display: inline-block; background: #0055a5; color: white; padding: 12px 25px; border-radius: 8px; text-decoration: none; transition: background 0.3s; }
+    .btn:hover { background: #003f7f; }
+    .highlight-section { background: #fff; padding: 50px 20px; text-align: center; }
+    .highlight-section h2 { color: #0055a5; margin-bottom: 20px; }
+    .highlight-section p { max-width: 800px; margin: auto; font-size: 1.05rem; }
+    .features-section { background: #e9f1fb; padding: 50px 20px; text-align: center; }
+    .features-section h2 { color: #0055a5; margin-bottom: 30px; }
+    .features-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px; max-width: 1000px; margin: auto; }
+    .feature { background: white; padding: 20px; border-radius: 10px; box-shadow: 0 2px 8px rgba(0,0,0,0.05); }
+    .feature h3 { color: #0055a5; margin-bottom: 10px; font-size: 1.2rem; }
+    .feature p { font-size: 0.95rem; }
+    footer { background: #333; color: white; text-align: center; padding: 15px 0; margin-top: 30px; font-size: 0.9rem; }
+    @media (max-width: 768px) {
+      .hero { flex-direction: column; text-align: center; }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <nav>
+    <a href="index.html">Beranda</a>
+    <a href="about.html">Tentang</a>
+    <a href="produk.html">Produk</a>
+    <a href="contact.html">Kontak</a>
+  </nav>
+</header>
+
+<section class="container hero" data-aos="fade-up">
+  <img src="img/logo.png" alt="Logo Makting Marknad">
+  <div class="hero-text">
+    <h1>Selamat Datang di Makting Marknad</h1>
+    <p>Solusi terbaik untuk kesehatan, vitalitas, dan energi Anda. Produk herbal pilihan, original, dan terpercaya.</p>
+    <a href="produk.html" class="btn">Lihat Produk</a>
+  </div>
+</section>
+
+<section class="highlight-section" data-aos="fade-up">
+  <h2>Mengapa Memilih Kami?</h2>
+  <p>Kami tidak hanya menjual produk, tapi juga memberikan solusi. Setiap produk kami telah dipilih dan diuji secara ketat untuk memastikan efektivitas dan keamanan bagi konsumen. Dengan pengalaman dan dedikasi kami di dunia herbal, Makting Marknad menjadi pilihan terpercaya untuk mendukung kesehatan dan kualitas hidup Anda.</p>
+</section>
+
+<section class="features-section" data-aos="fade-up">
+  <h2>Keunggulan Produk Kami</h2>
+  <div class="features-grid">
+    <div class="feature">
+      <h3>Original & Aman</h3>
+      <p>Produk dijamin 100% original dan aman digunakan, dengan izin edar yang jelas.</p>
+    </div>
+    <div class="feature">
+      <h3>Respon Cepat</h3>
+      <p>Layanan customer service kami siap membantu Anda kapan saja dengan cepat dan ramah.</p>
+    </div>
+    <div class="feature">
+      <h3>Terbukti Efektif</h3>
+      <p>Banyak testimoni positif dari pengguna yang telah merasakan manfaat dari produk kami.</p>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <p>&copy; 2025 Makting Marknad. All rights reserved.</p>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+<script>
+  AOS.init({ duration: 1200 });
+</script>
+
+</body>
+</html>
