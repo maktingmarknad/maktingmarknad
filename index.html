@@ -1,93 +1,1825 @@
 <!DOCTYPE html>
+
 <html lang="id">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Makting Marknad - Produk Herbal dan Vitalitas Pria">
-  <title>Beranda - Makting Marknad</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+
+<meta
+name="description"
+content="Makting Marknad menyediakan produk herbal pilihan untuk mendukung kesehatan, vitalitas, dan kualitas hidup."
+
+>
+
+  <title>Makting Marknad | Produk Herbal Pilihan</title>
+
+  <!-- Google Font -->
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Poppins:wght@400;500;600;700&display=swap"
+    rel="stylesheet"
+  >
+
+  <!-- AOS Animation -->
+
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css"
+  >
+
+  <!-- Favicon -->
+
   <link rel="icon" type="image/png" href="img/favicon.png">
 
   <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    body { font-family: 'Poppins', sans-serif; line-height: 1.6; background: #f7f9fc; color: #333; }
-    header { background: #0055a5; color: white; padding: 20px 0; text-align: center; }
-    nav a { color: white; margin: 0 5px; text-decoration: none; font-weight: 600; }
-    .container { max-width: 1200px; margin: auto; padding: 20px; }
-    .hero { display: flex; flex-wrap: wrap; align-items: center; justify-content: center; padding: 60px 0; }
-    .hero img { max-width: 300px; width: 100%; border-radius: 10px; }
-    .hero-text { max-width: 600px; padding: 20px; text-align: center; }
-    .hero-text h1 { font-size: 2.5rem; color: #0055a5; }
-    .hero-text p { margin: 20px 0; font-size: 1.1rem; }
-    .btn { display: inline-block; background: #0055a5; color: white; padding: 12px 25px; border-radius: 8px; text-decoration: none; transition: background 0.3s; }
-    .btn:hover { background: #003f7f; }
-    .highlight-section { background: #fff; padding: 50px 20px; text-align: center; }
-    .highlight-section h2 { color: #0055a5; margin-bottom: 20px; }
-    .highlight-section p { max-width: 800px; margin: auto; font-size: 1.05rem; }
-    .features-section { background: #e9f1fb; padding: 50px 20px; text-align: center; }
-    .features-section h2 { color: #0055a5; margin-bottom: 30px; }
-    .features-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px; max-width: 1000px; margin: auto; }
-    .feature { background: white; padding: 20px; border-radius: 10px; box-shadow: 0 2px 8px rgba(0,0,0,0.05); }
-    .feature h3 { color: #0055a5; margin-bottom: 10px; font-size: 1.2rem; }
-    .feature p { font-size: 0.95rem; }
-    footer { background: #333; color: white; text-align: center; padding: 15px 0; margin-top: 30px; font-size: 0.9rem; }
-    @media (max-width: 768px) {
-      .hero { flex-direction: column; text-align: center; }
+    :root {
+      --primary: #0756a4;
+      --primary-dark: #043d77;
+      --primary-light: #eaf4ff;
+      --secondary: #0b75d1;
+      --dark: #10233b;
+      --text: #506176;
+      --white: #ffffff;
+      --light: #f6f9fd;
+      --border: #dfe8f2;
+      --shadow: 0 18px 50px rgba(11, 62, 116, 0.12);
+      --radius: 20px;
+      --container: 1180px;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: "Poppins", sans-serif;
+      background: var(--light);
+      color: var(--text);
+      line-height: 1.7;
+      overflow-x: hidden;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    a {
+      text-decoration: none;
+    }
+
+    .container {
+      width: min(100% - 40px, var(--container));
+      margin-inline: auto;
+    }
+
+    .section {
+      padding: 100px 0;
+    }
+
+    .section-heading {
+      max-width: 720px;
+      margin: 0 auto 55px;
+      text-align: center;
+    }
+
+    .section-label {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 15px;
+      margin-bottom: 16px;
+      border-radius: 100px;
+      background: var(--primary-light);
+      color: var(--primary);
+      font-size: 0.8rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .section-heading h2 {
+      color: var(--dark);
+      font-family: "Manrope", sans-serif;
+      font-size: clamp(2rem, 4vw, 3.25rem);
+      line-height: 1.2;
+      letter-spacing: -0.04em;
+      margin-bottom: 18px;
+    }
+
+    .section-heading p {
+      font-size: 1.02rem;
+    }
+
+    /* =========================
+       HEADER
+    ========================== */
+
+    .site-header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 1000;
+      padding: 18px 0;
+      background: rgba(255, 255, 255, 0.88);
+      border-bottom: 1px solid rgba(223, 232, 242, 0.8);
+      backdrop-filter: blur(16px);
+      transition: 0.3s ease;
+    }
+
+    .site-header.scrolled {
+      padding: 12px 0;
+      box-shadow: 0 10px 35px rgba(10, 45, 83, 0.1);
+    }
+
+    .navbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 25px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      color: var(--dark);
+    }
+
+    .brand-logo {
+      width: 46px;
+      height: 46px;
+      padding: 6px;
+      border-radius: 13px;
+      background: var(--primary-light);
+      object-fit: contain;
+    }
+
+    .brand-name {
+      display: flex;
+      flex-direction: column;
+      line-height: 1.2;
+    }
+
+    .brand-name strong {
+      color: var(--primary);
+      font-family: "Manrope", sans-serif;
+      font-size: 1.05rem;
+      font-weight: 800;
+    }
+
+    .brand-name span {
+      color: #748397;
+      font-size: 0.7rem;
+    }
+
+    .nav-menu {
+      display: flex;
+      align-items: center;
+      gap: 30px;
+      list-style: none;
+    }
+
+    .nav-menu a {
+      position: relative;
+      color: #44566c;
+      font-size: 0.92rem;
+      font-weight: 600;
+      transition: 0.25s;
+    }
+
+    .nav-menu a::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: -7px;
+      width: 0;
+      height: 2px;
+      border-radius: 5px;
+      background: var(--primary);
+      transition: 0.25s;
+    }
+
+    .nav-menu a:hover,
+    .nav-menu a.active {
+      color: var(--primary);
+    }
+
+    .nav-menu a:hover::after,
+    .nav-menu a.active::after {
+      width: 100%;
+    }
+
+    .nav-button {
+      padding: 12px 20px;
+      border-radius: 11px;
+      background: var(--primary);
+      color: var(--white) !important;
+      box-shadow: 0 8px 20px rgba(7, 86, 164, 0.2);
+    }
+
+    .nav-button::after {
+      display: none;
+    }
+
+    .nav-button:hover {
+      background: var(--primary-dark);
+      transform: translateY(-2px);
+    }
+
+    .menu-toggle {
+      display: none;
+      width: 44px;
+      height: 44px;
+      border: 1px solid var(--border);
+      border-radius: 11px;
+      background: var(--white);
+      color: var(--primary);
+      font-size: 1.3rem;
+      cursor: pointer;
+    }
+
+    /* =========================
+       HERO
+    ========================== */
+
+    .hero {
+      position: relative;
+      min-height: 790px;
+      padding: 170px 0 100px;
+      display: flex;
+      align-items: center;
+      overflow: hidden;
+      background:
+        radial-gradient(
+          circle at 85% 25%,
+          rgba(55, 151, 245, 0.2),
+          transparent 30%
+        ),
+        linear-gradient(135deg, #f8fbff 0%, #eaf4ff 100%);
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      width: 550px;
+      height: 550px;
+      left: -280px;
+      bottom: -250px;
+      border-radius: 50%;
+      background: rgba(7, 86, 164, 0.08);
+    }
+
+    .hero-grid {
+      position: relative;
+      z-index: 2;
+      display: grid;
+      grid-template-columns: 1.08fr 0.92fr;
+      align-items: center;
+      gap: 65px;
+    }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      padding: 9px 16px;
+      margin-bottom: 23px;
+      border: 1px solid #cce3fa;
+      border-radius: 100px;
+      background: rgba(255, 255, 255, 0.75);
+      color: var(--primary);
+      font-size: 0.8rem;
+      font-weight: 700;
+    }
+
+    .hero-badge span {
+      width: 9px;
+      height: 9px;
+      border-radius: 50%;
+      background: #20a766;
+      box-shadow: 0 0 0 5px rgba(32, 167, 102, 0.12);
+    }
+
+    .hero-content h1 {
+      max-width: 720px;
+      color: var(--dark);
+      font-family: "Manrope", sans-serif;
+      font-size: clamp(2.7rem, 5vw, 4.8rem);
+      font-weight: 800;
+      line-height: 1.08;
+      letter-spacing: -0.055em;
+      margin-bottom: 25px;
+    }
+
+    .hero-content h1 em {
+      color: var(--primary);
+      font-style: normal;
+    }
+
+    .hero-content > p {
+      max-width: 620px;
+      font-size: 1.05rem;
+      line-height: 1.85;
+      margin-bottom: 32px;
+    }
+
+    .hero-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-bottom: 35px;
+    }
+
+    .btn {
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      gap: 10px;
+      min-height: 54px;
+      padding: 0 24px;
+      border-radius: 13px;
+      font-size: 0.93rem;
+      font-weight: 700;
+      transition: 0.3s ease;
+    }
+
+    .btn-primary {
+      background: var(--primary);
+      color: var(--white);
+      box-shadow: 0 14px 30px rgba(7, 86, 164, 0.25);
+    }
+
+    .btn-primary:hover {
+      background: var(--primary-dark);
+      transform: translateY(-3px);
+    }
+
+    .btn-outline {
+      border: 1px solid #c9d8e8;
+      background: rgba(255, 255, 255, 0.7);
+      color: var(--primary);
+    }
+
+    .btn-outline:hover {
+      border-color: var(--primary);
+      background: var(--white);
+      transform: translateY(-3px);
+    }
+
+    .hero-trust {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 23px;
+    }
+
+    .trust-item {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      color: #506176;
+      font-size: 0.82rem;
+      font-weight: 600;
+    }
+
+    .trust-icon {
+      display: grid;
+      place-items: center;
+      width: 34px;
+      height: 34px;
+      border-radius: 50%;
+      background: var(--white);
+      color: var(--primary);
+      box-shadow: 0 5px 15px rgba(15, 57, 98, 0.1);
+    }
+
+    /* Hero Image */
+
+    .hero-visual {
+      position: relative;
+      display: flex;
+      justify-content: center;
+    }
+
+    .hero-image-card {
+      position: relative;
+      width: min(100%, 450px);
+      padding: 25px;
+      border: 1px solid rgba(255, 255, 255, 0.9);
+      border-radius: 34px;
+      background: rgba(255, 255, 255, 0.65);
+      box-shadow: 0 30px 70px rgba(12, 65, 117, 0.18);
+      backdrop-filter: blur(12px);
+    }
+
+    .hero-image-card img {
+      width: 100%;
+      min-height: 440px;
+      object-fit: contain;
+      border-radius: 24px;
+      background: linear-gradient(145deg, #e2f0ff, #ffffff);
+    }
+
+    .floating-card {
+      position: absolute;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 13px 16px;
+      border: 1px solid rgba(255, 255, 255, 0.9);
+      border-radius: 15px;
+      background: rgba(255, 255, 255, 0.92);
+      box-shadow: 0 15px 35px rgba(14, 58, 102, 0.15);
+      backdrop-filter: blur(10px);
+    }
+
+    .floating-card.one {
+      left: -45px;
+      bottom: 70px;
+    }
+
+    .floating-card.two {
+      right: -35px;
+      top: 55px;
+    }
+
+    .floating-icon {
+      display: grid;
+      place-items: center;
+      width: 43px;
+      height: 43px;
+      border-radius: 12px;
+      background: var(--primary-light);
+      font-size: 1.2rem;
+    }
+
+    .floating-card strong {
+      display: block;
+      color: var(--dark);
+      font-size: 0.8rem;
+      line-height: 1.3;
+    }
+
+    .floating-card small {
+      color: #718196;
+      font-size: 0.68rem;
+    }
+
+    /* =========================
+       STATS
+    ========================== */
+
+    .stats-wrapper {
+      position: relative;
+      z-index: 10;
+      margin-top: -65px;
+    }
+
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      border: 1px solid var(--border);
+      border-radius: 23px;
+      background: var(--white);
+      box-shadow: var(--shadow);
+      overflow: hidden;
+    }
+
+    .stat-item {
+      padding: 30px 20px;
+      text-align: center;
+      border-right: 1px solid var(--border);
+    }
+
+    .stat-item:last-child {
+      border-right: 0;
+    }
+
+    .stat-item strong {
+      display: block;
+      color: var(--primary);
+      font-family: "Manrope", sans-serif;
+      font-size: 2rem;
+      line-height: 1.2;
+      margin-bottom: 6px;
+    }
+
+    .stat-item span {
+      color: #718196;
+      font-size: 0.82rem;
+      font-weight: 600;
+    }
+
+    /* =========================
+       ABOUT
+    ========================== */
+
+    .about {
+      background: var(--white);
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 0.9fr 1.1fr;
+      align-items: center;
+      gap: 75px;
+    }
+
+    .about-image {
+      position: relative;
+    }
+
+    .about-image img {
+      width: 100%;
+      min-height: 460px;
+      object-fit: contain;
+      padding: 45px;
+      border-radius: 30px;
+      background: linear-gradient(145deg, #e8f4ff, #f8fbff);
+    }
+
+    .experience-box {
+      position: absolute;
+      right: -25px;
+      bottom: 35px;
+      width: 165px;
+      padding: 20px;
+      border-radius: 18px;
+      background: var(--primary);
+      color: var(--white);
+      box-shadow: 0 18px 40px rgba(7, 86, 164, 0.3);
+    }
+
+    .experience-box strong {
+      display: block;
+      font-family: "Manrope", sans-serif;
+      font-size: 2rem;
+      line-height: 1;
+      margin-bottom: 8px;
+    }
+
+    .experience-box span {
+      font-size: 0.72rem;
+      opacity: 0.85;
+    }
+
+    .about-content .section-label {
+      margin-bottom: 18px;
+    }
+
+    .about-content h2 {
+      color: var(--dark);
+      font-family: "Manrope", sans-serif;
+      font-size: clamp(2rem, 4vw, 3.2rem);
+      line-height: 1.2;
+      letter-spacing: -0.04em;
+      margin-bottom: 22px;
+    }
+
+    .about-content > p {
+      margin-bottom: 25px;
+    }
+
+    .check-list {
+      display: grid;
+      gap: 15px;
+      margin: 30px 0;
+      list-style: none;
+    }
+
+    .check-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      color: #43566d;
+      font-size: 0.92rem;
+      font-weight: 600;
+    }
+
+    .check-list span {
+      display: grid;
+      flex: 0 0 27px;
+      place-items: center;
+      width: 27px;
+      height: 27px;
+      border-radius: 50%;
+      background: #e6f7ef;
+      color: #169458;
+      font-size: 0.75rem;
+    }
+
+    /* =========================
+       FEATURES
+    ========================== */
+
+    .features {
+      background:
+        linear-gradient(
+          180deg,
+          #f6f9fd 0%,
+          #edf5fd 100%
+        );
+    }
+
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 23px;
+    }
+
+    .feature-card {
+      position: relative;
+      padding: 34px 28px;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      background: var(--white);
+      transition: 0.35s ease;
+      overflow: hidden;
+    }
+
+    .feature-card::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 100%;
+      height: 4px;
+      background: var(--primary);
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: 0.35s ease;
+    }
+
+    .feature-card:hover {
+      transform: translateY(-9px);
+      border-color: transparent;
+      box-shadow: var(--shadow);
+    }
+
+    .feature-card:hover::after {
+      transform: scaleX(1);
+    }
+
+    .feature-icon {
+      display: grid;
+      place-items: center;
+      width: 62px;
+      height: 62px;
+      margin-bottom: 25px;
+      border-radius: 18px;
+      background: var(--primary-light);
+      font-size: 1.7rem;
+    }
+
+    .feature-card h3 {
+      color: var(--dark);
+      font-family: "Manrope", sans-serif;
+      font-size: 1.25rem;
+      margin-bottom: 12px;
+    }
+
+    .feature-card p {
+      font-size: 0.88rem;
+      line-height: 1.8;
+    }
+
+    /* =========================
+       PROCESS
+    ========================== */
+
+    .process {
+      background: var(--white);
+    }
+
+    .process-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 35px;
+      position: relative;
+    }
+
+    .process-card {
+      position: relative;
+      text-align: center;
+      padding: 10px 25px;
+    }
+
+    .process-number {
+      display: grid;
+      place-items: center;
+      width: 72px;
+      height: 72px;
+      margin: 0 auto 22px;
+      border-radius: 50%;
+      background: var(--primary);
+      color: var(--white);
+      font-family: "Manrope", sans-serif;
+      font-size: 1.35rem;
+      font-weight: 800;
+      box-shadow: 0 13px 28px rgba(7, 86, 164, 0.25);
+    }
+
+    .process-card h3 {
+      color: var(--dark);
+      font-family: "Manrope", sans-serif;
+      margin-bottom: 10px;
+    }
+
+    .process-card p {
+      font-size: 0.87rem;
+    }
+
+    /* =========================
+       CTA
+    ========================== */
+
+    .cta {
+      padding: 85px 0;
+      background: var(--light);
+    }
+
+    .cta-box {
+      position: relative;
+      padding: 75px 40px;
+      border-radius: 30px;
+      overflow: hidden;
+      text-align: center;
+      color: var(--white);
+      background:
+        radial-gradient(
+          circle at 15% 10%,
+          rgba(255, 255, 255, 0.18),
+          transparent 25%
+        ),
+        linear-gradient(
+          135deg,
+          var(--primary-dark),
+          var(--secondary)
+        );
+      box-shadow: 0 25px 60px rgba(7, 70, 135, 0.25);
+    }
+
+    .cta-box::before,
+    .cta-box::after {
+      content: "";
+      position: absolute;
+      border: 1px solid rgba(255, 255, 255, 0.14);
+      border-radius: 50%;
+    }
+
+    .cta-box::before {
+      width: 400px;
+      height: 400px;
+      left: -250px;
+      bottom: -280px;
+    }
+
+    .cta-box::after {
+      width: 350px;
+      height: 350px;
+      right: -230px;
+      top: -250px;
+    }
+
+    .cta-box > * {
+      position: relative;
+      z-index: 2;
+    }
+
+    .cta-box h2 {
+      max-width: 750px;
+      margin: 0 auto 18px;
+      font-family: "Manrope", sans-serif;
+      font-size: clamp(2rem, 4vw, 3.3rem);
+      line-height: 1.2;
+      letter-spacing: -0.04em;
+    }
+
+    .cta-box p {
+      max-width: 650px;
+      margin: 0 auto 30px;
+      color: rgba(255, 255, 255, 0.82);
+    }
+
+    .cta-box .btn {
+      background: var(--white);
+      color: var(--primary);
+    }
+
+    .cta-box .btn:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+    }
+
+    /* =========================
+       FOOTER
+    ========================== */
+
+    footer {
+      padding: 75px 0 0;
+      background: #0b1d32;
+      color: #aebdcd;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.5fr 0.8fr 0.8fr;
+      gap: 55px;
+      padding-bottom: 55px;
+    }
+
+    .footer-brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 20px;
+      color: var(--white);
+    }
+
+    .footer-brand img {
+      width: 46px;
+      height: 46px;
+      padding: 5px;
+      border-radius: 12px;
+      background: var(--white);
+      object-fit: contain;
+    }
+
+    .footer-brand strong {
+      font-family: "Manrope", sans-serif;
+      font-size: 1.05rem;
+    }
+
+    .footer-about {
+      max-width: 430px;
+      font-size: 0.85rem;
+      line-height: 1.9;
+    }
+
+    .footer-column h3 {
+      margin-bottom: 20px;
+      color: var(--white);
+      font-family: "Manrope", sans-serif;
+      font-size: 1rem;
+    }
+
+    .footer-column ul {
+      display: grid;
+      gap: 11px;
+      list-style: none;
+    }
+
+    .footer-column a {
+      color: #aebdcd;
+      font-size: 0.83rem;
+      transition: 0.25s;
+    }
+
+    .footer-column a:hover {
+      color: var(--white);
+      padding-left: 4px;
+    }
+
+    .footer-bottom {
+      padding: 22px 0;
+      border-top: 1px solid rgba(255, 255, 255, 0.09);
+      text-align: center;
+      font-size: 0.76rem;
+    }
+
+    /* =========================
+       RESPONSIVE
+    ========================== */
+
+    @media (max-width: 960px) {
+      .hero-grid,
+      .about-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero {
+        padding-top: 145px;
+      }
+
+      .hero-content {
+        text-align: center;
+      }
+
+      .hero-content > p {
+        margin-inline: auto;
+      }
+
+      .hero-buttons,
+      .hero-trust {
+        justify-content: center;
+      }
+
+      .hero-visual {
+        margin-top: 15px;
+      }
+
+      .about-image {
+        max-width: 600px;
+        margin-inline: auto;
+      }
+
+      .features-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 760px) {
+      .site-header {
+        padding: 12px 0;
+      }
+
+      .menu-toggle {
+        display: grid;
+        place-items: center;
+      }
+
+      .nav-menu {
+        position: absolute;
+        top: calc(100% + 8px);
+        left: 20px;
+        right: 20px;
+        display: none;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0;
+        padding: 12px;
+        border: 1px solid var(--border);
+        border-radius: 18px;
+        background: var(--white);
+        box-shadow: 0 20px 45px rgba(11, 42, 76, 0.15);
+      }
+
+      .nav-menu.active {
+        display: flex;
+      }
+
+      .nav-menu li {
+        width: 100%;
+      }
+
+      .nav-menu a {
+        display: block;
+        padding: 13px 14px;
+      }
+
+      .nav-menu a::after {
+        display: none;
+      }
+
+      .nav-button {
+        text-align: center;
+      }
+
+      .hero {
+        min-height: auto;
+        padding: 135px 0 100px;
+      }
+
+      .hero-content h1 {
+        font-size: 2.7rem;
+      }
+
+      .hero-image-card {
+        max-width: 360px;
+      }
+
+      .hero-image-card img {
+        min-height: 350px;
+      }
+
+      .floating-card.one {
+        left: -8px;
+        bottom: 35px;
+      }
+
+      .floating-card.two {
+        right: -8px;
+        top: 25px;
+      }
+
+      .stats-wrapper {
+        margin-top: -40px;
+      }
+
+      .stats {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .stat-item:nth-child(2) {
+        border-right: 0;
+      }
+
+      .stat-item:nth-child(-n+2) {
+        border-bottom: 1px solid var(--border);
+      }
+
+      .section {
+        padding: 75px 0;
+      }
+
+      .features-grid,
+      .process-grid,
+      .footer-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .process-grid {
+        gap: 45px;
+      }
+
+      .about-image img {
+        min-height: 360px;
+        padding: 30px;
+      }
+
+      .experience-box {
+        right: 10px;
+        bottom: 20px;
+      }
+
+      .footer-grid {
+        gap: 35px;
+      }
+    }
+
+    @media (max-width: 460px) {
+      .container {
+        width: min(100% - 28px, var(--container));
+      }
+
+      .brand-name span {
+        display: none;
+      }
+
+      .hero-content h1 {
+        font-size: 2.25rem;
+      }
+
+      .hero-buttons {
+        display: grid;
+        grid-template-columns: 1fr;
+      }
+
+      .hero-buttons .btn {
+        width: 100%;
+      }
+
+      .hero-trust {
+        display: grid;
+        grid-template-columns: 1fr;
+        justify-items: start;
+      }
+
+      .floating-card {
+        padding: 10px;
+      }
+
+      .floating-card small {
+        display: none;
+      }
+
+      .floating-card strong {
+        font-size: 0.68rem;
+      }
+
+      .floating-icon {
+        width: 35px;
+        height: 35px;
+      }
+
+      .cta-box {
+        padding: 60px 22px;
+      }
     }
   </style>
+
 </head>
+
 <body>
 
-<header>
-  <nav>
-    <a href="index.html">Beranda</a>
-    <a href="about.html">Tentang</a>
-    <a href="produk.html">Produk</a>
-    <a href="contact.html">Kontak</a>
-  </nav>
-</header>
+  <!-- HEADER -->
 
-<section class="container hero" data-aos="fade-up">
-  <img src="img/logo.png" alt="Logo Makting Marknad">
-  <div class="hero-text">
-    <h1>Selamat Datang di Makting Marknad</h1>
-    <p>Solusi terbaik untuk kesehatan, vitalitas, dan energi Anda. Produk herbal pilihan, original, dan terpercaya.</p>
-    <a href="produk.html" class="btn">Lihat Produk</a>
+  <header class="site-header" id="header">
+    <div class="container navbar">
+
+```
+  <a href="index.html" class="brand" aria-label="Makting Marknad">
+    <img
+      src="img/logo.png"
+      alt="Logo Makting Marknad"
+      class="brand-logo"
+    >
+
+    <span class="brand-name">
+      <strong>Makting Marknad</strong>
+      <span>Herbal &amp; Wellness</span>
+    </span>
+  </a>
+
+  <button
+    class="menu-toggle"
+    id="menuToggle"
+    aria-label="Buka menu"
+    aria-expanded="false"
+  >
+    ☰
+  </button>
+
+  <ul class="nav-menu" id="navMenu">
+    <li>
+      <a href="index.html" class="active">Beranda</a>
+    </li>
+
+    <li>
+      <a href="about.html">Tentang Kami</a>
+    </li>
+
+    <li>
+      <a href="produk.html">Produk</a>
+    </li>
+
+    <li>
+      <a href="contact.html" class="nav-button">
+        Hubungi Kami
+      </a>
+    </li>
+  </ul>
+
+</div>
+```
+
+  </header>
+
+  <!-- HERO -->
+
+  <main>
+
+```
+<section class="hero">
+
+  <div class="container hero-grid">
+
+    <div
+      class="hero-content"
+      data-aos="fade-right"
+      data-aos-duration="900"
+    >
+
+      <div class="hero-badge">
+        <span></span>
+        Pilihan Herbal Berkualitas
+      </div>
+
+      <h1>
+        Dukung Kesehatan dan
+        <em>Vitalitas Anda</em>
+        dengan Pilihan Terbaik
+      </h1>
+
+      <p>
+        Makting Marknad menghadirkan pilihan produk herbal
+        berkualitas untuk membantu mendukung kesehatan,
+        energi, dan kualitas hidup Anda dengan pelayanan
+        yang ramah serta terpercaya.
+      </p>
+
+      <div class="hero-buttons">
+
+        <a href="produk.html" class="btn btn-primary">
+          Lihat Koleksi Produk
+          <span>→</span>
+        </a>
+
+        <a href="about.html" class="btn btn-outline">
+          Kenali Kami
+        </a>
+
+      </div>
+
+      <div class="hero-trust">
+
+        <div class="trust-item">
+          <span class="trust-icon">✓</span>
+          Produk Pilihan
+        </div>
+
+        <div class="trust-item">
+          <span class="trust-icon">★</span>
+          Pelayanan Ramah
+        </div>
+
+        <div class="trust-item">
+          <span class="trust-icon">✓</span>
+          Pemesanan Mudah
+        </div>
+
+      </div>
+
+    </div>
+
+
+    <div
+      class="hero-visual"
+      data-aos="zoom-in"
+      data-aos-duration="1000"
+    >
+
+      <div class="hero-image-card">
+
+        <img
+          src="img/logo.png"
+          alt="Produk Herbal Makting Marknad"
+        >
+
+      </div>
+
+      <div class="floating-card one">
+
+        <div class="floating-icon">
+          ✓
+        </div>
+
+        <div>
+          <strong>Produk Pilihan</strong>
+          <small>Dipilih dengan teliti</small>
+        </div>
+
+      </div>
+
+      <div class="floating-card two">
+
+        <div class="floating-icon">
+          ★
+        </div>
+
+        <div>
+          <strong>Layanan Terpercaya</strong>
+          <small>Siap membantu Anda</small>
+        </div>
+
+      </div>
+
+    </div>
+
   </div>
+
 </section>
 
-<section class="highlight-section" data-aos="fade-up">
-  <h2>Mengapa Memilih Kami?</h2>
-  <p>Kami tidak hanya menjual produk, tapi juga memberikan solusi. Setiap produk kami telah dipilih dan diuji secara ketat untuk memastikan efektivitas dan keamanan bagi konsumen. Dengan pengalaman dan dedikasi kami di dunia herbal, Makting Marknad menjadi pilihan terpercaya untuk mendukung kesehatan dan kualitas hidup Anda.</p>
-</section>
 
-<section class="features-section" data-aos="fade-up">
-  <h2>Keunggulan Produk Kami</h2>
-  <div class="features-grid">
-    <div class="feature">
-      <h3>Original & Aman</h3>
-      <p>Produk dijamin 100% original dan aman digunakan, dengan izin edar yang jelas.</p>
+<!-- STATISTICS -->
+<div class="stats-wrapper">
+
+  <div class="container">
+
+    <div class="stats" data-aos="fade-up">
+
+      <div class="stat-item">
+        <strong>100%</strong>
+        <span>Fokus Pelayanan</span>
+      </div>
+
+      <div class="stat-item">
+        <strong>24/7</strong>
+        <span>Informasi Produk</span>
+      </div>
+
+      <div class="stat-item">
+        <strong>+</strong>
+        <span>Pilihan Produk</span>
+      </div>
+
+      <div class="stat-item">
+        <strong>★</strong>
+        <span>Kepuasan Pelanggan</span>
+      </div>
+
     </div>
-    <div class="feature">
-      <h3>Respon Cepat</h3>
-      <p>Layanan customer service kami siap membantu Anda kapan saja dengan cepat dan ramah.</p>
-    </div>
-    <div class="feature">
-      <h3>Terbukti Efektif</h3>
-      <p>Banyak testimoni positif dari pengguna yang telah merasakan manfaat dari produk kami.</p>
-    </div>
+
   </div>
+
+</div>
+
+
+<!-- ABOUT -->
+<section class="section about">
+
+  <div class="container about-grid">
+
+    <div
+      class="about-image"
+      data-aos="fade-right"
+    >
+
+      <img
+        src="img/logo.png"
+        alt="Tentang Makting Marknad"
+      >
+
+      <div class="experience-box">
+        <strong>100%</strong>
+        <span>Komitmen dalam memberikan pelayanan terbaik</span>
+      </div>
+
+    </div>
+
+
+    <div
+      class="about-content"
+      data-aos="fade-left"
+    >
+
+      <div class="section-label">
+        Tentang Makting Marknad
+      </div>
+
+      <h2>
+        Lebih dari Sekadar Menawarkan Produk
+      </h2>
+
+      <p>
+        Kami percaya bahwa setiap pelanggan membutuhkan
+        informasi yang jelas, pelayanan yang nyaman, dan
+        pilihan produk yang sesuai dengan kebutuhan.
+      </p>
+
+      <p>
+        Karena itu, Makting Marknad berkomitmen untuk
+        menghadirkan pengalaman belanja yang lebih mudah,
+        aman, dan terpercaya.
+      </p>
+
+      <ul class="check-list">
+
+        <li>
+          <span>✓</span>
+          Informasi produk disampaikan secara jelas
+        </li>
+
+        <li>
+          <span>✓</span>
+          Pelayanan cepat dan ramah
+        </li>
+
+        <li>
+          <span>✓</span>
+          Membantu pelanggan menemukan pilihan yang tepat
+        </li>
+
+      </ul>
+
+      <a href="about.html" class="btn btn-primary">
+        Selengkapnya Tentang Kami
+        <span>→</span>
+      </a>
+
+    </div>
+
+  </div>
+
 </section>
 
-<footer>
-  <p>&copy; 2025 Makting Marknad. All rights reserved.</p>
-</footer>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
-<script>
-  AOS.init({ duration: 1200 });
-</script>
+<!-- FEATURES -->
+<section class="section features">
+
+  <div class="container">
+
+    <div
+      class="section-heading"
+      data-aos="fade-up"
+    >
+
+      <div class="section-label">
+        Keunggulan Kami
+      </div>
+
+      <h2>
+        Mengapa Memilih Makting Marknad?
+      </h2>
+
+      <p>
+        Kami mengutamakan kualitas pelayanan dan kenyamanan
+        pelanggan dalam setiap proses pemesanan.
+      </p>
+
+    </div>
+
+
+    <div class="features-grid">
+
+      <article
+        class="feature-card"
+        data-aos="fade-up"
+        data-aos-delay="0"
+      >
+
+        <div class="feature-icon">
+          🛡️
+        </div>
+
+        <h3>
+          Produk Pilihan
+        </h3>
+
+        <p>
+          Kami menghadirkan pilihan produk yang dipilih
+          secara teliti untuk membantu memenuhi kebutuhan
+          pelanggan.
+        </p>
+
+      </article>
+
+
+      <article
+        class="feature-card"
+        data-aos="fade-up"
+        data-aos-delay="100"
+      >
+
+        <div class="feature-icon">
+          💬
+        </div>
+
+        <h3>
+          Respon Cepat
+        </h3>
+
+        <p>
+          Tim kami siap membantu memberikan informasi
+          produk dan menjawab pertanyaan dengan ramah.
+        </p>
+
+      </article>
+
+
+      <article
+        class="feature-card"
+        data-aos="fade-up"
+        data-aos-delay="200"
+      >
+
+        <div class="feature-icon">
+          🤝
+        </div>
+
+        <h3>
+          Pelayanan Terpercaya
+        </h3>
+
+        <p>
+          Kami berkomitmen memberikan pengalaman pemesanan
+          yang nyaman dan mudah bagi setiap pelanggan.
+        </p>
+
+      </article>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- ORDER PROCESS -->
+<section class="section process">
+
+  <div class="container">
+
+    <div
+      class="section-heading"
+      data-aos="fade-up"
+    >
+
+      <div class="section-label">
+        Cara Pemesanan
+      </div>
+
+      <h2>
+        Pesan Produk dengan Mudah
+      </h2>
+
+      <p>
+        Proses sederhana untuk membantu Anda mendapatkan
+        informasi dan melakukan pemesanan.
+      </p>
+
+    </div>
+
+
+    <div class="process-grid">
+
+      <article
+        class="process-card"
+        data-aos="fade-up"
+      >
+
+        <div class="process-number">
+          01
+        </div>
+
+        <h3>
+          Pilih Produk
+        </h3>
+
+        <p>
+          Kunjungi halaman produk dan lihat pilihan yang
+          tersedia.
+        </p>
+
+      </article>
+
+
+      <article
+        class="process-card"
+        data-aos="fade-up"
+        data-aos-delay="100"
+      >
+
+        <div class="process-number">
+          02
+        </div>
+
+        <h3>
+          Hubungi Kami
+        </h3>
+
+        <p>
+          Hubungi tim kami apabila Anda membutuhkan
+          informasi lebih lanjut.
+        </p>
+
+      </article>
+
+
+      <article
+        class="process-card"
+        data-aos="fade-up"
+        data-aos-delay="200"
+      >
+
+        <div class="process-number">
+          03
+        </div>
+
+        <h3>
+          Selesaikan Pesanan
+        </h3>
+
+        <p>
+          Ikuti arahan pemesanan dan tunggu informasi
+          selanjutnya dari tim kami.
+        </p>
+
+      </article>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- CTA -->
+<section class="cta">
+
+  <div class="container">
+
+    <div
+      class="cta-box"
+      data-aos="zoom-in"
+    >
+
+      <h2>
+        Temukan Pilihan Produk yang Sesuai untuk Anda
+      </h2>
+
+      <p>
+        Kunjungi halaman produk untuk melihat informasi
+        lengkap dan menemukan pilihan yang tersedia.
+      </p>
+
+      <a href="produk.html" class="btn">
+        Lihat Produk Sekarang
+        <span>→</span>
+      </a>
+
+    </div>
+
+  </div>
+
+</section>
+```
+
+  </main>
+
+  <!-- FOOTER -->
+
+  <footer>
+
+```
+<div class="container footer-grid">
+
+  <div>
+
+    <a href="index.html" class="footer-brand">
+
+      <img
+        src="img/logo.png"
+        alt="Logo Makting Marknad"
+      >
+
+      <strong>
+        Makting Marknad
+      </strong>
+
+    </a>
+
+    <p class="footer-about">
+      Menyediakan pilihan produk herbal dan wellness
+      dengan fokus pada informasi yang jelas, pelayanan
+      yang nyaman, serta pengalaman pelanggan yang baik.
+    </p>
+
+  </div>
+
+
+  <div class="footer-column">
+
+    <h3>
+      Navigasi
+    </h3>
+
+    <ul>
+
+      <li>
+        <a href="index.html">
+          Beranda
+        </a>
+      </li>
+
+      <li>
+        <a href="about.html">
+          Tentang Kami
+        </a>
+      </li>
+
+      <li>
+        <a href="produk.html">
+          Produk
+        </a>
+      </li>
+
+      <li>
+        <a href="contact.html">
+          Kontak
+        </a>
+      </li>
+
+    </ul>
+
+  </div>
+
+
+  <div class="footer-column">
+
+    <h3>
+      Informasi
+    </h3>
+
+    <ul>
+
+      <li>
+        <a href="contact.html">
+          Hubungi Kami
+        </a>
+      </li>
+
+      <li>
+        <a href="#">
+          Kebijakan Privasi
+        </a>
+      </li>
+
+      <li>
+        <a href="#">
+          Syarat &amp; Ketentuan
+        </a>
+      </li>
+
+    </ul>
+
+  </div>
+
+</div>
+
+
+<div class="footer-bottom">
+
+  <div class="container">
+
+    <p>
+      &copy; 2026 Makting Marknad.
+      Seluruh hak cipta dilindungi.
+    </p>
+
+  </div>
+
+</div>
+```
+
+  </footer>
+
+  <!-- AOS -->
+
+  <script
+    src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js">
+  </script>
+
+  <script>
+
+    AOS.init({
+      duration: 850,
+      once: true,
+      offset: 60
+    });
+
+
+    const menuToggle =
+      document.getElementById("menuToggle");
+
+    const navMenu =
+      document.getElementById("navMenu");
+
+
+    menuToggle.addEventListener("click", () => {
+
+      navMenu.classList.toggle("active");
+
+      const isOpen =
+        navMenu.classList.contains("active");
+
+      menuToggle.setAttribute(
+        "aria-expanded",
+        isOpen
+      );
+
+      menuToggle.innerHTML =
+        isOpen ? "✕" : "☰";
+
+    });
+
+
+    document
+      .querySelectorAll(".nav-menu a")
+      .forEach(link => {
+
+        link.addEventListener("click", () => {
+
+          navMenu.classList.remove("active");
+
+          menuToggle.innerHTML = "☰";
+
+          menuToggle.setAttribute(
+            "aria-expanded",
+            "false"
+          );
+
+        });
+
+      });
+
+
+    const header =
+      document.getElementById("header");
+
+
+    window.addEventListener("scroll", () => {
+
+      if (window.scrollY > 30) {
+
+        header.classList.add("scrolled");
+
+      } else {
+
+        header.classList.remove("scrolled");
+
+      }
+
+    });
+
+  </script>
 
 </body>
 </html>
