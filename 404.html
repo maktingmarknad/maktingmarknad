@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <meta
+    name="description"
+    content="Halaman yang Anda cari tidak ditemukan. Kembali ke beranda Makting Marknad."
+  >
+
+  <meta name="robots" content="noindex, follow">
+
+  <title>404 - Halaman Tidak Ditemukan | Makting Marknad</title>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
+    rel="stylesheet"
+  >
+
+  <link rel="icon" type="image/png" href="img/favicon.png">
+
+  <style>
+    :root {
+      --primary: #0055a5;
+      --primary-dark: #003f7f;
+      --primary-light: #eaf3ff;
+      --text: #26364a;
+      --text-soft: #66758a;
+      --white: #ffffff;
+      --border: #dce7f3;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html,
+    body {
+      min-height: 100%;
+    }
+
+    body {
+      font-family: "Poppins", sans-serif;
+      color: var(--text);
+      background:
+        radial-gradient(
+          circle at top left,
+          rgba(0, 85, 165, 0.12),
+          transparent 35%
+        ),
+        linear-gradient(135deg, #f6faff 0%, #edf5ff 100%);
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* Header */
+    .site-header {
+      width: 100%;
+      background: rgba(255, 255, 255, 0.92);
+      border-bottom: 1px solid var(--border);
+      backdrop-filter: blur(10px);
+    }
+
+    .navbar {
+      width: min(1150px, 92%);
+      min-height: 76px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 25px;
+    }
+
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      color: var(--primary);
+      text-decoration: none;
+      font-size: 1.15rem;
+      font-weight: 700;
+    }
+
+    .brand-logo {
+      width: 42px;
+      height: 42px;
+      object-fit: contain;
+      border-radius: 10px;
+    }
+
+    .back-link {
+      color: var(--primary);
+      font-size: 0.92rem;
+      font-weight: 600;
+      text-decoration: none;
+      transition: 0.25s ease;
+    }
+
+    .back-link:hover {
+      color: var(--primary-dark);
+      transform: translateX(-3px);
+    }
+
+    /* Main */
+    main {
+      width: 100%;
+      flex: 1;
+      display: grid;
+      place-items: center;
+      padding: 55px 20px;
+    }
+
+    .error-card {
+      width: min(850px, 100%);
+      background: rgba(255, 255, 255, 0.96);
+      border: 1px solid rgba(0, 85, 165, 0.12);
+      border-radius: 28px;
+      padding: 60px 45px;
+      text-align: center;
+      box-shadow: 0 25px 70px rgba(0, 62, 122, 0.12);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .error-card::before,
+    .error-card::after {
+      content: "";
+      position: absolute;
+      border-radius: 50%;
+      background: rgba(0, 85, 165, 0.06);
+      pointer-events: none;
+    }
+
+    .error-card::before {
+      width: 260px;
+      height: 260px;
+      top: -160px;
+      left: -120px;
+    }
+
+    .error-card::after {
+      width: 220px;
+      height: 220px;
+      right: -120px;
+      bottom: -150px;
+    }
+
+    .error-content {
+      position: relative;
+      z-index: 1;
+    }
+
+    .error-code {
+      color: var(--primary);
+      font-size: clamp(5rem, 17vw, 10rem);
+      line-height: 0.9;
+      font-weight: 700;
+      letter-spacing: -8px;
+      text-shadow: 0 10px 25px rgba(0, 85, 165, 0.13);
+      margin-bottom: 25px;
+    }
+
+    .error-icon {
+      width: 76px;
+      height: 76px;
+      margin: 0 auto 22px;
+      display: grid;
+      place-items: center;
+      border-radius: 50%;
+      background: var(--primary-light);
+      color: var(--primary);
+      font-size: 2rem;
+      font-weight: 700;
+    }
+
+    h1 {
+      color: var(--text);
+      font-size: clamp(1.7rem, 4vw, 2.5rem);
+      line-height: 1.25;
+      margin-bottom: 15px;
+    }
+
+    .description {
+      max-width: 610px;
+      margin: 0 auto;
+      color: var(--text-soft);
+      font-size: 1rem;
+      line-height: 1.8;
+    }
+
+    .button-group {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-top: 35px;
+    }
+
+    .button {
+      min-width: 190px;
+      padding: 13px 23px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 9px;
+      border-radius: 12px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: 0.25s ease;
+    }
+
+    .button-primary {
+      color: var(--white);
+      background: var(--primary);
+      box-shadow: 0 10px 24px rgba(0, 85, 165, 0.22);
+    }
+
+    .button-primary:hover {
+      background: var(--primary-dark);
+      transform: translateY(-3px);
+    }
+
+    .button-secondary {
+      color: var(--primary);
+      background: var(--white);
+      border: 1px solid #b9d2ed;
+    }
+
+    .button-secondary:hover {
+      background: var(--primary-light);
+      transform: translateY(-3px);
+    }
+
+    .help-text {
+      margin-top: 27px;
+      color: #8491a2;
+      font-size: 0.88rem;
+    }
+
+    .help-text a {
+      color: var(--primary);
+      font-weight: 600;
+      text-decoration: none;
+    }
+
+    .help-text a:hover {
+      text-decoration: underline;
+    }
+
+    /* Footer */
+    footer {
+      padding: 22px 20px;
+      text-align: center;
+      color: #718096;
+      font-size: 0.86rem;
+      border-top: 1px solid rgba(0, 85, 165, 0.08);
+      background: rgba(255, 255, 255, 0.6);
+    }
+
+    /* Mobile */
+    @media (max-width: 650px) {
+      .navbar {
+        min-height: 68px;
+      }
+
+      .brand {
+        font-size: 0.98rem;
+      }
+
+      .brand-logo {
+        width: 36px;
+        height: 36px;
+      }
+
+      .back-link {
+        font-size: 0.82rem;
+      }
+
+      main {
+        padding: 35px 15px;
+      }
+
+      .error-card {
+        padding: 42px 20px;
+        border-radius: 22px;
+      }
+
+      .error-code {
+        letter-spacing: -5px;
+        margin-bottom: 18px;
+      }
+
+      .error-icon {
+        width: 65px;
+        height: 65px;
+        font-size: 1.7rem;
+      }
+
+      .description {
+        font-size: 0.93rem;
+      }
+
+      .button-group {
+        flex-direction: column;
+      }
+
+      .button {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Header -->
+  <header class="site-header">
+    <nav class="navbar">
+
+      <a href="index.html" class="brand" aria-label="Makting Marknad">
+        <img
+          src="img/logo.png"
+          alt="Logo Makting Marknad"
+          class="brand-logo"
+        >
+        <span>Makting Marknad</span>
+      </a>
+
+      <a href="index.html" class="back-link">
+        ← Kembali ke Beranda
+      </a>
+
+    </nav>
+  </header>
+
+  <!-- Konten 404 -->
+  <main>
+    <section class="error-card">
+
+      <div class="error-content">
+
+        <div class="error-code">404</div>
+
+        <div class="error-icon" aria-hidden="true">
+          !
+        </div>
+
+        <h1>Halaman Tidak Ditemukan</h1>
+
+        <p class="description">
+          Maaf, halaman yang Anda cari mungkin sudah dipindahkan,
+          dihapus, atau alamat URL yang dimasukkan tidak tersedia.
+        </p>
+
+        <div class="button-group">
+
+          <a href="index.html" class="button button-primary">
+            ← Kembali ke Beranda
+          </a>
+
+          <a href="produk.html" class="button button-secondary">
+            Lihat Produk →
+          </a>
+
+        </div>
+
+        <p class="help-text">
+          Butuh bantuan?
+          <a href="contact.html">Hubungi kami melalui halaman kontak</a>.
+        </p>
+
+      </div>
+
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    © 2026 Makting Marknad. Semua hak dilindungi.
+  </footer>
+
+</body>
+</html>
