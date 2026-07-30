@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<<<<<<< HEAD
 <html lang="id">
 
 <head>
@@ -2152,10 +2153,1067 @@
 
     }
 
+=======
+
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Official Store | Makting Marknad</title>
+
+<meta
+name="description"
+content="Kunjungi official store Makting Marknad di Shopee, Lazada, dan TikTok Shop. Pilih marketplace favorit Anda untuk berbelanja dengan mudah dan nyaman."
+
+>
+
+  <meta name="robots" content="index, follow">
+
+  <style>
+    :root {
+      --primary: #ec4899;
+      --primary-dark: #be185d;
+      --purple: #7c3aed;
+      --text: #172033;
+      --muted: #667085;
+      --border: #e7eaf0;
+      --white: #ffffff;
+      --soft-pink: #fff4f9;
+      --soft-gray: #f8fafc;
+      --success: #16a34a;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      min-height: 100vh;
+      color: var(--text);
+      background: var(--white);
+      font-family:
+        Inter,
+        Poppins,
+        Arial,
+        sans-serif;
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    img {
+      display: block;
+      max-width: 100%;
+    }
+
+    .container {
+      width: min(1160px, calc(100% - 40px));
+      margin: 0 auto;
+    }
+
+    /* =========================
+       NAVIGATION
+    ========================= */
+
+    .navbar {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      border-bottom: 1px solid rgba(226, 232, 240, 0.8);
+      background: rgba(255, 255, 255, 0.9);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+    }
+
+    .nav-wrapper {
+      min-height: 76px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 25px;
+    }
+
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 11px;
+      font-size: 1.12rem;
+      font-weight: 850;
+      letter-spacing: -0.03em;
+    }
+
+    .brand-logo {
+      width: 39px;
+      height: 39px;
+      display: grid;
+      place-items: center;
+      color: white;
+      border-radius: 13px;
+      background:
+        linear-gradient(
+          135deg,
+          var(--primary),
+          var(--purple)
+        );
+      box-shadow:
+        0 10px 24px
+        rgba(236, 72, 153, 0.25);
+    }
+
+    .nav-menu {
+      display: flex;
+      align-items: center;
+      gap: 27px;
+      list-style: none;
+    }
+
+    .nav-menu a {
+      color: #5e6676;
+      font-size: 0.92rem;
+      font-weight: 650;
+      transition: color 0.2s ease;
+    }
+
+    .nav-menu a:hover,
+    .nav-menu a.active {
+      color: var(--primary-dark);
+    }
+
+    .nav-store {
+      padding: 10px 16px;
+      color: white !important;
+      border-radius: 11px;
+      background:
+        linear-gradient(
+          135deg,
+          var(--primary),
+          #c026d3
+        );
+      box-shadow:
+        0 10px 22px
+        rgba(236, 72, 153, 0.22);
+    }
+
+    .menu-toggle {
+      display: none;
+      width: 44px;
+      height: 44px;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      color: var(--text);
+      background: white;
+      cursor: pointer;
+      font-size: 1.25rem;
+    }
+
+    /* =========================
+       HERO
+    ========================= */
+
+    .hero {
+      position: relative;
+      min-height: 680px;
+      display: flex;
+      align-items: center;
+      padding: 125px 0 105px;
+      overflow: hidden;
+      isolation: isolate;
+      background:
+        radial-gradient(
+          circle at 15% 20%,
+          rgba(236, 72, 153, 0.16),
+          transparent 32%
+        ),
+        radial-gradient(
+          circle at 84% 25%,
+          rgba(124, 58, 237, 0.14),
+          transparent 30%
+        ),
+        linear-gradient(
+          135deg,
+          #fff7fb 0%,
+          #ffffff 48%,
+          #f8f5ff 100%
+        );
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      z-index: -2;
+      opacity: 0.45;
+      background-image:
+        linear-gradient(
+          rgba(23, 32, 51, 0.035) 1px,
+          transparent 1px
+        ),
+        linear-gradient(
+          90deg,
+          rgba(23, 32, 51, 0.035) 1px,
+          transparent 1px
+        );
+      background-size: 46px 46px;
+      mask-image:
+        linear-gradient(
+          to bottom,
+          black,
+          transparent
+        );
+    }
+
+    .hero-glow {
+      position: absolute;
+      z-index: -1;
+      width: 380px;
+      height: 380px;
+      border-radius: 50%;
+      opacity: 0.25;
+      filter: blur(50px);
+    }
+
+    .hero-glow-left {
+      left: -170px;
+      bottom: -180px;
+      background: #f472b6;
+    }
+
+    .hero-glow-right {
+      top: -170px;
+      right: -150px;
+      background: #8b5cf6;
+    }
+
+    .hero-content {
+      max-width: 880px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      margin-bottom: 23px;
+      padding: 10px 16px;
+      color: var(--primary-dark);
+      border:
+        1px solid
+        rgba(236, 72, 153, 0.18);
+      border-radius: 999px;
+      background:
+        rgba(255, 255, 255, 0.82);
+      box-shadow:
+        0 10px 35px
+        rgba(236, 72, 153, 0.08);
+      font-size: 0.74rem;
+      font-weight: 850;
+      letter-spacing: 0.15em;
+    }
+
+    .eyebrow-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--primary);
+      box-shadow:
+        0 0 0 5px
+        rgba(236, 72, 153, 0.12);
+    }
+
+    .hero h1 {
+      max-width: 850px;
+      margin: 0 auto;
+      font-size:
+        clamp(
+          2.8rem,
+          6vw,
+          5.4rem
+        );
+      font-weight: 900;
+      line-height: 1.06;
+      letter-spacing: -0.06em;
+    }
+
+    .hero h1 span {
+      display: block;
+      margin-top: 8px;
+      color: transparent;
+      background:
+        linear-gradient(
+          90deg,
+          var(--primary),
+          #a855f7
+        );
+      -webkit-background-clip: text;
+      background-clip: text;
+    }
+
+    .hero-description {
+      max-width: 700px;
+      margin: 28px auto 0;
+      color: var(--muted);
+      font-size:
+        clamp(
+          1rem,
+          2vw,
+          1.18rem
+        );
+      line-height: 1.85;
+    }
+
+    .hero-buttons {
+      display: flex;
+      justify-content: center;
+      gap: 14px;
+      margin-top: 36px;
+    }
+
+    .button {
+      min-height: 54px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 11px;
+      padding: 0 24px;
+      border: 1px solid transparent;
+      border-radius: 15px;
+      font-size: 0.94rem;
+      font-weight: 750;
+      transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
+    }
+
+    .button:hover {
+      transform: translateY(-3px);
+    }
+
+    .button-primary {
+      color: white;
+      background:
+        linear-gradient(
+          135deg,
+          var(--primary),
+          #c026d3
+        );
+      box-shadow:
+        0 18px 36px
+        rgba(236, 72, 153, 0.28);
+    }
+
+    .button-secondary {
+      color: var(--text);
+      border-color: var(--border);
+      background:
+        rgba(255, 255, 255, 0.88);
+    }
+
+    .button-secondary:hover {
+      box-shadow:
+        0 15px 35px
+        rgba(15, 23, 42, 0.08);
+    }
+
+    .trust-list {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 24px;
+      margin-top: 42px;
+    }
+
+    .trust-item {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: #5d6677;
+      font-size: 0.9rem;
+      font-weight: 650;
+    }
+
+    .trust-check {
+      width: 21px;
+      height: 21px;
+      display: grid;
+      place-items: center;
+      color: var(--success);
+      border-radius: 50%;
+      background: #dcfce7;
+      font-size: 0.74rem;
+      font-weight: 900;
+    }
+
+    /* =========================
+       MARKETPLACE
+    ========================= */
+
+    .marketplace-section {
+      padding: 110px 0;
+      background: white;
+    }
+
+    .section-heading {
+      max-width: 750px;
+      margin: 0 auto 55px;
+      text-align: center;
+    }
+
+    .section-label {
+      display: inline-block;
+      margin-bottom: 19px;
+      color: var(--primary-dark);
+      font-size: 0.74rem;
+      font-weight: 850;
+      letter-spacing: 0.15em;
+    }
+
+    .section-heading h2,
+    .benefit-intro h2,
+    .cta-content h2 {
+      font-size:
+        clamp(
+          2rem,
+          4vw,
+          3.35rem
+        );
+      line-height: 1.13;
+      letter-spacing: -0.045em;
+    }
+
+    .section-heading p {
+      margin-top: 20px;
+      color: var(--muted);
+      font-size: 1.04rem;
+      line-height: 1.8;
+    }
+
+    .marketplace-grid {
+      display: grid;
+      grid-template-columns:
+        repeat(3, 1fr);
+      gap: 23px;
+    }
+
+    .marketplace-card {
+      position: relative;
+      min-height: 470px;
+      display: flex;
+      flex-direction: column;
+      padding: 28px;
+      overflow: hidden;
+      border: 1px solid var(--border);
+      border-radius: 25px;
+      background: white;
+      box-shadow:
+        0 15px 50px
+        rgba(15, 23, 42, 0.055);
+      transition:
+        transform 0.35s ease,
+        box-shadow 0.35s ease;
+    }
+
+    .marketplace-card:hover {
+      transform: translateY(-10px);
+      box-shadow:
+        0 28px 65px
+        rgba(15, 23, 42, 0.12);
+    }
+
+    .marketplace-card::after {
+      content: "";
+      position: absolute;
+      right: -90px;
+      bottom: -110px;
+      width: 250px;
+      height: 250px;
+      border-radius: 50%;
+      opacity: 0.08;
+    }
+
+    .shopee::after {
+      background: #ee4d2d;
+    }
+
+    .lazada::after {
+      background: #5f2eea;
+    }
+
+    .tiktok::after {
+      background: #111827;
+    }
+
+    .card-top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+    }
+
+    .marketplace-logo {
+      width: 77px;
+      height: 77px;
+      display: grid;
+      place-items: center;
+      border-radius: 23px;
+      font-size: 2rem;
+      font-weight: 900;
+    }
+
+    .shopee-logo {
+      color: white;
+      background:
+        linear-gradient(
+          135deg,
+          #f15a37,
+          #e53d1b
+        );
+    }
+
+    .lazada-logo {
+      color: white;
+      background:
+        linear-gradient(
+          135deg,
+          #7442f2,
+          #4c1ec7
+        );
+    }
+
+    .tiktok-logo {
+      color: white;
+      background:
+        linear-gradient(
+          135deg,
+          #242b39,
+          #020617
+        );
+    }
+
+    .official-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      padding: 8px 11px;
+      color: #5f6878;
+      border: 1px solid #e5e7eb;
+      border-radius: 999px;
+      background: #fafafa;
+      font-size: 0.65rem;
+      font-weight: 850;
+      letter-spacing: 0.04em;
+      white-space: nowrap;
+    }
+
+    .badge-dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: #22c55e;
+    }
+
+    .card-content {
+      margin-top: 43px;
+    }
+
+    .marketplace-name {
+      margin-bottom: 12px;
+      color: var(--primary-dark);
+      font-size: 0.71rem;
+      font-weight: 850;
+      letter-spacing: 0.13em;
+    }
+
+    .marketplace-card h3 {
+      font-size: 2rem;
+      line-height: 1.2;
+      letter-spacing: -0.04em;
+    }
+
+    .marketplace-card p {
+      margin-top: 18px;
+      color: var(--muted);
+      line-height: 1.8;
+    }
+
+    .marketplace-button {
+      position: relative;
+      z-index: 1;
+      min-height: 56px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 15px;
+      margin-top: auto;
+      padding: 0 19px;
+      color: white;
+      border-radius: 15px;
+      font-weight: 750;
+      transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
+    }
+
+    .marketplace-button:hover {
+      transform: translateY(-3px);
+    }
+
+    .shopee-button {
+      background:
+        linear-gradient(
+          135deg,
+          #f15a37,
+          #e53d1b
+        );
+      box-shadow:
+        0 15px 30px
+        rgba(238, 77, 45, 0.22);
+    }
+
+    .lazada-button {
+      background:
+        linear-gradient(
+          135deg,
+          #6f3cf0,
+          #4f1fc7
+        );
+      box-shadow:
+        0 15px 30px
+        rgba(95, 46, 234, 0.2);
+    }
+
+    .tiktok-button {
+      background:
+        linear-gradient(
+          135deg,
+          #1f2937,
+          #030712
+        );
+      box-shadow:
+        0 15px 30px
+        rgba(15, 23, 42, 0.2);
+    }
+
+    /* =========================
+       BENEFITS
+    ========================= */
+
+    .benefits-section {
+      padding: 105px 0;
+      background:
+        linear-gradient(
+          180deg,
+          #fafbfc,
+          #ffffff
+        );
+    }
+
+    .benefits-wrapper {
+      display: grid;
+      grid-template-columns:
+        0.9fr 1.1fr;
+      align-items: center;
+      gap: 75px;
+    }
+
+    .benefit-intro p {
+      max-width: 500px;
+      margin-top: 22px;
+      color: var(--muted);
+      line-height: 1.8;
+    }
+
+    .benefits-grid {
+      display: grid;
+      grid-template-columns:
+        repeat(2, 1fr);
+      gap: 17px;
+    }
+
+    .benefit-card {
+      display: flex;
+      align-items: flex-start;
+      gap: 16px;
+      padding: 23px;
+      border: 1px solid #e9ecf2;
+      border-radius: 20px;
+      background: white;
+      transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
+    }
+
+    .benefit-card:hover {
+      transform: translateY(-5px);
+      box-shadow:
+        0 20px 45px
+        rgba(15, 23, 42, 0.08);
+    }
+
+    .benefit-icon {
+      width: 45px;
+      height: 45px;
+      flex: 0 0 auto;
+      display: grid;
+      place-items: center;
+      border-radius: 14px;
+      background: #fff0f7;
+      font-size: 1.1rem;
+    }
+
+    .benefit-card h3 {
+      margin-top: 1px;
+      margin-bottom: 8px;
+      font-size: 1rem;
+    }
+
+    .benefit-card p {
+      color: var(--muted);
+      font-size: 0.88rem;
+      line-height: 1.65;
+    }
+
+    /* =========================
+       CTA
+    ========================= */
+
+    .cta-section {
+      padding: 30px 0 95px;
+    }
+
+    .cta-box {
+      position: relative;
+      padding: 82px 35px;
+      overflow: hidden;
+      color: white;
+      border-radius: 32px;
+      text-align: center;
+      background:
+        radial-gradient(
+          circle at 15% 0%,
+          rgba(255, 255, 255, 0.2),
+          transparent 30%
+        ),
+        linear-gradient(
+          135deg,
+          #be185d,
+          #db2777 48%,
+          #7c3aed
+        );
+      box-shadow:
+        0 30px 70px
+        rgba(190, 24, 93, 0.22);
+    }
+
+    .cta-box::before,
+    .cta-box::after {
+      content: "";
+      position: absolute;
+      border:
+        1px solid
+        rgba(255, 255, 255, 0.18);
+      border-radius: 50%;
+    }
+
+    .cta-box::before {
+      width: 390px;
+      height: 390px;
+      left: -230px;
+      bottom: -260px;
+    }
+
+    .cta-box::after {
+      width: 320px;
+      height: 320px;
+      right: -170px;
+      top: -180px;
+    }
+
+    .cta-content {
+      position: relative;
+      z-index: 1;
+      max-width: 760px;
+      margin: 0 auto;
+    }
+
+    .cta-label {
+      display: block;
+      margin-bottom: 19px;
+      color:
+        rgba(255, 255, 255, 0.78);
+      font-size: 0.74rem;
+      font-weight: 850;
+      letter-spacing: 0.15em;
+    }
+
+    .cta-content p {
+      max-width: 620px;
+      margin: 21px auto 31px;
+      color:
+        rgba(255, 255, 255, 0.84);
+      line-height: 1.8;
+    }
+
+    .button-light {
+      color: var(--primary-dark);
+      background: white;
+      box-shadow:
+        0 16px 35px
+        rgba(40, 0, 30, 0.2);
+    }
+
+    /* =========================
+       INFORMATION
+    ========================= */
+
+    .store-information {
+      padding-bottom: 75px;
+      text-align: center;
+    }
+
+    .store-information p {
+      max-width: 890px;
+      margin: 0 auto;
+      padding: 19px 23px;
+      color: #687184;
+      border: 1px solid #eceef2;
+      border-radius: 16px;
+      background: #fafbfc;
+      font-size: 0.86rem;
+      line-height: 1.7;
+    }
+
+    .store-information strong {
+      color: #374151;
+    }
+
+    /* =========================
+       FOOTER
+    ========================= */
+
+    .footer {
+      padding: 35px 0;
+      color: #cbd5e1;
+      background: #111827;
+    }
+
+    .footer-wrapper {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .footer-brand {
+      color: white;
+      font-weight: 800;
+    }
+
+    .footer p {
+      color: #94a3b8;
+      font-size: 0.86rem;
+    }
+
+    /* =========================
+       RESPONSIVE
+    ========================= */
+
+    @media (max-width: 980px) {
+      .marketplace-grid {
+        max-width: 620px;
+        margin: 0 auto;
+        grid-template-columns: 1fr;
+      }
+
+      .marketplace-card {
+        min-height: 420px;
+      }
+
+      .benefits-wrapper {
+        grid-template-columns: 1fr;
+        gap: 45px;
+      }
+
+      .benefit-intro {
+        max-width: 650px;
+      }
+    }
+
+    @media (max-width: 760px) {
+      .nav-wrapper {
+        min-height: 68px;
+      }
+
+      .menu-toggle {
+        display: grid;
+        place-items: center;
+      }
+
+      .nav-menu {
+        position: absolute;
+        top: 68px;
+        left: 0;
+        right: 0;
+        display: none;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0;
+        padding: 15px;
+        border-bottom:
+          1px solid
+          var(--border);
+        background: white;
+        box-shadow:
+          0 20px 40px
+          rgba(15, 23, 42, 0.1);
+      }
+
+      .nav-menu.show {
+        display: flex;
+      }
+
+      .nav-menu li a {
+        display: block;
+        padding: 13px 12px;
+      }
+
+      .nav-store {
+        text-align: center;
+      }
+
+      .footer-wrapper {
+        flex-direction: column;
+        text-align: center;
+      }
+    }
+
+    @media (max-width: 680px) {
+      .container {
+        width:
+          min(
+            100% - 28px,
+            1160px
+          );
+      }
+
+      .hero {
+        min-height: auto;
+        padding: 105px 0 82px;
+      }
+
+      .hero h1 {
+        font-size:
+          clamp(
+            2.45rem,
+            12vw,
+            3.8rem
+          );
+      }
+
+      .hero-description {
+        font-size: 0.97rem;
+      }
+
+      .hero-buttons {
+        flex-direction: column;
+      }
+
+      .hero-buttons .button {
+        width: 100%;
+      }
+
+      .trust-list {
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: flex-start;
+        gap: 13px;
+        padding-left: 8px;
+      }
+
+      .marketplace-section,
+      .benefits-section {
+        padding: 78px 0;
+      }
+
+      .section-heading {
+        margin-bottom: 38px;
+      }
+
+      .section-heading h2,
+      .benefit-intro h2,
+      .cta-content h2 {
+        font-size: 2.15rem;
+      }
+
+      .marketplace-card {
+        min-height: 430px;
+        padding: 22px;
+        border-radius: 22px;
+      }
+
+      .marketplace-logo {
+        width: 66px;
+        height: 66px;
+        border-radius: 19px;
+        font-size: 1.7rem;
+      }
+
+      .official-badge {
+        padding: 7px 9px;
+        font-size: 0.6rem;
+      }
+
+      .card-content {
+        margin-top: 34px;
+      }
+
+      .marketplace-card h3 {
+        font-size: 1.8rem;
+      }
+
+      .benefits-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .benefit-card {
+        padding: 20px;
+      }
+
+      .cta-section {
+        padding: 20px 0 70px;
+      }
+
+      .cta-box {
+        padding: 65px 22px;
+        border-radius: 25px;
+      }
+
+      .store-information {
+        padding-bottom: 50px;
+      }
+
+      .store-information p {
+        padding: 17px;
+        text-align: left;
+      }
+    }
+>>>>>>> 5929c02aecc564c2b445a61d8866deb89dfa5b7f
   </style>
 
 </head>
 
+<<<<<<< HEAD
 
 <body>
 
@@ -3237,3 +4295,543 @@
 </body>
 
 </html>
+=======
+<body>
+
+  <!-- NAVIGATION -->
+
+  <header class="navbar">
+    <div class="container nav-wrapper">
+
+```
+  <a href="index.html" class="brand">
+    <span class="brand-logo">M</span>
+    <span>Makting Marknad</span>
+  </a>
+
+  <button
+    class="menu-toggle"
+    id="menuToggle"
+    aria-label="Buka menu navigasi"
+    aria-expanded="false"
+  >
+    ☰
+  </button>
+
+  <ul class="nav-menu" id="navMenu">
+    <li>
+      <a href="index.html">Beranda</a>
+    </li>
+
+    <li>
+      <a href="blog.html">Artikel</a>
+    </li>
+
+    <li>
+      <a href="about.html">Tentang Kami</a>
+    </li>
+
+    <li>
+      <a href="contact.html">Kontak</a>
+    </li>
+
+    <li>
+      <a
+        href="official-store.html"
+        class="nav-store active"
+      >
+        Official Store
+      </a>
+    </li>
+  </ul>
+
+</div>
+```
+
+  </header>
+
+  <main>
+
+```
+<!-- HERO -->
+<section class="hero">
+
+  <div class="hero-glow hero-glow-left"></div>
+  <div class="hero-glow hero-glow-right"></div>
+
+  <div class="container hero-content">
+
+    <div class="eyebrow">
+      <span class="eyebrow-dot"></span>
+      OFFICIAL MARKETPLACE
+    </div>
+
+    <h1>
+      Belanja Lebih Mudah
+      <span>di Official Store Kami</span>
+    </h1>
+
+    <p class="hero-description">
+      Pilih marketplace favorit Anda untuk menemukan
+      produk pilihan, menikmati promo terbaru, dan
+      berbelanja dengan nyaman melalui platform terpercaya.
+    </p>
+
+    <div class="hero-buttons">
+
+      <a
+        href="#marketplace"
+        class="button button-primary"
+      >
+        Pilih Marketplace
+        <span>↓</span>
+      </a>
+
+      <a
+        href="contact.html"
+        class="button button-secondary"
+      >
+        Butuh Bantuan?
+      </a>
+
+    </div>
+
+    <div class="trust-list">
+
+      <div class="trust-item">
+        <span class="trust-check">✓</span>
+        Platform Terpercaya
+      </div>
+
+      <div class="trust-item">
+        <span class="trust-check">✓</span>
+        Pembayaran Aman
+      </div>
+
+      <div class="trust-item">
+        <span class="trust-check">✓</span>
+        Belanja Lebih Praktis
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+<!-- MARKETPLACE -->
+<section
+  class="marketplace-section"
+  id="marketplace"
+>
+
+  <div class="container">
+
+    <div class="section-heading">
+
+      <span class="section-label">
+        PILIH TEMPAT BELANJA
+      </span>
+
+      <h2>
+        Temukan Kami di Marketplace
+        Favorit Anda
+      </h2>
+
+      <p>
+        Kami menyediakan beberapa pilihan marketplace
+        agar Anda dapat berbelanja melalui platform yang
+        paling nyaman digunakan.
+      </p>
+
+    </div>
+
+    <div class="marketplace-grid">
+
+      <!-- SHOPEE -->
+      <article class="marketplace-card shopee">
+
+        <div class="card-top">
+
+          <div
+            class="marketplace-logo shopee-logo"
+            aria-label="Shopee"
+          >
+            S
+          </div>
+
+          <span class="official-badge">
+            <span class="badge-dot"></span>
+            Official Store
+          </span>
+
+        </div>
+
+        <div class="card-content">
+
+          <div class="marketplace-name">
+            SHOPEE OFFICIAL STORE
+          </div>
+
+          <h3>Shopee</h3>
+
+          <p>
+            Temukan produk pilihan kami dengan promo
+            menarik, metode pembayaran lengkap, dan
+            sistem pengiriman terpercaya.
+          </p>
+
+        </div>
+
+        <!-- GANTI LINK SHOPEE DI BAWAH -->
+        <a
+          href="https://shopee.co.id/"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="
+            marketplace-button
+            shopee-button
+          "
+        >
+          Kunjungi Toko Shopee
+          <span>→</span>
+        </a>
+
+      </article>
+
+      <!-- LAZADA -->
+      <article class="marketplace-card lazada">
+
+        <div class="card-top">
+
+          <div
+            class="marketplace-logo lazada-logo"
+            aria-label="Lazada"
+          >
+            L
+          </div>
+
+          <span class="official-badge">
+            <span class="badge-dot"></span>
+            Official Store
+          </span>
+
+        </div>
+
+        <div class="card-content">
+
+          <div class="marketplace-name">
+            LAZADA OFFICIAL STORE
+          </div>
+
+          <h3>Lazada</h3>
+
+          <p>
+            Belanja dengan mudah melalui Lazada dan
+            nikmati berbagai pilihan promo serta layanan
+            marketplace yang praktis.
+          </p>
+
+        </div>
+
+        <!-- GANTI LINK LAZADA DI BAWAH -->
+        <a
+          href="https://www.lazada.co.id/"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="
+            marketplace-button
+            lazada-button
+          "
+        >
+          Kunjungi Toko Lazada
+          <span>→</span>
+        </a>
+
+      </article>
+
+      <!-- TIKTOK SHOP -->
+      <article class="marketplace-card tiktok">
+
+        <div class="card-top">
+
+          <div
+            class="marketplace-logo tiktok-logo"
+            aria-label="TikTok Shop"
+          >
+            ♪
+          </div>
+
+          <span class="official-badge">
+            <span class="badge-dot"></span>
+            Official Store
+          </span>
+
+        </div>
+
+        <div class="card-content">
+
+          <div class="marketplace-name">
+            TIKTOK SHOP
+          </div>
+
+          <h3>TikTok Shop</h3>
+
+          <p>
+            Lihat produk terbaru, konten menarik,
+            penawaran spesial, dan belanja langsung
+            melalui TikTok Shop.
+          </p>
+
+        </div>
+
+        <!-- GANTI LINK TIKTOK SHOP DI BAWAH -->
+        <a
+          href="https://www.tiktok.com/"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="
+            marketplace-button
+            tiktok-button
+          "
+        >
+          Kunjungi TikTok Shop
+          <span>→</span>
+        </a>
+
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- BENEFITS -->
+<section class="benefits-section">
+
+  <div class="container">
+
+    <div class="benefits-wrapper">
+
+      <div class="benefit-intro">
+
+        <span class="section-label">
+          KENAPA BELANJA MELALUI KAMI?
+        </span>
+
+        <h2>
+          Pengalaman Belanja yang
+          Lebih Nyaman
+        </h2>
+
+        <p>
+          Kami berusaha memberikan pengalaman
+          berbelanja yang mudah, aman, dan nyaman
+          melalui marketplace terpercaya.
+        </p>
+
+      </div>
+
+      <div class="benefits-grid">
+
+        <article class="benefit-card">
+
+          <div class="benefit-icon">✓</div>
+
+          <div>
+            <h3>Produk Pilihan</h3>
+
+            <p>
+              Temukan berbagai produk yang telah
+              kami pilih dan tampilkan melalui
+              toko resmi kami.
+            </p>
+          </div>
+
+        </article>
+
+        <article class="benefit-card">
+
+          <div class="benefit-icon">🔒</div>
+
+          <div>
+            <h3>Pembayaran Aman</h3>
+
+            <p>
+              Gunakan metode pembayaran yang
+              tersedia langsung melalui marketplace
+              pilihan Anda.
+            </p>
+          </div>
+
+        </article>
+
+        <article class="benefit-card">
+
+          <div class="benefit-icon">🚚</div>
+
+          <div>
+            <h3>Pengiriman Praktis</h3>
+
+            <p>
+              Pilih layanan pengiriman yang
+              tersedia sesuai lokasi dan kebutuhan
+              Anda.
+            </p>
+          </div>
+
+        </article>
+
+        <article class="benefit-card">
+
+          <div class="benefit-icon">💬</div>
+
+          <div>
+            <h3>Informasi Jelas</h3>
+
+            <p>
+              Lihat informasi produk, ulasan,
+              promo, dan detail lainnya sebelum
+              melakukan pembelian.
+            </p>
+          </div>
+
+        </article>
+
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section">
+
+  <div class="container">
+
+    <div class="cta-box">
+
+      <div class="cta-content">
+
+        <span class="cta-label">
+          MAKTING MARKNAD
+        </span>
+
+        <h2>
+          Sudah Menemukan Marketplace
+          Favorit Anda?
+        </h2>
+
+        <p>
+          Kunjungi official store kami dan temukan
+          berbagai produk serta penawaran menarik
+          yang tersedia.
+        </p>
+
+        <a
+          href="#marketplace"
+          class="button button-light"
+        >
+          Kunjungi Official Store
+          <span>→</span>
+        </a>
+
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- INFORMATION -->
+<section class="store-information">
+
+  <div class="container">
+
+    <p>
+      <strong>Catatan:</strong>
+      Anda akan diarahkan ke halaman marketplace
+      resmi. Harga, promo, ketersediaan produk,
+      metode pembayaran, dan layanan pengiriman
+      mengikuti ketentuan pada masing-masing platform.
+    </p>
+
+  </div>
+</section>
+```
+
+  </main>
+
+  <!-- FOOTER -->
+
+  <footer class="footer">
+
+```
+<div class="container footer-wrapper">
+
+  <div class="footer-brand">
+    Makting Marknad
+  </div>
+
+  <p>
+    © <span id="currentYear"></span>
+    Makting Marknad. Semua Hak Dilindungi.
+  </p>
+
+</div>
+```
+
+  </footer>
+
+  <script>
+    const menuToggle =
+      document.getElementById("menuToggle");
+
+    const navMenu =
+      document.getElementById("navMenu");
+
+    menuToggle.addEventListener(
+      "click",
+      function () {
+
+        navMenu.classList.toggle("show");
+
+        const isOpen =
+          navMenu.classList.contains("show");
+
+        menuToggle.setAttribute(
+          "aria-expanded",
+          isOpen
+        );
+
+        menuToggle.innerHTML =
+          isOpen ? "✕" : "☰";
+      }
+    );
+
+    document
+      .querySelectorAll(".nav-menu a")
+      .forEach(function (link) {
+
+        link.addEventListener(
+          "click",
+          function () {
+
+            navMenu.classList.remove("show");
+
+            menuToggle.setAttribute(
+              "aria-expanded",
+              "false"
+            );
+
+            menuToggle.innerHTML = "☰";
+          }
+        );
+      });
+
+    document
+      .getElementById("currentYear")
+      .textContent =
+      new Date().getFullYear();
+  </script>
+
+</body>
+</html>
+>>>>>>> 5929c02aecc564c2b445a61d8866deb89dfa5b7f
