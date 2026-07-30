@@ -1775,6 +1775,392 @@ content="Temukan pilihan produk herbal dan wellness dari Makting Marknad."
 
   </style>
 
+  <style>
+    .products-page main {
+      background: linear-gradient(180deg, #f8fbff 0%, #f5f9fd 100%);
+    }
+
+    .products-hero {
+      padding: 150px 0 60px;
+      background:
+        radial-gradient(circle at top left, rgba(0, 85, 165, 0.12), transparent 28%),
+        linear-gradient(135deg, #fdfefe 0%, #eef6ff 100%);
+      border-bottom: 1px solid rgba(219, 231, 242, 0.9);
+    }
+
+    .products-hero__badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.45rem;
+      padding: 0.45rem 0.8rem;
+      margin-bottom: 1rem;
+      border-radius: 999px;
+      background: var(--primary-light);
+      color: var(--primary);
+      font-size: 0.76rem;
+      font-weight: 700;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+    }
+
+    .products-hero h1 {
+      max-width: 760px;
+      margin-bottom: 1rem;
+      color: var(--dark);
+      font-family: "Manrope", sans-serif;
+      font-size: clamp(2rem, 4vw, 3.2rem);
+      line-height: 1.15;
+      letter-spacing: -0.035em;
+    }
+
+    .products-hero p {
+      max-width: 720px;
+      margin-bottom: 1.6rem;
+      color: var(--text-soft);
+      font-size: 1rem;
+    }
+
+    .products-search {
+      position: relative;
+      max-width: 540px;
+      margin-bottom: 1.4rem;
+    }
+
+    .products-search input {
+      width: 100%;
+      min-height: 50px;
+      padding: 0 3rem 0 1rem;
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      background: var(--white);
+      color: var(--text);
+      font: inherit;
+      box-shadow: 0 12px 28px rgba(0, 65, 125, 0.06);
+    }
+
+    .products-search input:focus {
+      outline: 2px solid rgba(0, 85, 165, 0.2);
+      border-color: var(--primary);
+    }
+
+    .products-search .search-icon {
+      position: absolute;
+      top: 50%;
+      right: 1rem;
+      transform: translateY(-50%);
+      color: var(--primary);
+      pointer-events: none;
+    }
+
+    .products-section {
+      padding: 2.2rem 0 4rem;
+    }
+
+    .products-toolbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      margin-bottom: 1.1rem;
+      flex-wrap: wrap;
+    }
+
+    .products-results {
+      color: var(--text-soft);
+      font-size: 0.95rem;
+      font-weight: 600;
+    }
+
+    .products-sort select {
+      min-height: 42px;
+      padding: 0 0.9rem;
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      background: var(--white);
+      color: var(--text);
+      font: inherit;
+    }
+
+    .category-scroll {
+      display: flex;
+      gap: 0.7rem;
+      padding-bottom: 0.4rem;
+      margin-bottom: 1.25rem;
+      overflow-x: auto;
+      overscroll-behavior-x: contain;
+      scrollbar-width: none;
+      -ms-overflow-style: none;
+    }
+
+    .category-scroll::-webkit-scrollbar {
+      display: none;
+    }
+
+    .category-button {
+      flex: 0 0 auto;
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      background: var(--white);
+      color: var(--text-soft);
+      padding: 0.7rem 1rem;
+      font: inherit;
+      font-weight: 600;
+      cursor: pointer;
+      transition: 0.2s ease;
+    }
+
+    .category-button.active,
+    .category-button:hover,
+    .category-button:focus-visible {
+      background: var(--primary);
+      color: var(--white);
+      border-color: var(--primary);
+      box-shadow: 0 10px 24px rgba(0, 85, 165, 0.16);
+      outline: none;
+    }
+
+    .product-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 1.1rem;
+      align-items: start;
+    }
+
+    .product-card {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      min-width: 0;
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      background: var(--white);
+      overflow: hidden;
+      box-shadow: 0 10px 25px rgba(0, 65, 125, 0.05);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .product-card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 16px 36px rgba(0, 65, 125, 0.1);
+    }
+
+    .product-image {
+      position: relative;
+      width: 100%;
+      aspect-ratio: 1 / 1;
+      background: linear-gradient(135deg, #fdfefe 0%, #edf5ff 100%);
+      padding: 0.8rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .product-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      border-radius: 12px;
+      background: var(--white);
+      padding: 0.25rem;
+    }
+
+    .product-badge {
+      position: absolute;
+      top: 0.8rem;
+      left: 0.8rem;
+      padding: 0.35rem 0.6rem;
+      border-radius: 999px;
+      background: var(--primary);
+      color: var(--white);
+      font-size: 0.68rem;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+    }
+
+    .product-content {
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+      padding: 1rem;
+      min-width: 0;
+    }
+
+    .product-tag {
+      display: inline-flex;
+      width: fit-content;
+      padding: 0.3rem 0.58rem;
+      border-radius: 999px;
+      background: var(--primary-light);
+      color: var(--primary);
+      font-size: 0.72rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+
+    .product-title {
+      display: -webkit-box;
+      -webkit-box-orient: vertical;
+      -webkit-line-clamp: 2;
+      overflow: hidden;
+      color: var(--dark);
+      font-size: 0.97rem;
+      font-weight: 700;
+      line-height: 1.35;
+      min-height: 2.7em;
+    }
+
+    .product-description {
+      display: -webkit-box;
+      -webkit-box-orient: vertical;
+      -webkit-line-clamp: 2;
+      overflow: hidden;
+      color: var(--text-soft);
+      font-size: 0.84rem;
+      line-height: 1.55;
+      min-height: 2.9em;
+    }
+
+    .product-price {
+      display: flex;
+      flex-direction: column;
+      gap: 0.2rem;
+      margin-top: auto;
+      padding-top: 0.2rem;
+    }
+
+    .product-price small {
+      color: var(--text-soft);
+      font-size: 0.72rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+
+    .product-price strong {
+      color: var(--primary);
+      font-size: 0.95rem;
+      font-weight: 700;
+    }
+
+    .product-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.6rem;
+      margin-top: 0.2rem;
+    }
+
+    .product-link {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      flex: 1 1 0;
+      min-height: 40px;
+      padding: 0 0.85rem;
+      border-radius: 999px;
+      background: var(--primary);
+      color: var(--white);
+      font-size: 0.84rem;
+      font-weight: 700;
+      text-align: center;
+      transition: background 0.2s ease, transform 0.2s ease;
+    }
+
+    .product-link.secondary {
+      background: var(--primary-light);
+      color: var(--primary);
+    }
+
+    .product-link:hover,
+    .product-link:focus-visible {
+      transform: translateY(-1px);
+      background: var(--primary-dark);
+      outline: none;
+    }
+
+    .product-link.secondary:hover,
+    .product-link.secondary:focus-visible {
+      background: #dcecff;
+      color: var(--primary-dark);
+    }
+
+    .products-empty {
+      margin-top: 1.25rem;
+      padding: 2rem;
+      border: 1px dashed var(--border);
+      border-radius: 16px;
+      background: var(--white);
+      text-align: center;
+      color: var(--text-soft);
+    }
+
+    .products-empty h3 {
+      margin-bottom: 0.4rem;
+      color: var(--dark);
+    }
+
+    .sr-only {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      white-space: nowrap;
+      border: 0;
+    }
+
+    @media (max-width: 1024px) {
+      .product-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+      }
+    }
+
+    @media (max-width: 768px) {
+      .products-hero {
+        padding-top: 128px;
+      }
+
+      .product-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 0.8rem;
+      }
+
+      .products-toolbar {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+    }
+
+    @media (max-width: 560px) {
+      .products-search input {
+        min-height: 46px;
+      }
+
+      .product-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 0.7rem;
+      }
+
+      .product-content {
+        padding: 0.8rem;
+      }
+
+      .product-title {
+        font-size: 0.92rem;
+      }
+
+      .product-description {
+        font-size: 0.8rem;
+      }
+
+      .product-actions {
+        flex-direction: column;
+      }
+    }
+  </style>
+
   <link rel="stylesheet" href="css/global.css">
 </head>
 
@@ -1886,598 +2272,293 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
      PRODUCT HERO
 ========================== -->
 
-<section
-  class="product-hero"
->
-
+<section class="products-hero">
   <div class="container">
-
-
-    <div class="breadcrumb">
-
-      <a href="index.html">
-        Beranda
-      </a>
-
-      <span>
-        /
-      </span>
-
-      <span>
-        Produk
-      </span>
-
+    <div class="products-hero__badge">KATALOG PRODUK</div>
+    <h1>Temukan Produk Pilihan untuk Kebutuhan Anda</h1>
+    <p>Jelajahi berbagai pilihan produk Makting Marknad dengan informasi yang jelas dan akses pembelian yang mudah.</p>
+    <div class="products-search">
+      <label class="sr-only" for="productSearch">Cari produk</label>
+      <input id="productSearch" type="search" placeholder="Cari produk..." autocomplete="off">
+      <span class="search-icon" aria-hidden="true">🔎</span>
     </div>
-
-
-    <div class="section-label">
-
-      Koleksi Produk
-
-    </div>
-
-
-    <h1>
-
-      Temukan Pilihan
-      <span>
-        Produk Terbaik
-      </span>
-
-      untuk Kebutuhan Anda
-
-    </h1>
-
-
-    <p>
-
-      Jelajahi pilihan produk herbal dan wellness
-      dari Makting Marknad. Dapatkan informasi
-      produk secara jelas sebelum melakukan
-      pemesanan.
-
-    </p>
-
-
   </div>
-
 </section>
-
-
 
 <!-- =========================
      PRODUCT LIST
 ========================== -->
 
-<section
-  class="product-section"
->
-
+<section class="products-section">
   <div class="container">
-
-
-    <div
-      class="section-heading"
-      data-aos="fade-up"
-    >
-
-      <div class="section-label">
-
-        Produk Kami
-
+    <div class="products-toolbar" data-aos="fade-up">
+      <p class="products-results">Menampilkan <span id="resultsCount">12</span> produk</p>
+      <div class="products-sort">
+        <label class="sr-only" for="sortSelect">Urutkan produk</label>
+        <select id="sortSelect">
+          <option value="default">Produk Terbaru</option>
+          <option value="name-asc">Nama A–Z</option>
+          <option value="name-desc">Nama Z–A</option>
+        </select>
       </div>
-
-
-      <h2>
-
-        Pilihan yang Tersedia
-
-      </h2>
-
-
-      <p>
-
-        Pilih kategori untuk melihat produk
-        yang sesuai dengan kebutuhan Anda.
-
-      </p>
-
     </div>
 
-
-
-    <!-- FILTER CATEGORY -->
-
-    <div
-      class="filter-wrapper"
-      data-aos="fade-up"
-    >
-
-      <button
-        class="filter-button active"
-        data-filter="all"
-      >
-
-        Semua Produk
-
-      </button>
-
-
-      <button
-        class="filter-button"
-        data-filter="herbal"
-      >
-
-        Herbal
-
-      </button>
-
-
-      <button
-        class="filter-button"
-        data-filter="wellness"
-      >
-
-        Wellness
-
-      </button>
-
-
-      <button
-        class="filter-button"
-        data-filter="vitalitas"
-      >
-
-        Vitalitas
-
-      </button>
-
+    <div class="category-scroll" role="tablist" aria-label="Filter kategori" data-aos="fade-up">
+      <button class="category-button active" type="button" data-category="all">Semua</button>
+      <button class="category-button" type="button" data-category="herbal">Herbal</button>
+      <button class="category-button" type="button" data-category="kesehatan-pria">Kesehatan Pria</button>
+      <button class="category-button" type="button" data-category="suplemen">Suplemen</button>
+      <button class="category-button" type="button" data-category="vitalitas">Vitalitas</button>
+      <button class="category-button" type="button" data-category="produk-pilihan">Produk Pilihan</button>
     </div>
 
-
-
-    <!-- PRODUCT GRID -->
-
-    <div
-      class="product-grid"
-      id="productGrid"
-    >
-
-
-      <!-- PRODUCT 1 -->
-
-      <article
-        class="product-card"
-        data-category="herbal"
-        data-aos="fade-up"
-      >
-
-
+    <div class="product-grid" id="productGrid">
+      <article class="product-card" data-category="produk-pilihan" data-name="alat pijat wanita" data-tags="alat pijat wanita wellness relaksasi">
         <div class="product-image">
-
-          <span class="product-badge">
-
-            Produk Pilihan
-
-          </span>
-
-
-          <span class="product-category">
-
-            Herbal
-
-          </span>
-
-
-          <!--
-            GANTI FILE INI
-            DENGAN FOTO PRODUK ASLI
-          -->
-
-          <img
-            src="img/logo.png"
-            alt="Produk Herbal Makting Marknad"
-          >
-
+          <span class="product-badge">Produk Pilihan</span>
+          <img src="img/product/alat-pijat.jpg" alt="Alat Pijat Wanita" loading="lazy">
         </div>
-
-
-
         <div class="product-content">
-
-
-          <h2>
-
-            Produk Herbal Pilihan
-
-          </h2>
-
-
-          <p>
-
-            Pilihan produk herbal untuk mendukung
-            kebutuhan kesehatan dan kebugaran
-            sehari-hari.
-
-          </p>
-
-
-          <ul class="product-benefits">
-
-            <li>
-
-              <span class="benefit-check">
-                ✓
-              </span>
-
-              Informasi produk tersedia
-
-            </li>
-
-
-            <li>
-
-              <span class="benefit-check">
-                ✓
-              </span>
-
-              Pemesanan mudah
-
-            </li>
-
-
-            <li>
-
-              <span class="benefit-check">
-                ✓
-              </span>
-
-              Pelayanan ramah
-
-            </li>
-
-          </ul>
-
-
-          <div class="product-footer">
-
-
-            <div class="product-price">
-
-              <small>
-
-                Mulai dari
-
-              </small>
-
-
-              <strong>
-
-                Hubungi Kami
-
-              </strong>
-
-            </div>
-
-
-            <a
-              href="contact.html"
-              class="product-link"
-              aria-label="Lihat detail produk"
-            >
-
-              →
-
-            </a>
-
-
+          <span class="product-tag">Produk Pilihan</span>
+          <h2 class="product-title">Alat Pijat Wanita</h2>
+          <p class="product-description">Produk untuk mendukung kenyamanan pribadi dan relaksasi dengan desain yang praktis.</p>
+          <div class="product-price">
+            <small>Informasi harga</small>
+            <strong>Hubungi Kami</strong>
           </div>
-
-
+          <div class="product-actions">
+            <a class="product-link" href="alat-pijat-wanita.html">Lihat Produk</a>
+            <a class="product-link secondary" href="contact.html">Beli Sekarang</a>
+          </div>
         </div>
-
       </article>
 
-
-
-      <!-- PRODUCT 2 -->
-
-      <article
-        class="product-card"
-        data-category="wellness"
-        data-aos="fade-up"
-        data-aos-delay="100"
-      >
-
-
+      <article class="product-card" data-category="kesehatan-pria" data-name="black blue mmc" data-tags="black blue mmc kesehatan pria pria">
         <div class="product-image">
-
-
-          <span class="product-badge">
-
-            Rekomendasi
-
-          </span>
-
-
-          <span class="product-category">
-
-            Wellness
-
-          </span>
-
-
-          <img
-            src="img/logo.png"
-            alt="Produk Wellness Makting Marknad"
-          >
-
-
+          <span class="product-badge">Rekomendasi</span>
+          <img src="img/product/black-blue-mmc.jpg" alt="Black Blue MMC" loading="lazy">
         </div>
-
-
-
         <div class="product-content">
-
-
-          <h2>
-
-            Produk Wellness
-
-          </h2>
-
-
-          <p>
-
-            Pilihan produk untuk membantu melengkapi
-            gaya hidup sehat dan menjaga kebugaran.
-
-          </p>
-
-
-          <ul class="product-benefits">
-
-
-            <li>
-
-              <span class="benefit-check">
-                ✓
-              </span>
-
-              Informasi mudah dipahami
-
-            </li>
-
-
-            <li>
-
-              <span class="benefit-check">
-                ✓
-              </span>
-
-              Pilihan sesuai kebutuhan
-
-            </li>
-
-
-            <li>
-
-              <span class="benefit-check">
-                ✓
-              </span>
-
-              Konsultasi sebelum pesan
-
-            </li>
-
-
-          </ul>
-
-
-          <div class="product-footer">
-
-
-            <div class="product-price">
-
-              <small>
-
-                Informasi harga
-
-              </small>
-
-
-              <strong>
-
-                Hubungi Kami
-
-              </strong>
-
-            </div>
-
-
-            <a
-              href="contact.html"
-              class="product-link"
-              aria-label="Tanyakan produk"
-            >
-
-              →
-
-            </a>
-
-
+          <span class="product-tag">Kesehatan Pria</span>
+          <h2 class="product-title">Black Blue MMC</h2>
+          <p class="product-description">Pilihan produk untuk kebutuhan kesehatan pria dengan informasi yang jelas sebelum pembelian.</p>
+          <div class="product-price">
+            <small>Informasi harga</small>
+            <strong>Hubungi Kami</strong>
           </div>
-
-
+          <div class="product-actions">
+            <a class="product-link" href="black-blue-mmc.html">Lihat Produk</a>
+            <a class="product-link secondary" href="contact.html">Beli Sekarang</a>
+          </div>
         </div>
-
       </article>
 
-
-
-      <!-- PRODUCT 3 -->
-
-      <article
-        class="product-card"
-        data-category="vitalitas"
-        data-aos="fade-up"
-        data-aos-delay="200"
-      >
-
-
+      <article class="product-card" data-category="herbal" data-name="daun tiga jari" data-tags="daun tiga jari herbal minyak">
         <div class="product-image">
-
-
-          <span class="product-badge">
-
-            Populer
-
-          </span>
-
-
-          <span class="product-category">
-
-            Vitalitas
-
-          </span>
-
-
-          <img
-            src="img/logo.png"
-            alt="Produk Vitalitas Makting Marknad"
-          >
-
-
+          <span class="product-badge">Herbal</span>
+          <img src="img/product/tiga-jari-oil.jpg" alt="Daun Tiga Jari" loading="lazy">
         </div>
-
-
-
         <div class="product-content">
-
-
-          <h2>
-
-            Produk Vitalitas
-
-          </h2>
-
-
-          <p>
-
-            Pilihan produk untuk mendukung energi,
-            kebugaran, dan aktivitas harian Anda.
-
-          </p>
-
-
-          <ul class="product-benefits">
-
-
-            <li>
-
-              <span class="benefit-check">
-                ✓
-              </span>
-
-              Informasi penggunaan tersedia
-
-            </li>
-
-
-            <li>
-
-              <span class="benefit-check">
-                ✓
-              </span>
-
-              Mudah ditanyakan
-
-            </li>
-
-
-            <li>
-
-              <span class="benefit-check">
-                ✓
-              </span>
-
-              Pelayanan responsif
-
-            </li>
-
-
-          </ul>
-
-
-          <div class="product-footer">
-
-
-            <div class="product-price">
-
-              <small>
-
-                Informasi produk
-
-              </small>
-
-
-              <strong>
-
-                Lihat Detail
-
-              </strong>
-
-            </div>
-
-
-            <a
-              href="contact.html"
-              class="product-link"
-              aria-label="Lihat informasi produk"
-            >
-
-              →
-
-            </a>
-
-
+          <span class="product-tag">Herbal</span>
+          <h2 class="product-title">Daun Tiga Jari</h2>
+          <p class="product-description">Produk herbal yang menjadi pilihan bagi pengguna yang mencari opsi alami.</p>
+          <div class="product-price">
+            <small>Informasi harga</small>
+            <strong>Hubungi Kami</strong>
           </div>
-
-
+          <div class="product-actions">
+            <a class="product-link" href="daun-tiga-jari.html">Lihat Produk</a>
+            <a class="product-link secondary" href="contact.html">Beli Sekarang</a>
+          </div>
         </div>
-
       </article>
 
+      <article class="product-card" data-category="vitalitas" data-name="japan tengsu" data-tags="japan tengsu vitalitas wellness">
+        <div class="product-image">
+          <span class="product-badge">Vitalitas</span>
+          <img src="img/product/japan-tengsu.jpg" alt="Japan Tengsu" loading="lazy">
+        </div>
+        <div class="product-content">
+          <span class="product-tag">Vitalitas</span>
+          <h2 class="product-title">Japan Tengsu</h2>
+          <p class="product-description">Pilihan produk untuk mendukung kebutuhan vitalitas dengan penjelasan yang mudah dipahami.</p>
+          <div class="product-price">
+            <small>Informasi harga</small>
+            <strong>Hubungi Kami</strong>
+          </div>
+          <div class="product-actions">
+            <a class="product-link" href="japan-tengsu.html">Lihat Produk</a>
+            <a class="product-link secondary" href="contact.html">Beli Sekarang</a>
+          </div>
+        </div>
+      </article>
 
+      <article class="product-card" data-category="herbal" data-name="minyak lintah" data-tags="minyak lintah herbal minyak">
+        <div class="product-image">
+          <span class="product-badge">Herbal</span>
+          <img src="img/product/minyak-lintah.jpg" alt="Minyak Lintah" loading="lazy">
+        </div>
+        <div class="product-content">
+          <span class="product-tag">Herbal</span>
+          <h2 class="product-title">Minyak Lintah</h2>
+          <p class="product-description">Produk herbal yang dikenal sebagai pilihan untuk kebutuhan perawatan dan dukungan kenyamanan.</p>
+          <div class="product-price">
+            <small>Informasi harga</small>
+            <strong>Hubungi Kami</strong>
+          </div>
+          <div class="product-actions">
+            <a class="product-link" href="minyak-lintah.html">Lihat Produk</a>
+            <a class="product-link secondary" href="contact.html">Beli Sekarang</a>
+          </div>
+        </div>
+      </article>
 
-      <!-- EMPTY RESULT -->
+      <article class="product-card" data-category="suplemen" data-name="minyak wamena" data-tags="minyak wamena suplemen wellness">
+        <div class="product-image">
+          <span class="product-badge">Suplemen</span>
+          <img src="img/product/minyak-wamena.jpg" alt="Minyak Wamena" loading="lazy">
+        </div>
+        <div class="product-content">
+          <span class="product-tag">Suplemen</span>
+          <h2 class="product-title">Minyak Wamena</h2>
+          <p class="product-description">Pilihan produk yang cocok untuk pengguna yang ingin mengetahui lebih jauh tentang manfaatnya.</p>
+          <div class="product-price">
+            <small>Informasi harga</small>
+            <strong>Hubungi Kami</strong>
+          </div>
+          <div class="product-actions">
+            <a class="product-link" href="minyak-wamena.html">Lihat Produk</a>
+            <a class="product-link secondary" href="contact.html">Beli Sekarang</a>
+          </div>
+        </div>
+      </article>
 
-      <div
-        class="empty-product"
-        id="emptyProduct"
-      >
+      <article class="product-card" data-category="herbal" data-name="pil biru cina" data-tags="pil biru cina herbal kesehatan pria">
+        <div class="product-image">
+          <span class="product-badge">Herbal</span>
+          <img src="img/product/pil-biru-cina.jpg" alt="Pil Biru Cina" loading="lazy">
+        </div>
+        <div class="product-content">
+          <span class="product-tag">Herbal</span>
+          <h2 class="product-title">Pil Biru Cina</h2>
+          <p class="product-description">Katalog produk herbal yang tersedia dengan penjelasan sederhana untuk memudahkan keputusan.</p>
+          <div class="product-price">
+            <small>Informasi harga</small>
+            <strong>Hubungi Kami</strong>
+          </div>
+          <div class="product-actions">
+            <a class="product-link" href="pil-biru-cina.html">Lihat Produk</a>
+            <a class="product-link secondary" href="contact.html">Beli Sekarang</a>
+          </div>
+        </div>
+      </article>
 
-        <h3>
+      <article class="product-card" data-category="kesehatan-pria" data-name="super stud 007" data-tags="super stud 007 kesehatan pria pria">
+        <div class="product-image">
+          <span class="product-badge">Kesehatan Pria</span>
+          <img src="img/product/super-stud-007.jpg" alt="Super Stud 007" loading="lazy">
+        </div>
+        <div class="product-content">
+          <span class="product-tag">Kesehatan Pria</span>
+          <h2 class="product-title">Super Stud 007</h2>
+          <p class="product-description">Produk pilihan yang memberikan informasi rinci agar pelanggan lebih nyaman saat mencari solusi.</p>
+          <div class="product-price">
+            <small>Informasi harga</small>
+            <strong>Hubungi Kami</strong>
+          </div>
+          <div class="product-actions">
+            <a class="product-link" href="super-stud-007.html">Lihat Produk</a>
+            <a class="product-link secondary" href="contact.html">Beli Sekarang</a>
+          </div>
+        </div>
+      </article>
 
-          Produk belum tersedia
+      <article class="product-card" data-category="vitalitas" data-name="titan gel gold" data-tags="titan gel gold vitalitas pria">
+        <div class="product-image">
+          <span class="product-badge">Vitalitas</span>
+          <img src="img/product/titan-gel-gold.jpg" alt="Titan Gel Gold" loading="lazy">
+        </div>
+        <div class="product-content">
+          <span class="product-tag">Vitalitas</span>
+          <h2 class="product-title">Titan Gel Gold</h2>
+          <p class="product-description">Produk dengan informasi yang jelas dan akses pembelian yang mudah melalui tim Makting Marknad.</p>
+          <div class="product-price">
+            <small>Informasi harga</small>
+            <strong>Hubungi Kami</strong>
+          </div>
+          <div class="product-actions">
+            <a class="product-link" href="titan-gel-gold.html">Lihat Produk</a>
+            <a class="product-link secondary" href="contact.html">Beli Sekarang</a>
+          </div>
+        </div>
+      </article>
 
-        </h3>
+      <article class="product-card" data-category="vitalitas" data-name="titan gel red" data-tags="titan gel red vitalitas pria">
+        <div class="product-image">
+          <span class="product-badge">Vitalitas</span>
+          <img src="img/product/titan-gel-red.jpg" alt="Titan Gel Red" loading="lazy">
+        </div>
+        <div class="product-content">
+          <span class="product-tag">Vitalitas</span>
+          <h2 class="product-title">Titan Gel Red</h2>
+          <p class="product-description">Produk vitalitas yang terdaftar dalam katalog dengan detail yang memudahkan pelanggan menghubungi kami.</p>
+          <div class="product-price">
+            <small>Informasi harga</small>
+            <strong>Hubungi Kami</strong>
+          </div>
+          <div class="product-actions">
+            <a class="product-link" href="titan-gel-red.html">Lihat Produk</a>
+            <a class="product-link secondary" href="contact.html">Beli Sekarang</a>
+          </div>
+        </div>
+      </article>
 
+      <article class="product-card" data-category="kesehatan-pria" data-name="viagra mmc blue" data-tags="viagra mmc blue kesehatan pria pria">
+        <div class="product-image">
+          <span class="product-badge">Kesehatan Pria</span>
+          <img src="img/product/viagra-mmc-blue.jpg" alt="Viagra MMC Blue" loading="lazy">
+        </div>
+        <div class="product-content">
+          <span class="product-tag">Kesehatan Pria</span>
+          <h2 class="product-title">Viagra MMC Blue</h2>
+          <p class="product-description">Kategori produk kesehatan pria yang menampilkan informasi penting sebelum pembelian.</p>
+          <div class="product-price">
+            <small>Informasi harga</small>
+            <strong>Hubungi Kami</strong>
+          </div>
+          <div class="product-actions">
+            <a class="product-link" href="viagra-mmc-blue.html">Lihat Produk</a>
+            <a class="product-link secondary" href="contact.html">Beli Sekarang</a>
+          </div>
+        </div>
+      </article>
 
-        <p>
-
-          Silakan pilih kategori lain.
-
-        </p>
-
-      </div>
-
-
+      <article class="product-card" data-category="suplemen" data-name="vigamax" data-tags="vigamax suplemen wellness">
+        <div class="product-image">
+          <span class="product-badge">Suplemen</span>
+          <img src="img/product/vigamax.jpg" alt="Vigamax" loading="lazy">
+        </div>
+        <div class="product-content">
+          <span class="product-tag">Suplemen</span>
+          <h2 class="product-title">Vigamax</h2>
+          <p class="product-description">Pilihan suplemen yang tersedia dengan penjelasan produk agar mudah dipahami pelanggan.</p>
+          <div class="product-price">
+            <small>Informasi harga</small>
+            <strong>Hubungi Kami</strong>
+          </div>
+          <div class="product-actions">
+            <a class="product-link" href="vigamax.html">Lihat Produk</a>
+            <a class="product-link secondary" href="contact.html">Beli Sekarang</a>
+          </div>
+        </div>
+      </article>
     </div>
 
-
+    <div class="products-empty" id="productsEmpty" hidden>
+      <h3>Produk tidak ditemukan</h3>
+      <p>Coba gunakan kata kunci lain atau lihat seluruh katalog kami.</p>
+    </div>
   </div>
-
 </section>
 
 
@@ -3090,202 +3171,66 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
     /* PRODUCT FILTER */
 
-    const filterButtons =
-
-      document
-        .querySelectorAll(
-
-          ".filter-button"
-
-        );
-
-
-
-    const productCards =
-
-      document
-        .querySelectorAll(
-
-          ".product-card"
-
-        );
-
-
-
-    const emptyProduct =
-
-      document
-        .getElementById(
-
-          "emptyProduct"
-
-        );
-
-
-
-    filterButtons
-
-      .forEach(
-
-        button => {
-
-
-          button
-            .addEventListener(
-
-              "click",
-
-              () => {
-
-
-                filterButtons
-
-                  .forEach(
-
-                    item =>
-
-                      item
-                        .classList
-                        .remove(
-
-                          "active"
-
-                        )
-
-                  );
-
-
-
-                button
-
-                  .classList
-
-                  .add(
-
-                    "active"
-
-                  );
-
-
-
-                const selectedCategory =
-
-                  button
-
-                    .dataset
-
-                    .filter;
-
-
-
-                let visibleProduct = 0;
-
-
-
-                productCards
-
-                  .forEach(
-
-                    product => {
-
-
-                      const category =
-
-                        product
-
-                          .dataset
-
-                          .category;
-
-
-
-                      if (
-
-                        selectedCategory === "all"
-
-                        ||
-
-                        category ===
-
-                        selectedCategory
-
-                      ) {
-
-
-                        product
-
-                          .style
-
-                          .display =
-
-                          "flex";
-
-
-                        visibleProduct++;
-
-
-                      } else {
-
-
-                        product
-
-                          .style
-
-                          .display =
-
-                          "none";
-
-
-                      }
-
-
-                    }
-
-                  );
-
-
-
-                if (
-
-                  visibleProduct === 0
-
-                ) {
-
-
-                  emptyProduct
-
-                    .style
-
-                    .display =
-
-                    "block";
-
-
-                } else {
-
-
-                  emptyProduct
-
-                    .style
-
-                    .display =
-
-                    "none";
-
-
-                }
-
-
-              }
-
-            );
-
-
+    const productGrid = document.getElementById("productGrid");
+    const productCards = Array.from(document.querySelectorAll(".product-card"));
+    const searchInput = document.getElementById("productSearch");
+    const categoryButtons = Array.from(document.querySelectorAll(".category-button"));
+    const sortSelect = document.getElementById("sortSelect");
+    const resultsCount = document.getElementById("resultsCount");
+    const emptyState = document.getElementById("productsEmpty");
+
+    if (productGrid && productCards.length) {
+      const applyCatalog = () => {
+        const query = (searchInput?.value || "").trim().toLowerCase();
+        const activeCategory = document.querySelector(".category-button.active")?.dataset.category || "all";
+        const sortValue = sortSelect?.value || "default";
+
+        let visibleCards = productCards.filter((card) => {
+          const name = (card.dataset.name || "").toLowerCase();
+          const tags = (card.dataset.tags || "").toLowerCase();
+          const category = (card.dataset.category || "").toLowerCase();
+          const matchesSearch = !query || name.includes(query) || tags.includes(query);
+          const matchesCategory = activeCategory === "all" || category === activeCategory;
+
+          return matchesSearch && matchesCategory;
+        });
+
+        if (sortValue === "name-asc") {
+          visibleCards.sort((a, b) => (a.dataset.name || "").localeCompare(b.dataset.name || "", "id"));
+        } else if (sortValue === "name-desc") {
+          visibleCards.sort((a, b) => (b.dataset.name || "").localeCompare(a.dataset.name || "", "id"));
         }
 
-      );
+        productCards.forEach((card) => {
+          card.style.display = "none";
+        });
 
+        visibleCards.forEach((card) => {
+          card.style.display = "flex";
+        });
 
+        if (resultsCount) {
+          resultsCount.textContent = String(visibleCards.length);
+        }
+
+        if (emptyState) {
+          emptyState.hidden = visibleCards.length !== 0;
+        }
+      };
+
+      searchInput?.addEventListener("input", applyCatalog);
+      sortSelect?.addEventListener("change", applyCatalog);
+
+      categoryButtons.forEach((button) => {
+        button.addEventListener("click", () => {
+          categoryButtons.forEach((item) => item.classList.remove("active"));
+          button.classList.add("active");
+          applyCatalog();
+        });
+      });
+
+      applyCatalog();
+    }
   </script>
 
   <script src="js/main.js" defer></script>
