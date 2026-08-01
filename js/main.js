@@ -70,7 +70,6 @@ document.addEventListener('DOMContentLoaded', () => {
           <li><a href="disclaimer.html">Disclaimer</a></li>
           <li><a href="faq.html">FAQ</a></li>
         </ul>
-        <p style="margin-top:0.7rem;">Link informasi dapat diperbarui sesuai kebutuhan.</p>
       </div>
       <div class="footer-column">
         <h3>Hubungi Kami</h3>
