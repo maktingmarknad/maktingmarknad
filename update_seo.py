@@ -2,7 +2,7 @@ from pathlib import Path
 import re
 
 root = Path(r'd:\website\maktingmarknad')
-site = 'https://makting-marknad.netlify.app'
+site = 'https://maktingmarknad.netlify.app'
 
 files = [
     'index.html','produk.html','about.html','contact.html','blog.html','official-store.html','promo.html',
@@ -62,8 +62,8 @@ for file in files:
     "@context": "https://schema.org",
     "@type": "Organization",
     "name": "Makting Marknad",
-    "url": "https://makting-marknad.netlify.app/",
-    "logo": "https://makting-marknad.netlify.app/img/favicon.png"
+    "url": "https://maktingmarknad.netlify.app/",
+    "logo": "https://maktingmarknad.netlify.app/img/favicon.png"
   }
   </script>
   <script type="application/ld+json">
@@ -71,7 +71,7 @@ for file in files:
     "@context": "https://schema.org",
     "@type": "WebSite",
     "name": "Makting Marknad",
-    "url": "https://makting-marknad.netlify.app/"
+    "url": "https://maktingmarknad.netlify.app/"
   }
   </script>
 '''
@@ -88,27 +88,27 @@ if path_404.exists():
 
 (root / 'sitemap.xml').write_text('''<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>https://makting-marknad.netlify.app/</loc><changefreq>weekly</changefreq><priority>1.0</priority></url>
-  <url><loc>https://makting-marknad.netlify.app/produk.html</loc><changefreq>weekly</changefreq><priority>0.9</priority></url>
-  <url><loc>https://makting-marknad.netlify.app/about.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://makting-marknad.netlify.app/contact.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://makting-marknad.netlify.app/blog.html</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://makting-marknad.netlify.app/official-store.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://makting-marknad.netlify.app/promo.html</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://makting-marknad.netlify.app/alat-pijat-wanita.html</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://makting-marknad.netlify.app/black-blue-mmc.html</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://makting-marknad.netlify.app/daun-tiga-jari.html</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://makting-marknad.netlify.app/japan-tengsu.html</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://makting-marknad.netlify.app/minyak-lintah.html</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://makting-marknad.netlify.app/minyak-wamena.html</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://makting-marknad.netlify.app/pil-biru-cina.html</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://makting-marknad.netlify.app/super-stud-007.html</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://makting-marknad.netlify.app/titan-gel-gold.html</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://makting-marknad.netlify.app/titan-gel-red.html</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://makting-marknad.netlify.app/viagra-mmc-blue.html</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://makting-marknad.netlify.app/vigamax.html</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://maktingmarknad.netlify.app/</loc><changefreq>weekly</changefreq><priority>1.0</priority></url>
+  <url><loc>https://maktingmarknad.netlify.app/produk.html</loc><changefreq>weekly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://maktingmarknad.netlify.app/about.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://maktingmarknad.netlify.app/contact.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://maktingmarknad.netlify.app/blog.html</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://maktingmarknad.netlify.app/official-store.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://maktingmarknad.netlify.app/promo.html</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://maktingmarknad.netlify.app/alat-pijat-wanita.html</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://maktingmarknad.netlify.app/black-blue-mmc.html</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://maktingmarknad.netlify.app/daun-tiga-jari.html</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://maktingmarknad.netlify.app/japan-tengsu.html</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://maktingmarknad.netlify.app/minyak-lintah.html</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://maktingmarknad.netlify.app/minyak-wamena.html</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://maktingmarknad.netlify.app/pil-biru-cina.html</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://maktingmarknad.netlify.app/super-stud-007.html</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://maktingmarknad.netlify.app/titan-gel-gold.html</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://maktingmarknad.netlify.app/titan-gel-red.html</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://maktingmarknad.netlify.app/viagra-mmc-blue.html</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://maktingmarknad.netlify.app/vigamax.html</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
 </urlset>
 ''', encoding='utf-8')
 
-(root / 'robots.txt').write_text('User-agent: *\nAllow: /\nSitemap: https://makting-marknad.netlify.app/sitemap.xml\n', encoding='utf-8')
+(root / 'robots.txt').write_text('User-agent: *\nAllow: /\nSitemap: https://maktingmarknad.netlify.app/sitemap.xml\n', encoding='utf-8')
 print('SEO update complete')
