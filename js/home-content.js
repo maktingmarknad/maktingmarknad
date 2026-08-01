@@ -52,13 +52,16 @@ document.addEventListener('DOMContentLoaded', () => {
       { title: 'Viagra USA: Mengenal Sildenafil, Kegunaan Medis, Risiko, dan Cara Memeriksa Keaslian', excerpt: 'Panduan edukatif untuk memahami istilah Viagra USA, kandungan sildenafil, penggunaan medis, risiko, serta cara memeriksa legalitas dan keaslian produk.', category: 'Kesehatan Pria', date: '17 Jul 2026', readTime: '7 menit', image: 'img/blog/apa-itu-viagra.png', href: 'artikel-viagra-usa.html' },
       { title: 'Vigamax: Kenali Kandungan, Klaim, Risiko, dan Cara Memeriksa Keaslian Produk', excerpt: 'Vigamax sering dipasarkan sebagai produk pendukung vitalitas pria. Sebelum membeli atau menggunakannya, penting untuk memahami identitas produk, membaca komposisi, menilai klaim secara kritis, serta memeriksa legalitas dan keasliannya.', category: 'Tips Kesehatan', date: '15 Jul 2026', readTime: '5 menit', image: 'img/blog/vigamax-asli-untuk-stamina-pria.png', href: 'artikel-vigamax.html' },
 
+      //buat referensi judul untuk artikel nanti
+      /*
       { title: 'Panduan memilih produk herbal yang sesuai kebutuhan', excerpt: 'Pelajari cara menilai kualitas, keamanan, dan manfaat produk sebelum memutuskan.', category: 'Tips Kesehatan', date: '12 Jul 2026', readTime: '4 menit', image: 'img/product/black-blue-mmc.jpg', href: 'blog.html' },
       { title: 'Kenali manfaat wellness untuk rutinitas harian', excerpt: 'Rutinitas yang sederhana bisa membantu Anda merasa lebih segar dan terjaga.', category: 'Wellness', date: '10 Jul 2026', readTime: '3 menit', image: 'img/product/viagra-mmc-blue.jpg', href: 'blog.html' },
       { title: 'Produk kesehatan pria yang sering dicari', excerpt: 'Temukan kategori produk yang paling sering dibahas pelanggan.', category: 'Kesehatan Pria', date: '07 Jul 2026', readTime: '5 menit', image: 'img/product/super-stud-007.jpg', href: 'blog.html' },
       { title: 'Cara memanfaatkan informasi produk secara lebih efisien', excerpt: 'Informasi yang jelas membantu mempercepat keputusan pembelian.', category: 'Panduan', date: '05 Jul 2026', readTime: '4 menit', image: 'img/product/pil-biru-cina.jpg', href: 'blog.html' },
       { title: 'Kapan waktu terbaik untuk memperbarui kebutuhan wellness', excerpt: 'Pelajari cara menyeimbangkan rutinitas dan kebutuhan tubuh Anda.', category: 'Lifestyle', date: '02 Jul 2026', readTime: '3 menit', image: 'img/product/alat-pijat.jpg', href: 'blog.html' },
       { title: 'Review singkat produk terbaru untuk referensi Anda', excerpt: 'Informasi singkat yang membantu Anda membandingkan pilihan secara cepat.', category: 'Review Produk', date: '28 Jun 2026', readTime: '2 menit', image: 'img/product/japan-tengsu.jpg', href: 'blog.html' }
-    ],
+      */
+      ],
     popularArticles: [
       { title: 'Artikel paling sering dibaca', excerpt: 'Konten yang terus mendapat perhatian pembaca.', href: 'blog.html' },
       { title: 'Tips memilih produk dengan aman', excerpt: 'Panduan sederhana untuk keputusan yang lebih nyaman.', href: 'blog.html' },
