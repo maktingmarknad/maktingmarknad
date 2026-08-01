@@ -65,10 +65,10 @@ document.addEventListener('DOMContentLoaded', () => {
       <div class="footer-column">
         <h3>Informasi</h3>
         <ul>
-          <li><a href="#">Kebijakan Privasi</a></li>
-          <li><a href="#">Syarat &amp; Ketentuan</a></li>
-          <li><a href="#">Disclaimer</a></li>
-          <li><a href="#">FAQ</a></li>
+          <li><a href="Kebijakan-Privasi.html">Kebijakan Privasi</a></li>
+          <li><a href="syarat%20&amp;%20ketentuan.html">Syarat &amp; Ketentuan</a></li>
+          <li><a href="disclaimer.html">Disclaimer</a></li>
+          <li><a href="faq.html">FAQ</a></li>
         </ul>
         <p style="margin-top:0.7rem;">Link informasi dapat diperbarui sesuai kebutuhan.</p>
       </div>
