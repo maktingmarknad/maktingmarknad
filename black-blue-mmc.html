@@ -112,20 +112,22 @@
     .gallery-card { padding: 1rem; }
 
     .gallery-layout {
-      display: grid;
+      display: flex;
+      flex-direction: column;
       gap: 0.95rem;
-      align-items: start;
+      align-items: stretch;
     }
 
     .gallery-thumbs {
-      display: flex;
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
       gap: 0.65rem;
       overflow-x: auto;
       padding-bottom: 0.1rem;
     }
 
     .thumb {
-      flex: 0 0 90px;
+      flex: 0 0 auto;
       border: 1px solid var(--border);
       border-radius: 16px;
       padding: 0.3rem;
@@ -608,11 +610,12 @@
       }
 
       .gallery-layout {
-        grid-template-columns: 90px 1fr;
+        display: flex;
+        flex-direction: column;
       }
 
       .gallery-thumbs {
-        flex-direction: column;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
         overflow: visible;
       }
 
@@ -659,22 +662,22 @@
       <div class="container hero-grid">
         <div class="card gallery-card" data-aos="fade-up">
           <div class="gallery-layout">
+            <div class="preview-wrap">
+              <img id="mainImage" src="img/product/black-blue-mmc.jpg" alt="Black Blue MMC" />
+            </div>
             <div class="gallery-thumbs" role="tablist" aria-label="Pilihan gambar produk">
-              <button class="thumb active" type="button" data-image="img/product/black-blue-mmc.jpg" data-label="Tampak depan" aria-label="Lihat tampak depan produk">
+              <button class="thumb active" type="button" data-image="img/product/black-blue-mmc.jpg" data-label="Tampak depan" data-alt="Black Blue MMC tampak depan" aria-label="Lihat tampak depan produk" aria-selected="true">
                 <img src="img/product/black-blue-mmc.jpg" alt="Black Blue MMC tampak depan" />
                 <span>Tampak depan</span>
               </button>
-              <button class="thumb" type="button" data-image="img/product/black-blue-mmc.jpg" data-label="Kemasan" aria-label="Lihat kemasan produk">
-                <img src="img/product/black-blue-mmc.jpg" alt="Black Blue MMC kemasan" />
+              <button class="thumb" type="button" data-image="img/product/black-blue-mmc-kemasan.jpg" data-label="Kemasan" data-alt="Black Blue MMC kemasan" aria-label="Lihat kemasan produk" aria-selected="false">
+                <img src="img/product/black-blue-mmc-kemasan.jpg" alt="Black Blue MMC kemasan" />
                 <span>Kemasan</span>
               </button>
-              <button class="thumb" type="button" data-image="img/product/black-blue-mmc.jpg" data-label="Detail manfaat" aria-label="Lihat detail manfaat produk">
-                <img src="img/product/black-blue-mmc.jpg" alt="Black Blue MMC detail produk" />
+              <button class="thumb" type="button" data-image="img/product/black-blue-mmc-detail.png" data-label="Detail manfaat" data-alt="Black Blue MMC detail produk" aria-label="Lihat detail manfaat produk" aria-selected="false">
+                <img src="img/product/black-blue-mmc-detail.png" alt="Black Blue MMC detail produk" />
                 <span>Detail</span>
               </button>
-            </div>
-            <div class="preview-wrap">
-              <img id="mainImage" src="img/product/black-blue-mmc.jpg" alt="Black Blue MMC" />
             </div>
           </div>
           <div class="gallery-caption">
@@ -956,14 +959,45 @@
   <script>
     AOS.init({ duration: 700, once: true });
 
-    const mainImage = document.getElementById('mainImage');
-    const imageCaption = document.getElementById('imageCaption');
-    document.querySelectorAll('.thumb').forEach((thumb) => {
-      thumb.addEventListener('click', () => {
-        document.querySelector('.thumb.active')?.classList.remove('active');
-        thumb.classList.add('active');
-        mainImage.src = thumb.dataset.image;
-        imageCaption.textContent = thumb.dataset.label;
+    document.addEventListener('DOMContentLoaded', () => {
+      const galleryCards = document.querySelectorAll('.gallery-card');
+
+      galleryCards.forEach((galleryCard) => {
+        const thumbs = galleryCard.querySelectorAll('.thumb');
+        const mainImage = galleryCard.querySelector('#mainImage');
+        const imageCaption = galleryCard.querySelector('#imageCaption');
+
+        if (!thumbs.length || !mainImage) {
+          return;
+        }
+
+        thumbs.forEach((thumb) => {
+          thumb.addEventListener('click', () => {
+            const imagePath = thumb.dataset.image;
+            const label = thumb.dataset.label;
+
+            if (!imagePath) {
+              console.error('data-image tidak ditemukan:', thumb);
+              return;
+            }
+
+            thumbs.forEach((item) => {
+              item.classList.remove('active');
+              item.setAttribute('aria-selected', 'false');
+            });
+
+            thumb.classList.add('active');
+            thumb.setAttribute('aria-selected', 'true');
+            mainImage.src = imagePath;
+            mainImage.alt = thumb.dataset.alt || 'Black Blue MMC';
+
+            if (label && imageCaption) {
+              imageCaption.textContent = label;
+            }
+
+            console.log('Galeri berhasil diganti:', imagePath);
+          });
+        });
       });
     });
 
