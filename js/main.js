@@ -21,8 +21,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
   header.innerHTML = `
     <div class="container site-header__inner">
-      <a class="brand" href="index.html" aria-label="Makting Marknad beranda">
-        <img class="brand-logo" src="img/logo.png" alt="Logo Makting Marknad">
+      <a class="brand" href="/" aria-label="Makting Marknad beranda">
+        <img class="brand-logo" src="/img/logo.png" alt="Logo Makting Marknad">
         <span class="brand-name">
           <strong>Makting Marknad</strong>
           <span>Produk herbal & wellness</span>
@@ -32,13 +32,13 @@ document.addEventListener('DOMContentLoaded', () => {
         <span></span><span></span><span></span>
       </button>
       <nav class="site-nav" aria-label="Navigasi utama">
-        <a href="index.html">Beranda</a>
-        <a href="produk.html">Produk</a>
-        <a href="about.html">Tentang</a>
-        <a href="blog.html">Blog</a>
-        <a href="official-store.html">Official Store</a>
-        <a href="contact.html">Kontak</a>
-        <a class="header-cta" href="contact.html">Hubungi Kami</a>
+        <a href="/">Beranda</a>
+        <a href="/produk.html">Produk</a>
+        <a href="/about.html">Tentang</a>
+        <a href="/blog.html">Blog</a>
+        <a href="/official-store.html">Official Store</a>
+        <a href="/kontak.html">Kontak</a>
+        <a class="header-cta" href="/kontak.html">Hubungi Kami</a>
       </nav>
     </div>
   `;
@@ -46,7 +46,7 @@ document.addEventListener('DOMContentLoaded', () => {
   footer.innerHTML = `
     <div class="container site-footer__grid">
       <div class="footer-column">
-        <a class="footer-brand" href="index.html">
+        <a class="footer-brand" href="/">
           <strong>Makting Marknad</strong>
         </a>
         <p class="footer-description">Makting Marknad menyediakan informasi dan pilihan produk untuk mendukung kesehatan, kebugaran, dan kualitas hidup.</p>
@@ -54,28 +54,28 @@ document.addEventListener('DOMContentLoaded', () => {
       <div class="footer-column">
         <h3>Navigasi</h3>
         <ul>
-          <li><a href="index.html">Beranda</a></li>
-          <li><a href="produk.html">Produk</a></li>
-          <li><a href="about.html">Tentang</a></li>
-          <li><a href="blog.html">Blog</a></li>
-          <li><a href="official-store.html">Official Store</a></li>
-          <li><a href="contact.html">Kontak</a></li>
+          <li><a href="/">Beranda</a></li>
+          <li><a href="/produk.html">Produk</a></li>
+          <li><a href="/about.html">Tentang</a></li>
+          <li><a href="/blog.html">Blog</a></li>
+          <li><a href="/official-store.html">Official Store</a></li>
+          <li><a href="/kontak.html">Kontak</a></li>
         </ul>
       </div>
       <div class="footer-column">
         <h3>Informasi</h3>
         <ul>
-          <li><a href="Kebijakan-Privasi.html">Kebijakan Privasi</a></li>
-          <li><a href="syarat%20&amp;%20ketentuan.html">Syarat &amp; Ketentuan</a></li>
-          <li><a href="disclaimer.html">Disclaimer</a></li>
-          <li><a href="faq.html">FAQ</a></li>
+          <li><a href="/Kebijakan-Privasi.html">Kebijakan Privasi</a></li>
+          <li><a href="/syarat%20%26%20ketentuan.html">Syarat &amp; Ketentuan</a></li>
+          <li><a href="/disclaimer.html">Disclaimer</a></li>
+          <li><a href="/faq.html">FAQ</a></li>
         </ul>
       </div>
       <div class="footer-column">
         <h3>Hubungi Kami</h3>
         <p>WhatsApp: 088980874055</p>
         <a class="whatsapp-btn" href="https://wa.me/6288980874055?text=Halo%20Makting%20Marknad,%20saya%20ingin%20mendapatkan%20informasi%20lebih%20lanjut." target="_blank" rel="noopener noreferrer">Hubungi via WhatsApp</a>
-        <p style="margin-top:0.75rem;"><a href="contact.html">Lihat halaman kontak</a></p>
+        <p style="margin-top:0.75rem;"><a href="/kontak.html">Lihat halaman kontak</a></p>
       </div>
     </div>
     <div class="container footer-bottom">
@@ -123,8 +123,12 @@ document.addEventListener('DOMContentLoaded', () => {
     if (!href || href === '#') return;
 
     const relativePath = href.split('?')[0].split('#')[0];
-    const currentPath = window.location.pathname.split('/').pop() || 'index.html';
-    if (relativePath && currentPath === relativePath) {
+    const currentPath = window.location.pathname;
+    
+    const isHome = (currentPath === '/' || currentPath === '/index.html' || currentPath === '') && (relativePath === '/' || relativePath === '/index.html');
+    const isMatch = relativePath !== '/' && (currentPath === relativePath || currentPath.endsWith(relativePath));
+    
+    if (isHome || isMatch) {
       link.classList.add('active');
     }
   });

@@ -1,0 +1,8 @@
+{
+  "name": "Makting Marknad",
+  "description": "Makting Marknad menghadirkan produk herbal, wellness, dan kesehatan pria pilihan dengan informasi lengkap serta layanan konsultasi yang mudah.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
